@@ -14,7 +14,7 @@ import { VideoContainer } from '/src/components/video_container'
 
 import LinksDeployment from './sql-reference-links.json'
 
-# ClickHouse SQL Reference
+# ClickHouse SQL reference
 
 ClickHouse supports a declarative query language based on SQL that is identical to the ANSI SQL standard in many cases.
 
