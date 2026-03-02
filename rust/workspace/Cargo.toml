@@ -1,0 +1,8 @@
+# workspace is required to vendor crates for all packages.
+[workspace]
+members = [
+    "skim",
+    "prql",
+    "wasmtime",
+]
+resolver = "2"
