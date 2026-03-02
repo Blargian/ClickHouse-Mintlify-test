@@ -109,7 +109,7 @@ def check_whitespaces(files) -> str:
             if not m:
                 continue
 
-            # Column right before the end of the matched spaces (Perl $+[1] - 1)
+            # The column right before the end of the matched spaces (Perl $+[1] - 1)
             pos = m.end(1) - 1
 
             prev_slice = lines[i - 1][pos : pos + 2] if pos < len(lines[i - 1]) else ""
