@@ -1,0 +1,310 @@
+tabs:
+  home:
+    display-name: Home
+    icon: house
+  knowledge-base:
+    display-name: Knowledge Base
+    icon: book
+
+navigation:
+  - tab: home
+    layout:
+      - section: Home
+        contents:
+          - page: Home
+            path: ./pages/support_home.mdx
+
+  - tab: knowledge-base
+    layout:
+      - section: Community
+        contents:
+          - page: How do I contribute code to ClickHouse?
+            path: ./pages/knowledge-base/how-do-i-contribute-code-to-clickhouse.mdx
+          - page: How to build LLVM and clang on Linux
+            path: ./pages/knowledge-base/llvm-clang-up-to-date.mdx
+
+      - section: Concepts
+        contents:
+          - page: Can I use ClickHouse as a key-value storage?
+            path: ./pages/knowledge-base/key-value.mdx
+          - page: Can I use ClickHouse as a time-series database?
+            path: ./pages/knowledge-base/time-series.mdx
+          - page: Differences Between Official and 3rd-Party Builds
+            path: ./pages/knowledge-base/difference_between_official_builds_and_3rd_party.mdx
+          - page: What does "ClickHouse" mean?
+            path: ./pages/knowledge-base/dbms-naming.mdx
+          - page: What is OLAP?
+            path: ./pages/knowledge-base/olap.mdx
+          - page: Which ClickHouse version to use in production?
+            path: ./pages/knowledge-base/production.mdx
+          - page: Why not use something like MapReduce?
+            path: ./pages/knowledge-base/mapreduce.mdx
+
+      - section: Core Data Concepts
+        contents:
+          - page: What is a columnar database?
+            path: ./pages/knowledge-base/columnar-database.mdx
+          - page: What is the difference between OPTIMIZE FINAL and FINAL?
+            path: ./pages/knowledge-base/optimize_final_vs_final.mdx
+          - page: When are TTL rules applied?
+            path: ./pages/knowledge-base/when_is_ttl_applied.mdx
+          - page: Why is ClickHouse Keeper recommended over ZooKeeper?
+            path: ./pages/knowledge-base/why_recommend_clickhouse_keeper_over_zookeeper.mdx
+
+      - section: Data Export
+        contents:
+          - page: How can I do partitioned writes by year and month on S3?
+            path: ./pages/knowledge-base/s3_export_data_year_month_folders.mdx
+          - page: How do I export PostgreSQL data to Parquet, CSV or JSON?
+            path: ./pages/knowledge-base/postgresql-to-parquet-csv-json.mdx
+          - page: How to Export Data from ClickHouse to a File
+            path: ./pages/knowledge-base/file-export.mdx
+          - page: How to output send logs level traces to file
+            path: ./pages/knowledge-base/outputSendLogsLevelTracesToFile.mdx
+
+      - section: Data Formats
+        contents:
+          - page: How can I use the new JSON Data Type with Kafka?
+            path: ./pages/knowledge-base/kafka-clickhouse-json.mdx
+          - page: How do I export MySQL Data to Parquet, CSV, or JSON
+            path: ./pages/knowledge-base/mysql-to-parquet-csv-json.mdx
+          - page: Importing GeoJSON with a deeply nested object array
+            path: ./pages/knowledge-base/importing-geojason-with-nested-object-array.mdx
+          - page: Importing and Querying JSON Array Objects
+            path: ./pages/knowledge-base/importing_and_working_with_JSON_array_objects.mdx
+          - page: JSON Extract example
+            path: ./pages/knowledge-base/json_extract_example.mdx
+          - page: Simple example flow for extracting JSON data
+            path: ./pages/knowledge-base/json_simple_example.mdx
+
+      - section: Data Ingestion
+        contents:
+          - page: How to Ingest Data from Kafka into ClickHouse
+            path: ./pages/knowledge-base/kafka-to-clickhouse-setup.mdx
+          - page: How to import JSON into ClickHouse?
+            path: ./pages/knowledge-base/json-import.mdx
+          - page: How to ingest Parquet files from an S3 bucket
+            path: ./pages/knowledge-base/ingest-parquet-files-in-s3.mdx
+          - page: How to insert all rows from one table to another?
+            path: ./pages/knowledge-base/how-to-insert-all-rows-from-another-table.mdx
+
+      - section: Data Modelling
+        contents:
+          - page: Adding a column to a table
+            path: ./pages/knowledge-base/add-column.mdx
+          - page: Are Materialized Views inserted synchronously?
+            path: ./pages/knowledge-base/are_materialized_views_inserted_asynchronously.mdx
+          - page: Can you PIVOT in ClickHouse?
+            path: ./pages/knowledge-base/pivot.mdx
+          - page: How to Create a ClickHouse Dictionary with String Keys
+            path: ./pages/knowledge-base/dictionary_using_strings.mdx
+          - page: How to confirm if a Projection is used by the query?
+            path: ./pages/knowledge-base/projection_example.mdx
+          - page: How to filter a ClickHouse table by an array-column?
+            path: ./pages/knowledge-base/how-to-filter-a-clickhouse-table-by-an-array-column.mdx
+
+      - section: Data Sources
+        contents:
+          - page: How do I convert Files from Parquet to CSV or JSON?
+            path: ./pages/knowledge-base/parquet-to-csv-json.mdx
+
+      - section: Deleting Data
+        contents:
+          - page: Is it possible to delete old records from a table?
+            path: ./pages/knowledge-base/delete-old-data.mdx
+
+      - section: Deployments and Scaling
+        contents:
+          - page: Does ClickHouse support multi-region replication?
+            path: ./pages/knowledge-base/multi-region-replication.mdx
+          - page: Execute SYSTEM Statements on All Nodes
+            path: ./pages/knowledge-base/execute-system-queries-in-cloud.mdx
+          - page: How to create a table that can query multiple clusters
+            path: ./pages/knowledge-base/how-to-create-table-to-query-multiple-remote-clusters.mdx
+          - page: Searching across nodes for tables with a wildcard
+            path: ./pages/knowledge-base/search-across-node-for-tables-with-a-wildcard.mdx
+
+      - section: Errors and Exceptions
+        contents:
+          - page: Configuring CAP_IPC_LOCK and CAP_SYS_NICE in Docker
+            path: ./pages/knowledge-base/configure_cap_ipc_lock_and_cap_sys_nice_in_docker.mdx
+          - page: DB Exception Part intersects previous part
+            path: ./pages/knowledge-base/part_intersects_previous_part.mdx
+          - page: Fix the Developer Verification Error in MacOS
+            path: ./pages/knowledge-base/fix-developer-verification-error-in-macos.mdx
+          - page: How do I resolve Ingest Failures After 23.9 Release?
+            path: ./pages/knowledge-base/ingest-failures-23-9-release.mdx
+          - page: I am unable to access a ClickHouse Cloud service
+            path: ./pages/knowledge-base/unable-to-access-cloud-service.mdx
+          - page: Memory limit exceeded for query
+            path: ./pages/knowledge-base/memory-limit-exceeded-for-query.mdx
+          - page: Resolving Cannot Append Data in Parquet Format Error
+            path: ./pages/knowledge-base/cannot-append-data-to-parquet-format.mdx
+          - page: Resolving Too Many Parts Error
+            path: ./pages/knowledge-base/exception-too-many-parts.mdx
+          - page: Resolving Timeout Errors with remote functions
+            path: ./pages/knowledge-base/connection_timeout_remote_remoteSecure.mdx
+
+      - section: Functions
+        contents:
+          - page: How to Validate if Two Queries Return Same Results
+            path: ./pages/knowledge-base/compare_resultsets.mdx
+          - page: How to use array join to extract and query attributes
+            path: ./pages/knowledge-base/using-array-join-to-extract-and-query-attributes.mdx
+          - page: Using Filtered Aggregates in ClickHouse
+            path: ./pages/knowledge-base/filtered-aggregates.mdx
+
+      - section: Language Clients
+        contents:
+          - page: A Python client working example
+            path: ./pages/knowledge-base/python-clickhouse-connect-example.mdx
+          - page: How do I use NodeJS with @clickhouse/client
+            path: ./pages/knowledge-base/node-js-example.mdx
+
+      - section: Managing Cloud
+        contents:
+          - page: About Quotas and Query complexity
+            path: ./pages/knowledge-base/about-quotas-and-query-complexity.mdx
+          - page: How do I change my Billing Contact?
+            path: ./pages/knowledge-base/change-billing-email.mdx
+          - page: How to Check Your ClickHouse Cloud Service State
+            path: ./pages/knowledge-base/how-to-check-my-clickhouse-cloud-sevice-state.mdx
+          - page: How to connect to ClickHouse using SSH Keys
+            path: ./pages/knowledge-base/how-to-connect-to-ch-cloud-using-ssh-keys.mdx
+          - page: Managing ClickHouse Cloud Service with API
+            path: ./pages/knowledge-base/clickhouse_cloud_api_usage.mdx
+          - page: Setting a limit on query execution time
+            path: ./pages/knowledge-base/query_max_execution_time.mdx
+          - page: Why can't I see my data in a dictionary?
+            path: ./pages/knowledge-base/dictionaries-consistent-state.mdx
+
+      - section: Managing Data
+        contents:
+          - page: Backing up a specific partition
+            path: ./pages/knowledge-base/backing_up_a_specific_partition.mdx
+          - page: How to use the exchange command to switch tables
+            path: ./pages/knowledge-base/exchangeStatementToSwitchTables.mdx
+
+      - section: Native Clients and Interfaces
+        contents:
+          - page: How to set up ClickHouse on Docker with ODBC
+            path: ./pages/knowledge-base/how-to-set-up-ch-on-docker-odbc-connect-mssql.mdx
+          - page: ODBC authentication failed error with Power BI
+            path: ./pages/knowledge-base/ODBC-authentication-failed-error-using-PowerBI-CH-connector.mdx
+          - page: Python quick example using HTTP requests
+            path: ./pages/knowledge-base/python_http_requests.mdx
+          - page: Terraform example on how to use Cloud API
+            path: ./pages/knowledge-base/terraform_example.mdx
+          - page: What if I have a problem with encodings via ODBC?
+            path: ./pages/knowledge-base/oracle-odbc.mdx
+
+      - section: Performance and Optimizations
+        contents:
+          - page: Comparing metrics between queries in decibels
+            path: ./pages/knowledge-base/comparing-metrics-between-queries.mdx
+          - page: How to Identify the Most Expensive Queries
+            path: ./pages/knowledge-base/find-expensive-queries.mdx
+          - page: How to Increase the Number of Threads
+            path: ./pages/knowledge-base/how-to-increase-thread-pool-size.mdx
+          - page: How to Measure Query Processing Time Without Rows
+            path: ./pages/knowledge-base/check_query_processing_time_only.mdx
+          - page: How to Verify Query Cache Usage
+            path: ./pages/knowledge-base/check-query-cache-in-use.mdx
+          - page: How to achieve data read consistency?
+            path: ./pages/knowledge-base/read_consistency.mdx
+          - page: How to calculate ratio of empty values in columns
+            path: ./pages/knowledge-base/calculate_ratio_of_zero_sparse_serialization.mdx
+          - page: Identifying Expensive Queries by Memory Usage
+            path: ./pages/knowledge-base/finding_expensive_queries_by_memory_usage.mdx
+          - page: Improving Map Lookup Performance
+            path: ./pages/knowledge-base/improve-map-performance.mdx
+          - page: Profiling ClickHouse with LLVM's XRay
+            path: ./pages/knowledge-base/profiling-clickhouse-with-llvm-xray.mdx
+          - page: Recommended Maximum Databases and Tables
+            path: ./pages/knowledge-base/maximum_number_of_tables_and_databases.mdx
+          - page: Tips and tricks on optimizing basic data types
+            path: ./pages/knowledge-base/tips-tricks-optimizing-basic-data-types-in-clickhouse.mdx
+          - page: Why is my primary key not used?
+            path: ./pages/knowledge-base/why_is_my_primary_key_not_used.mdx
+
+      - section: Security and Authentication
+        contents:
+          - page: AWS PrivateLink setup for MSK ClickPipes
+            path: ./pages/knowledge-base/aws-privatelink-setup-for-msk-clickpipes.mdx
+          - page: AWS PrivateLink setup for RDS ClickPipes
+            path: ./pages/knowledge-base/aws-privatelink-setup-for-clickpipes.mdx
+          - page: Common RBAC queries
+            path: ./pages/knowledge-base/common-rbac-queries.mdx
+          - page: Does ClickHouse support row and column-level security?
+            path: ./pages/knowledge-base/row-column-policy.mdx
+          - page: How to Enable SSL with Let's Encrypt
+            path: ./pages/knowledge-base/enabling-ssl-with-lets-encrypt.mdx
+          - page: Resolving SSL Certificate Verify Error
+            path: ./pages/knowledge-base/certificate_verify_failed_error.mdx
+
+      - section: Server Admin
+        contents:
+          - page: Capturing server logs of queries at the client
+            path: ./pages/knowledge-base/send_logs_level.mdx
+          - page: Create a custom DNS alias
+            path: ./pages/knowledge-base/custom-dns-alias-for-instance.mdx
+          - page: How do I remove the default user?
+            path: ./pages/knowledge-base/remove-default-user.mdx
+          - page: How to Check Users Assigned to Roles
+            path: ./pages/knowledge-base/check_users_roles.mdx
+          - page: How to check what code is currently running?
+            path: ./pages/knowledge-base/which-processes-are-currently-running.mdx
+
+      - section: Settings
+        contents:
+          - page: Alter User Settings Exception
+            path: ./pages/knowledge-base/alter-user-settings-exception.mdx
+          - page: Change the prompt in clickhouse-client
+            path: ./pages/knowledge-base/change-the-prompt-in-clickhouse-client.mdx
+          - page: How do I solve TOO MANY PARTS error during INSERT?
+            path: ./pages/knowledge-base/Insert_select_settings_tuning.mdx
+          - page: How to Configure Settings for a User
+            path: ./pages/knowledge-base/configure-a-user-setting.mdx
+          - page: How to Ignore Incorrect Settings
+            path: ./pages/knowledge-base/ignoring-incorrect-settings.mdx
+          - page: Synchronous data reading
+            path: ./pages/knowledge-base/async_vs_optimize_read_in_order.mdx
+          - page: Useful queries for troubleshooting
+            path: ./pages/knowledge-base/useful-queries-for-troubleshooting.mdx
+          - page: Why is ClickHouse logging so verbose by default?
+            path: ./pages/knowledge-base/why_default_logging_verbose.mdx
+
+      - section: System Tables
+        contents:
+          - page: How do I view the number of active mutations?
+            path: ./pages/knowledge-base/view_number_of_active_mutations.mdx
+          - page: How to Identify Queries Using Materialized Views
+            path: ./pages/knowledge-base/how_to_display_queries_using_MV.mdx
+          - page: Mapping of metrics to Prometheus metrics
+            path: ./pages/knowledge-base/mapping-of-system-metrics-to-prometheus-metrics.mdx
+
+      - section: Tools and Utilities
+        contents:
+          - page: Automatic schema migration tools
+            path: ./pages/knowledge-base/schema_migration_tools.mdx
+          - page: How do I Install ClickHouse on Windows 10?
+            path: ./pages/knowledge-base/install-clickhouse-windows10.mdx
+          - page: How to Generate a HAR file for support
+            path: ./pages/knowledge-base/generate-har-file.mdx
+          - page: How to quickly recreate a small table
+            path: ./pages/knowledge-base/recreate_table_across_terminals.mdx
+          - page: Mapping Windows AD security groups to roles
+            path: ./pages/knowledge-base/windows_active_directory_to_ch_roles.mdx
+
+      - section: Use Cases
+        contents:
+          - page: Can you use ClickHouse for vector search?
+            path: ./pages/knowledge-base/vector-search.mdx
+          - page: How to Use Parameterized Views
+            path: ./pages/knowledge-base/how_to_use_parametrised_views.mdx
+          - page: Let's calculate pi using SQL
+            path: ./pages/knowledge-base/calculate-pi-using-sql.mdx
+          - page: Using ClickHouse for Log Analytics
+            path: ./pages/knowledge-base/use-clickhouse-for-log-analytics.mdx
+          - page: Who is using ClickHouse?
+            path: ./pages/knowledge-base/who-is-using-clickhouse.mdx

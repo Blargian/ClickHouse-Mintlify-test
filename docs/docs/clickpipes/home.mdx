@@ -1,0 +1,32 @@
+---
+mode: "custom"
+---
+
+import {ClickPipesAnimationV2} from '/snippets/components/ClickPipesAnimation/ClickPipesAnimation.jsx';
+
+<section className="hero">
+  <div className="hero-text">
+    <h1>ClickPipes</h1>
+    <p>An integration engine that makes ingesting massive volumes of data from a diverse set of sources as simple as clicking a few buttons.</p>
+  </div>
+  <div className="hero-aside">
+    <ClickPipesAnimationV2 />
+  </div>
+</section>
+
+<section className="sidekick divider">
+    <Columns cols={2}>
+        <Card title="Cloud object stores">
+            Ingest data from S3, GCS, and Azure Blob Storage into ClickHouse Cloud.
+        </Card>
+        <Card title="Databases & data lakehouses">
+            Replicate data from Postgres, MySQL, MongoDB, and data lakehouses with CDC.
+        </Card>
+        <Card title="Amazon databases">
+            Connect Amazon Kinesis, DynamoDB, and other AWS data sources.
+        </Card>
+        <Card title="Event streams">
+            Stream real-time data from Kafka and event streaming platforms.
+        </Card>
+    </Columns>
+</section>

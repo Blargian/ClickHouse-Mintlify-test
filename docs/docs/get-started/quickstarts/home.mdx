@@ -1,0 +1,109 @@
+---
+sidebarTitle: 'Quickstarts'
+title: 'Quickstarts explorer'
+description: 'Explore quickstart guides to get up and running with ClickHouse'
+keywords: ['quickstarts', 'explore', 'getting started', 'tutorials']
+mode: 'custom'
+---
+
+import { QuickStartsGrid } from '/snippets/components/QuickStartsGrid/QuickStartsGrid.jsx'
+
+{/* Define featured quickstarts - just list the IDs */}
+export const featuredQuickStartIds = [
+  'create-your-first-service-on-cloud',
+  'obtain-your-cloud-connection-details'
+];
+
+{/* Define quickstarts data */}
+export const quickStartsData = [
+  {
+    id: 'build-etl-pipeline-using-clickhouse',
+    title: 'Build an ETL pipeline using ClickHouse',
+    description: 'Learn how to ingest data from CSV and parquet files into ClickHouse Cloud',
+    href: '/docs/get-started/quickstarts/build-etl-pipeline-using-clickhouse',
+    useCases: ['Data warehousing', 'Real-time analytics'],
+    products: ['Cloud'],
+    level: 'Beginner',
+  },
+  {
+    id: 'connect-your-iceberg-catalog',
+    title: 'How to connect your Iceberg catalog in ClickHouse Cloud',
+    description: 'Learn how to connect ClickHouse Cloud to connect to your Data Catalog and query Iceberg tables.',
+    href: '/docs/get-started/quickstarts/connect-your-iceberg-catalog',
+    useCases: ['Data warehousing', 'Real-time analytics', 'Data Lake'],
+    products: ['Cloud'],
+    level: 'Beginner',
+  },
+  {
+    id: 'create-your-first-materialized-view',
+    title: 'Create your first materialized view',
+    description: 'Learn how to use materialized views in ClickHouse to pre-compute and store query results with a different sort order, enabling fast lookups on columns not covered by your primary key.',
+    href: '/docs/get-started/quickstarts/create-your-first-materialized-view',
+    useCases: ['Real-time analytics', 'Data warehousing'],
+    products: ['Cloud', 'OSS'],
+    level: 'Beginner',
+  },
+  {
+    id: 'create-your-first-mergetree-table',
+    title: 'Create your first MergeTree table',
+    description: 'Learn how ClickHouses primary table engine works by creating a MergeTree table, loading UK property price data, and observing how parts and merges affect storage and query performance.',
+    href: '/docs/get-started/quickstarts/create-your-first-mergetree-table',
+    useCases: ['Real-time analytics', 'Data warehousing'],
+    products: ['Cloud', 'OSS'],
+    level: 'Beginner',
+  },
+  {
+    id: 'create-your-first-projection',
+    title: 'Create your first projection',
+    description: 'Learn how to use projections in ClickHouse to store an additional sorted copy of your data within the same table, enabling fast lookups on columns not covered by your primary key.',
+    href: '/docs/get-started/quickstarts/create-your-first-projection',
+    useCases: ['Real-time analytics', 'Data warehousing'],
+    products: ['Cloud', 'OSS'],
+    level: 'Beginner',
+  },
+  {
+    id: 'create-your-first-service-on-cloud',
+    title: 'Create your first Cloud service and load example data',
+    description: 'Create a ClickHouse Cloud service, explore the SQL console, and load an example dataset to start querying real data in minutes.',
+    href: '/docs/get-started/quickstarts/create-your-first-service-on-cloud',
+    useCases: ['Data warehousing', 'Real-time analytics', 'Observability', 'AI/ML'],
+    products: ['Cloud'],
+    level: 'Beginner',
+  },
+  {
+    id: 'insert-data-using-clickhouse-client',
+    title: 'Insert data into ClickHouse Cloud using clickhouse-client',
+    description: 'Learn how to use clickhouse-client to insert data from local CSV and Parquet files into a ClickHouse Cloud service from the command line.',
+    href: '/docs/get-started/quickstarts/insert-data-using-clickhouse-client',
+    useCases: ['Data warehousing', 'Real-time analytics'],
+    products: ['Cloud'],
+    level: 'Beginner',
+  },
+  {
+    id: 'obtain-your-cloud-connection-details',
+    title: 'Obtain your Cloud connection details',
+    description: 'Learn how to find the hostname, port, and credentials for your ClickHouse Cloud service so you can connect from external clients, CLIs, and applications.',
+    href: '/docs/get-started/quickstarts/obtain-your-cloud-connection-details',
+    useCases: ['Data warehousing', 'Real-time analytics', 'Observability', 'AI/ML'],
+    products: ['Cloud'],
+    level: 'Beginner',
+  },
+];
+
+<div className="relative overflow-hidden">
+    <div className="absolute top-0 left-0 right-0 opacity-80">
+        <img
+            src="/images/background-light.svg"
+            className="block dark:hidden pointer-events-none w-full h-auto"
+            alt="Decorative background image."
+        />
+        <img
+            src="/images/background-dark.svg"
+            className="hidden dark:block pointer-events-none w-full h-auto"
+            alt="Decorative background image."
+        />
+    </div>
+
+    {/* Render the QuickStartsGrid component */}
+    <QuickStartsGrid quickStartsData={quickStartsData} featuredIds={featuredQuickStartIds} />
+</div>
