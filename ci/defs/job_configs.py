@@ -1106,8 +1106,7 @@ class JobConfigs:
         command="python3 ./ci/jobs/docs_job.py",
         digest_config=Job.CacheDigestConfig(
             include_paths=[
-                "**/*.md",
-                "./docs",
+                "./docs/en/",
                 "./ci/jobs/docs_job.py",
                 "CHANGELOG.md",
                 "./src/Functions",
@@ -1115,6 +1114,20 @@ class JobConfigs:
         ),
         run_in_docker="clickhouse/docs-builder",
         requires=[JobNames.STYLE_CHECK, ArtifactNames.CH_ARM_BINARY],
+    )
+    docs_job_mintlify = Job.Config(
+        name=JobNames.DOCS_MINTLIFY,
+        runs_on=RunnerLabels.FUNC_TESTER_ARM,
+        command="python3 ./ci/jobs/docs_job_mintlify.py",
+        digest_config=Job.CacheDigestConfig(
+            include_paths=[
+                "./docs/",
+            ],
+            exclude_paths=[
+                "./docs/en/",
+            ],
+        ),
+        run_in_docker="clickhouse/docs-builder-mintlify"
     )
     docker_server = Job.Config(
         name=JobNames.DOCKER_SERVER,
