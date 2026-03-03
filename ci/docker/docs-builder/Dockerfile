@@ -4,29 +4,20 @@ FROM node:22-bookworm-slim
 RUN apt-get update && \
     apt-get upgrade -y && \
     apt-get install -y --no-install-recommends \
-    git \
-    openssh-client \
     python3 \
-    python3-venv \
-    rsync \
-    curl \
+    git \
     ca-certificates \
-    build-essential && \
+    aspell \
+    aspell-en \
+    wget && \
+    ARCH=$(dpkg --print-architecture) && \
+    wget -qO- "https://github.com/errata-ai/vale/releases/download/v3.9.5/vale_3.9.5_Linux_${ARCH}.tar.gz" | tar xz -C /usr/local/bin vale && \
+    apt-get purge -y wget && apt-get autoremove -y && \
     rm -rf /var/lib/apt/lists/*
 
-ARG CACHE_INVALIDATOR=0
+RUN npm install -g mint@latest markdownlint-cli2 markdownlint-rule-helpers
 
-# Create a specific user and group
-RUN groupadd -r clickhouse && \
-    useradd -r -g clickhouse -m -d /home/clickhouse -s /sbin/nologin -c "ClickHouse user" clickhouse
+ENV HOME=/tmp
+WORKDIR /docs
 
-RUN npm install -g npm@11
-ENV HOME=/opt/clickhouse-docs
-
-# Create directory with specific ownership
-RUN mkdir -p /opt/clickhouse-docs && \
-    chown clickhouse:clickhouse /opt/clickhouse-docs && \
-    chmod -R a+rw /opt/clickhouse-docs/
-
-# Set working directory
-WORKDIR /
+ENTRYPOINT []
