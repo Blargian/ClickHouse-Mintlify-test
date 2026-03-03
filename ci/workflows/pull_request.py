@@ -47,6 +47,7 @@ workflow = Workflow.Config(
     jobs=[
         JobConfigs.style_check,
         JobConfigs.docs_job,
+        JobConfigs.docs_job_mintlify,
         JobConfigs.fast_test,
         *JobConfigs.tidy_build_arm_jobs,
         *[job.set_dependency(STYLE_AND_FAST_TESTS) for job in JobConfigs.build_jobs],
