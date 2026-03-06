@@ -731,126 +731,171 @@
                 "icon": "/images/icons/icon-reference.svg",
                 "pages": [
                   "docs/reference/home",
-                  "docs/reference/syntax",
+                  {
+                    "group": "Syntax",
+                    "root":  "docs/reference/syntax"
+                  },
                   {
                     "group": "Statements",
                     "expandable": true,
                     "expanded": false,
+                    "root": "docs/reference/statements/index",
                     "pages": [
-                      "docs/reference/statements/index",
                       {
-                        "group": "Statements",
+                        "group": "ALTER",
                         "expanded": false,
                         "pages": [
-                          {
-                            "group": "ALTER",
-                            "expanded": false,
-                            "pages": [
-                              "docs/reference/statements/alter/index",
-                              "docs/reference/statements/alter/apply-deleted-mask",
-                              "docs/reference/statements/alter/column",
-                              "docs/reference/statements/alter/comment",
-                              "docs/reference/statements/alter/constraint",
-                              "docs/reference/statements/alter/database-comment",
-                              "docs/reference/statements/alter/delete",
-                              "docs/reference/statements/alter/named-collection",
-                              "docs/reference/statements/alter/order-by",
-                              "docs/reference/statements/alter/partition",
-                              "docs/reference/statements/alter/projection",
-                              "docs/reference/statements/alter/quota",
-                              "docs/reference/statements/alter/role",
-                              "docs/reference/statements/alter/row-policy",
-                              "docs/reference/statements/alter/sample-by",
-                              "docs/reference/statements/alter/setting",
-                              "docs/reference/statements/alter/settings-profile",
-                              "docs/reference/statements/alter/skipping-index",
-                              "docs/reference/statements/alter/statistics",
-                              "docs/reference/statements/alter/ttl",
-                              "docs/reference/statements/alter/update",
-                              "docs/reference/statements/alter/user",
-                              "docs/reference/statements/alter/view"
-                            ]
-                          },
-                          "docs/reference/statements/attach",
-                          "docs/reference/statements/check-grant",
-                          "docs/reference/statements/check-table",
-                          {
-                            "group": "CREATE",
-                            "expanded": false,
-                            "pages": [
-                              "docs/reference/statements/create/index",
-                              "docs/reference/statements/create/database",
-                              "docs/reference/statements/create/dictionary",
-                              "docs/reference/statements/create/function",
-                              "docs/reference/statements/create/named-collection",
-                              "docs/reference/statements/create/quota",
-                              "docs/reference/statements/create/role",
-                              "docs/reference/statements/create/row-policy",
-                              "docs/reference/statements/create/settings-profile",
-                              "docs/reference/statements/create/table",
-                              "docs/reference/statements/create/user",
-                              "docs/reference/statements/create/view"
-                            ]
-                          },
-                          "docs/reference/statements/delete",
-                          "docs/reference/statements/describe-table",
-                          "docs/reference/statements/detach",
-                          "docs/reference/statements/distributed-ddl",
-                          "docs/reference/statements/drop",
-                          "docs/reference/statements/exchange",
-                          "docs/reference/statements/execute_as",
-                          "docs/reference/statements/exists",
-                          "docs/reference/statements/explain",
-                          "docs/reference/statements/grant",
-                          "docs/reference/statements/in",
-                          "docs/reference/statements/insert-into",
-                          "docs/reference/statements/kill",
-                          "docs/reference/statements/move",
-                          "docs/reference/statements/optimize",
-                          "docs/reference/statements/parallel_with",
-                          "docs/reference/statements/rename",
-                          "docs/reference/statements/revoke",
-                          {
-                            "group": "SELECT",
-                            "expanded": false,
-                            "pages": [
-                              "docs/reference/statements/select/index",
-                              "docs/reference/statements/select/all",
-                              "docs/reference/statements/select/apply_modifier",
-                              "docs/reference/statements/select/array-join",
-                              "docs/reference/statements/select/distinct",
-                              "docs/reference/statements/select/except",
-                              "docs/reference/statements/select/except_modifier",
-                              "docs/reference/statements/select/format",
-                              "docs/reference/statements/select/from",
-                              "docs/reference/statements/select/group-by",
-                              "docs/reference/statements/select/having",
-                              "docs/reference/statements/select/intersect",
-                              "docs/reference/statements/select/into-outfile",
-                              "docs/reference/statements/select/join",
-                              "docs/reference/statements/select/limit-by",
-                              "docs/reference/statements/select/limit",
-                              "docs/reference/statements/select/offset",
-                              "docs/reference/statements/select/order-by",
-                              "docs/reference/statements/select/qualify",
-                              "docs/reference/statements/select/replace_modifier",
-                              "docs/reference/statements/select/sample",
-                              "docs/reference/statements/select/union",
-                              "docs/reference/statements/select/where",
-                              "docs/reference/statements/select/with"
-                            ]
-                          },
-                          "docs/reference/statements/set-role",
-                          "docs/reference/statements/set",
-                          "docs/reference/statements/show",
-                          "docs/reference/statements/system",
-                          "docs/reference/statements/truncate",
-                          "docs/reference/statements/undrop",
-                          "docs/reference/statements/update",
-                          "docs/reference/statements/use",
-                          "docs/reference/statements/watch"
+                          "docs/reference/statements/alter/index",
+                          "docs/reference/statements/alter/apply-deleted-mask",
+                          "docs/reference/statements/alter/column",
+                          "docs/reference/statements/alter/comment",
+                          "docs/reference/statements/alter/constraint",
+                          "docs/reference/statements/alter/database-comment",
+                          "docs/reference/statements/alter/delete",
+                          "docs/reference/statements/alter/named-collection",
+                          "docs/reference/statements/alter/order-by",
+                          "docs/reference/statements/alter/partition",
+                          "docs/reference/statements/alter/projection",
+                          "docs/reference/statements/alter/quota",
+                          "docs/reference/statements/alter/role",
+                          "docs/reference/statements/alter/row-policy",
+                          "docs/reference/statements/alter/sample-by",
+                          "docs/reference/statements/alter/setting",
+                          "docs/reference/statements/alter/settings-profile",
+                          "docs/reference/statements/alter/skipping-index",
+                          "docs/reference/statements/alter/statistics",
+                          "docs/reference/statements/alter/ttl",
+                          "docs/reference/statements/alter/update",
+                          "docs/reference/statements/alter/user",
+                          "docs/reference/statements/alter/view"
                         ]
-                      }
+                      },
+                      "docs/reference/statements/attach",
+                      "docs/reference/statements/check-grant",
+                      "docs/reference/statements/check-table",
+                      {
+                        "group": "CREATE",
+                        "expanded": false,
+                        "pages": [
+                          "docs/reference/statements/create/index",
+                          "docs/reference/statements/create/database",
+                          {
+                            "group": "DICTIONARY",
+                            "expanded": false,
+                            "root": "docs/reference/statements/create/dictionary",
+                            "pages": [
+                              "docs/sql-reference/statements/create/dictionary/attributes",
+                              "docs/sql-reference/statements/create/dictionary/embedded",
+                              "docs/sql-reference/statements/create/dictionary/lifetime",
+                              {
+                                "group": "Layouts",
+                                "expanded": false,
+                                "root": "docs/sql-reference/statements/create/dictionary/layouts/overview",
+                                "pages": [
+                                  "docs/sql-reference/statements/create/dictionary/layouts/flat",
+                                  "docs/sql-reference/statements/create/dictionary/layouts/hashed",
+                                  "docs/sql-reference/statements/create/dictionary/layouts/hashed-array",
+                                  "docs/sql-reference/statements/create/dictionary/layouts/cache",
+                                  "docs/sql-reference/statements/create/dictionary/layouts/ssd-cache",
+                                  "docs/sql-reference/statements/create/dictionary/layouts/direct",
+                                  "docs/sql-reference/statements/create/dictionary/layouts/range-hashed",
+                                  "docs/sql-reference/statements/create/dictionary/layouts/hierarchical",
+                                  "docs/sql-reference/statements/create/dictionary/layouts/polygon",
+                                  "docs/sql-reference/statements/create/dictionary/layouts/ip-trie",
+                                  "docs/sql-reference/statements/create/dictionary/layouts/regexp-tree"
+                                ]
+                              },
+                              {
+                                "group": "Sources",
+                                "expanded": false,
+                                "root": "docs/sql-reference/statements/create/dictionary/sources/overview",
+                                "pages": [
+                                  "docs/sql-reference/statements/create/dictionary/sources/local-file",
+                                  "docs/sql-reference/statements/create/dictionary/sources/executable-file",
+                                  "docs/sql-reference/statements/create/dictionary/sources/executable-pool",
+                                  "docs/sql-reference/statements/create/dictionary/sources/http",
+                                  "docs/sql-reference/statements/create/dictionary/sources/clickhouse",
+                                  "docs/sql-reference/statements/create/dictionary/sources/mysql",
+                                  "docs/sql-reference/statements/create/dictionary/sources/postgresql",
+                                  "docs/sql-reference/statements/create/dictionary/sources/mongodb",
+                                  "docs/sql-reference/statements/create/dictionary/sources/redis",
+                                  "docs/sql-reference/statements/create/dictionary/sources/cassandra",
+                                  "docs/sql-reference/statements/create/dictionary/sources/odbc",
+                                  "docs/sql-reference/statements/create/dictionary/sources/null",
+                                  "docs/sql-reference/statements/create/dictionary/sources/yamlregexptree",
+                                  "docs/sql-reference/statements/create/dictionary/sources/ytsaurus"
+                                ]
+                              }
+                            ]
+                          },
+                          "docs/reference/statements/create/function",
+                          "docs/reference/statements/create/named-collection",
+                          "docs/reference/statements/create/quota",
+                          "docs/reference/statements/create/role",
+                          "docs/reference/statements/create/row-policy",
+                          "docs/reference/statements/create/settings-profile",
+                          "docs/reference/statements/create/table",
+                          "docs/reference/statements/create/user",
+                          "docs/reference/statements/create/view"
+                        ]
+                      },
+                      "docs/reference/statements/delete",
+                      "docs/reference/statements/describe-table",
+                      "docs/reference/statements/detach",
+                      "docs/reference/statements/distributed-ddl",
+                      "docs/reference/statements/drop",
+                      "docs/reference/statements/exchange",
+                      "docs/reference/statements/execute_as",
+                      "docs/reference/statements/exists",
+                      "docs/reference/statements/explain",
+                      "docs/reference/statements/grant",
+                      "docs/reference/statements/in",
+                      "docs/reference/statements/insert-into",
+                      "docs/reference/statements/kill",
+                      "docs/reference/statements/move",
+                      "docs/reference/statements/optimize",
+                      "docs/reference/statements/parallel_with",
+                      "docs/reference/statements/rename",
+                      "docs/reference/statements/revoke",
+                      {
+                        "group": "SELECT",
+                        "expanded": false,
+                        "pages": [
+                          "docs/reference/statements/select/index",
+                          "docs/reference/statements/select/all",
+                          "docs/reference/statements/select/apply_modifier",
+                          "docs/reference/statements/select/array-join",
+                          "docs/reference/statements/select/distinct",
+                          "docs/reference/statements/select/except",
+                          "docs/reference/statements/select/except_modifier",
+                          "docs/reference/statements/select/format",
+                          "docs/reference/statements/select/from",
+                          "docs/reference/statements/select/group-by",
+                          "docs/reference/statements/select/having",
+                          "docs/reference/statements/select/intersect",
+                          "docs/reference/statements/select/into-outfile",
+                          "docs/reference/statements/select/join",
+                          "docs/reference/statements/select/limit-by",
+                          "docs/reference/statements/select/limit",
+                          "docs/reference/statements/select/offset",
+                          "docs/reference/statements/select/order-by",
+                          "docs/reference/statements/select/qualify",
+                          "docs/reference/statements/select/replace_modifier",
+                          "docs/reference/statements/select/sample",
+                          "docs/reference/statements/select/union",
+                          "docs/reference/statements/select/where",
+                          "docs/reference/statements/select/with"
+                        ]
+                      },
+                      "docs/reference/statements/set-role",
+                      "docs/reference/statements/set",
+                      "docs/reference/statements/show",
+                      "docs/reference/statements/system",
+                      "docs/reference/statements/truncate",
+                      "docs/reference/statements/undrop",
+                      "docs/reference/statements/update",
+                      "docs/reference/statements/use",
+                      "docs/reference/statements/watch"
                     ]
                   },
                   {
@@ -968,8 +1013,8 @@
                     "icon": "engine",
                     "expandable": true,
                     "expanded": false,
+                    "root": "docs/reference/engines/engines",
                     "pages": [
-                      "docs/reference/engines/engines",
                       {
                         "group": "Table Engines",
                         "expanded": false,
@@ -1851,12 +1896,14 @@
                   {
                     "group": "Get started",
                     "icon": "rocket",
-                    "groups": [
+                    "pages": [
+                      "docs/clickstack/overview",
                       {
-                        "group": "Introduction",
+                        "group": "Getting started",
                         "pages": [
-                          "docs/clickstack/overview",
-                          "docs/clickstack/getting-started"
+                          "docs/clickstack/getting-started",
+                          "docs/clickstack/getting-started/managed",
+                          "docs/clickstack/getting-started/oss"
                         ]
                       },
                       {
@@ -1865,24 +1912,12 @@
                           "docs/clickstack/example-datasets/sample-data",
                           "docs/clickstack/example-datasets/kubernetes",
                           "docs/clickstack/example-datasets/local-data",
-                          "docs/clickstack/example-datasets/remote-demo-data"
+                          "docs/clickstack/example-datasets/remote-demo-data",
+                          "docs/clickstack/example-datasets/session-replay"
                         ]
                       },
-                      {
-                        "group": "Architecture",
-                        "pages": [
-                          "docs/clickstack/architecture"
-                        ]
-                      },
-                      {
-                        "group": "Integration quick start",
-                        "pages": [
-                          "docs/clickstack/integration-examples/nginx-logs",
-                          "docs/clickstack/integration-examples/nginx-traces",
-                          "docs/clickstack/integration-examples/redis-logs",
-                          "docs/clickstack/integration-examples/redis-metrics"
-                        ]
-                      }
+                      "docs/clickstack/architecture",
+                      "docs/clickstack/faq"
                     ]
                   },
                   {
@@ -1890,21 +1925,49 @@
                     "icon": "list-check",
                     "pages": [
                       {
-                        "group": "Deployment options",
+                        "group": "Deployment",
                         "pages": [
-                          "docs/clickstack/deployment/all-in-one",
-                          "docs/clickstack/deployment/hyperdx-clickhouse-cloud",
-                          "docs/clickstack/deployment/helm",
-                          "docs/clickstack/deployment/docker-compose",
-                          "docs/clickstack/deployment/hyperdx-only",
-                          "docs/clickstack/deployment/local-mode-only"
+                          {
+                            "group": "Open Source",
+                            "root": "docs/clickstack/deployment/oss",
+                            "pages": [
+                              "docs/clickstack/deployment/all-in-one",
+                              "docs/clickstack/deployment/helm",
+                              {
+                                "group": "Helm",
+                                "pages": [
+                                  "docs/clickstack/deployment/helm-configuration",
+                                  "docs/clickstack/deployment/helm-deployment-options",
+                                  "docs/clickstack/deployment/helm-cloud"
+                                ]
+                              },
+                              "docs/clickstack/deployment/docker-compose",
+                              "docs/clickstack/deployment/hyperdx-only",
+                              "docs/clickstack/deployment/local-mode-only",
+                              "docs/clickstack/deployment/clickhouse-embedded"
+                            ]
+                          },
+                          "docs/clickstack/deployment/managed"
                         ]
                       },
-                      "docs/clickstack/search",
-                      "docs/clickstack/dashboards",
-                      "docs/clickstack/event_patterns",
-                      "docs/clickstack/event_deltas",
-                      "docs/clickstack/alerts"
+                      "docs/clickstack/features/search",
+                      "docs/clickstack/features/dashboards",
+                      "docs/clickstack/features/event_patterns",
+                      "docs/clickstack/features/event_deltas",
+                      "docs/clickstack/features/alerts",
+                      "docs/clickstack/features/session-replay"
+                    ]
+                  },
+                  {
+                    "group": "Managing ClicKStack",
+                    "expanded": true,
+                    "icon": "gear",
+                    "root": "docs/clickstack/managing",
+                    "pages": [
+                      "docs/clickstack/managing/admin",
+                      "docs/clickstack/managing/production",
+                      "docs/clickstack/managing/materialized_views",
+                      "docs/clickstack/managing/performance_tuning"
                     ]
                   },
                   {
@@ -1914,7 +1977,55 @@
                       {
                         "group": "Ingesting data",
                         "pages": [
-                          "docs/clickstack/ingesting-data/overview"
+                          "docs/clickstack/ingesting-data/overview",
+                          "docs/clickstack/ingesting-data/opentelemetry",
+                          "docs/clickstack/ingesting-data/vector",
+                          "docs/clickstack/ingesting-data/collector",
+                          "docs/clickstack/ingesting-data/schemas",
+                          {
+                            "group": "Integrations",
+                            "pages": [
+                              "docs/clickstack/integration-examples/nginx-logs",
+                              "docs/clickstack/integration-examples/nginx-traces",
+                              "docs/clickstack/integration-examples/redis-logs",
+                              "docs/clickstack/integration-examples/redis-metrics",
+                              "docs/clickstack/integration-examples/cloudwatch",
+                              "docs/clickstack/integration-examples/aws-lambda",
+                              {
+                                "group": "Host logs",
+                                "pages": [
+                                  "docs/clickstack/integration-examples/host-logs",
+                                  "docs/clickstack/integration-examples/host-logs/ec2"
+                                ]
+                              },
+                              "docs/clickstack/integration-examples/jvm-metrics",
+                              "docs/clickstack/integration-examples/kafka-metrics",
+                              "docs/clickstack/integration-examples/kubernetes",
+                              "docs/clickstack/integration-examples/mysql",
+                              "docs/clickstack/integration-examples/nodejs-traces",
+                              "docs/clickstack/integration-examples/postgres-logs",
+                              "docs/clickstack/integration-examples/postgres-metrics",
+                              "docs/clickstack/integration-examples/systemd",
+                              "docs/clickstack/integration-examples/temporal"
+                            ]
+                          },
+                          {
+                            "group": "Language SDKs",
+                            "pages": [
+                              "docs/clickstack/ingesting-data/sdks/browser",
+                              "docs/clickstack/ingesting-data/sdks/nodejs",
+                              "docs/clickstack/ingesting-data/sdks/python",
+                              "docs/clickstack/ingesting-data/sdks/golang",
+                              "docs/clickstack/ingesting-data/sdks/java",
+                              "docs/clickstack/ingesting-data/sdks/ruby",
+                              "docs/clickstack/ingesting-data/sdks/elixir",
+                              "docs/clickstack/ingesting-data/sdks/deno",
+                              "docs/clickstack/ingesting-data/sdks/nestjs",
+                              "docs/clickstack/ingesting-data/sdks/nextjs",
+                              "docs/clickstack/ingesting-data/sdks/react-native",
+                              "docs/clickstack/ingesting-data/sdks/aws-lambda"
+                            ]
+                          }
                         ]
                       },
                       {
@@ -1941,6 +2052,7 @@
                   {
                     "group": "API reference",
                     "icon": "code",
+                    "root": "docs/clickstack/api-reference",
                     "openapi": "api-reference/hyperdx/hyperdx-openapi.json"
                   }
                 ]
@@ -2593,7 +2705,6 @@
                     "pages": [
                       {
                         "group": "Performance & Optimization",
-                        "icon": "gauge-high",
                         "pages": [
                           "docs/support/knowledge-base/performance-optimization/Insert_select_settings_tuning",
                           "docs/support/knowledge-base/performance-optimization/async_vs_optimize_read_in_order",
@@ -2610,7 +2721,6 @@
                       },
                       {
                         "group": "Cloud",
-                        "icon": "cloud",
                         "pages": [
                           "docs/support/knowledge-base/cloud-services/aws-privatelink-setup-for-clickpipes",
                           "docs/support/knowledge-base/cloud-services/aws-privatelink-setup-for-msk-clickpipes",
@@ -2627,7 +2737,6 @@
                       },
                       {
                         "group": "Data Import & Export",
-                        "icon": "arrow-right-arrow-left",
                         "pages": [
                           "docs/support/knowledge-base/data-import-export/cannot-append-data-to-parquet-format",
                           "docs/support/knowledge-base/data-import-export/file-export",
@@ -2647,7 +2756,6 @@
                       },
                       {
                         "group": "Configuration & Settings",
-                        "icon": "sliders",
                         "pages": [
                           "docs/support/knowledge-base/configuration-settings/about-quotas-and-query-complexity",
                           "docs/support/knowledge-base/configuration-settings/alter-user-settings-exception",
@@ -2660,7 +2768,6 @@
                       },
                       {
                         "group": "Integrations & Client Libraries",
-                        "icon": "puzzle-piece",
                         "pages": [
                           "docs/support/knowledge-base/integrations/node-js-example",
                           "docs/support/knowledge-base/integrations/ODBC-authentication-failed-error-using-PowerBI-CH-connector",
@@ -2673,7 +2780,6 @@
                       },
                       {
                         "group": "Troubleshooting & Errors",
-                        "icon": "triangle-exclamation",
                         "pages": [
                           "docs/support/knowledge-base/troubleshooting/certificate_verify_failed_error",
                           "docs/support/knowledge-base/troubleshooting/connection_timeout_remote_remoteSecure",
@@ -2684,7 +2790,6 @@
                       },
                       {
                         "group": "Tables & Schema",
-                        "icon": "table",
                         "pages": [
                           "docs/support/knowledge-base/tables-schema/add-column",
                           "docs/support/knowledge-base/tables-schema/delete-old-data",
@@ -2697,7 +2802,6 @@
                       },
                       {
                         "group": "Queries & SQL",
-                        "icon": "code",
                         "pages": [
                           "docs/support/knowledge-base/queries-sql/calculate-pi-using-sql",
                           "docs/support/knowledge-base/queries-sql/compare_resultsets",
@@ -2712,7 +2816,6 @@
                       },
                       {
                         "group": "Materialized Views & Projections",
-                        "icon": "layer-group",
                         "pages": [
                           "docs/support/knowledge-base/materialized-views/are_materialized_views_inserted_asynchronously",
                           "docs/support/knowledge-base/materialized-views/how_to_display_queries_using_MV",
@@ -2722,7 +2825,6 @@
                       },
                       {
                         "group": "Monitoring & Debugging",
-                        "icon": "chart-line",
                         "pages": [
                           "docs/support/knowledge-base/monitoring-debugging/check-query-cache-in-use",
                           "docs/support/knowledge-base/monitoring-debugging/generate-har-file",
@@ -2737,7 +2839,6 @@
                       },
                       {
                         "group": "Security & Access Control",
-                        "icon": "lock",
                         "pages": [
                           "docs/support/knowledge-base/security/check_users_roles",
                           "docs/support/knowledge-base/security/common-rbac-queries",
@@ -2748,7 +2849,6 @@
                       },
                       {
                         "group": "Data Management",
-                        "icon": "database",
                         "pages": [
                           "docs/support/knowledge-base/data-management/backing_up_a_specific_partition",
                           "docs/support/knowledge-base/data-management/calculate_ratio_of_zero_sparse_serialization",
@@ -2760,7 +2860,6 @@
                       },
                       {
                         "group": "Setup & Installation",
-                        "icon": "download",
                         "pages": [
                           "docs/support/knowledge-base/setup-installation/difference_between_official_builds_and_3rd_party",
                           "docs/support/knowledge-base/setup-installation/enabling-ssl-with-lets-encrypt",
@@ -2772,7 +2871,6 @@
                       },
                       {
                         "group": "General & FAQs",
-                        "icon": "circle-question",
                         "pages": [
                           "docs/support/knowledge-base/general-faqs/columnar-database",
                           "docs/support/knowledge-base/general-faqs/dbms-naming",
@@ -2785,6 +2883,14 @@
                           "docs/support/knowledge-base/general-faqs/vector-search",
                           "docs/support/knowledge-base/general-faqs/who-is-using-clickhouse",
                           "docs/support/knowledge-base/general-faqs/why_recommend_clickhouse_keeper_over_zookeeper"
+                        ]
+                      },
+                      {
+                        "group": "Tips & Tricks",
+                        "pages": [
+                          "docs/tips-and-tricks/community-wisdom",
+                          "docs/tips-and-tricks/materialized-views",
+                          "docs/tips-and-tricks/too-many-parts"
                         ]
                       }
                     ]
