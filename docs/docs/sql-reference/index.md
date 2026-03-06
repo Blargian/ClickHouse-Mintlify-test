@@ -1,0 +1,13 @@
+---
+description: 'Documentation for ClickHouse SQL Reference'
+keywords: ['clickhouse', 'docs', 'sql reference', 'sql statements', 'sql', 'syntax']
+slug: /sql-reference
+title: 'SQL Reference'
+doc_type: 'reference'
+---
+
+# ClickHouse SQL Reference
+
+ClickHouse supports a declarative query language based on SQL that is identical to the ANSI SQL standard in many cases.
+
+Supported queries include GROUP BY, ORDER BY, subqueries in FROM, JOIN clause, IN operator, window functions and scalar subqueries.

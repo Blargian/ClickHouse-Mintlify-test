@@ -7,7 +7,10 @@ keywords: ['clickstack', 'observability', 'logs', 'performance', 'optimization']
 sidebarTitle: 'Performance Tuning'
 ---
 
-import {BetaBadge} from '/snippets/components/BetaBadge/BetaBadge.jsx'
+import { BetaBadge } from '/snippets/components/BetaBadge/BetaBadge.jsx'
+
+<BetaBadge />
+
 ## Introduction
 
 This guide focuses on the most common and effective performance optimizations for ClickStack, sufficient to optimize the majority of real-world observability workloads, typically up to tens of terabytes of data per day.
