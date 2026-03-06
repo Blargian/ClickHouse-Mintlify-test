@@ -7,8 +7,9 @@ keywords: ['clickstack', 'observability', 'materialized views', 'performance', '
 sidebarTitle: 'Materialized Views'
 ---
 
-import {BetaBadge} from '/snippets/components/BetaBadge/BetaBadge.jsx'
-<BetaBadge/>
+import { BetaBadge } from '/snippets/components/BetaBadge/BetaBadge.jsx'
+
+<BetaBadge />
 
 ## Introduction
 
