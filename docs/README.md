@@ -33,7 +33,7 @@ This folder contains the official ClickHouse documentation which is built with [
 
 ## Build the docs locally
 
-To build the documentation locally, all you need is the [Mintlify CLI](https://www.mintlify.com/docs/installation#install-the-cli) utility installed.
+To build and preview the documentation locally, all you need is the [Mintlify CLI](https://www.mintlify.com/docs/installation#install-the-cli) utility installed globally on your machine.
 
 Install it by running:
 
@@ -46,6 +46,66 @@ Once installed, run the following command from the `/docs` directory of the Clic
 
 ```bash
 mint dev
+```
+
+You should see the documentation site open on `localhost:3000` in your browser.
+
+## To run CI checks locally
+
+Prerequisites:
+- You have docker desktop installed
+- You have python3 installed
+
+Build the docs CI docker image `docs-builder`:
+
+```bash
+docker build -t clickhouse/docs-builder /path-to-clickhouse-repo/ci/docker/docs-builder/
+```
+
+It's only necessary to build the docker image as a temporary measure.
+When fully migrated to Mintlify the image will be hosted on docker hub.
+
+Run all CI checks locally:
+
+```bash
+python3 -m ci.praktika run "Docs check (Mintlify)" --docker clickhouse/docs-builder
+```
+
+To run only a specific check, you can run:
+
+```bash
+python3 -m ci.praktika run "Docs check (Mintlify)" --docker clickhouse/docs-builder --test="testname"
+```
+
+Replacing `testname` above with one of the following test names:
+
+| Test name | Test description                                                                                                                                                                                                                                                                          |
+|---|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `broken-link-and-anchor-check` | Runs `mint broken-links --check-anchors` to detect broken internal links and anchors across the documentation                                                                                                                                                                             |
+| `mint-validate` | Runs `mint validate` to verify that the documentation builds successfully                                                                                                                                                                                                                 |
+| `markdown-lint` | Runs `markdownlint-cli2` to check markdown style (indentation, tabs, blank lines, code block languages, heading anchors)                                                                                                                                                                  |
+| `vale` | Runs Vale prose linting (default: errors only). Vale is a tool for checking writing style, helping humans and agents to produce consistent, easy-to-read documentation. When running locally use the additional flags described below to target specific files or change the error level. |
+| `aspell` | Runs aspell spell checking on all markdown files in `docs/docs/`. Uses a custom dictionary at `ci/jobs/scripts/docs/aspell-ignore/en/aspell-dict.txt`. Supports `--path` to check a single file. |
+
+Additional flags for Vale (uses praktika's built-in `--param` and `--path` flags):
+
+- `--param <level>`: Set minimum Vale alert level (`suggestion`, `warning`, or `error`). Default: `error`
+- `--path <path>`: File or directory path for Vale to check. Default: `.` (all docs)
+
+Vale examples:
+
+```bash
+# Run Vale at error level (default — currently passes since no rules use error severity)
+python3 -m ci.praktika run "Docs check (Mintlify)" --docker clickhouse/docs-builder --test="vale"
+
+# Run Vale at warning level to see all warnings
+python3 -m ci.praktika run "Docs check (Mintlify)" --docker clickhouse/docs-builder --test="vale" --param warning
+
+# Run Vale on a specific directory (relative to /docs folder of repository)
+python3 -m ci.praktika run "Docs check (Mintlify)" --docker clickhouse/docs-builder --test="vale" --path docs/cloud/
+
+# Run Vale on a specific file (relative to /docs folder of repository)
+python3 -m ci.praktika run "Docs check (Mintlify)" --docker clickhouse/docs-builder --test="vale" --path docs/get-started/quick-start.md
 ```
 
 ## Contributing
