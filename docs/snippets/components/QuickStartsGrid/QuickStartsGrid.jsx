@@ -34,9 +34,9 @@ export const QuickStartsGrid = ({ quickStartsData, featuredIds = [] }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 6;
 
-  const [useCasesDropdownOpen, setUseCasesDropdownOpen] = useState(false);
-  const [productsDropdownOpen, setProductsDropdownOpen] = useState(false);
-  const [levelsDropdownOpen, setLevelsDropdownOpen] = useState(false);
+  const [useCasesDropdownOpen, setUseCasesDropdownOpen] = useState(true);
+  const [productsDropdownOpen, setProductsDropdownOpen] = useState(true);
+  const [levelsDropdownOpen, setLevelsDropdownOpen] = useState(true);
 
   // Persist to localStorage
   useEffect(() => {
@@ -135,6 +135,9 @@ export const QuickStartsGrid = ({ quickStartsData, featuredIds = [] }) => {
   // Filtering logic
   const filteredQuickStarts = useMemo(() => {
     return quickStartsData.filter(quickStart => {
+      // Exclude featured quickstarts from explore section
+      if (featuredIds.includes(quickStart.id)) return false;
+
       // Search filter
       const matchesSearch = searchTerm === '' ||
         quickStart.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -157,44 +160,21 @@ export const QuickStartsGrid = ({ quickStartsData, featuredIds = [] }) => {
 
       return matchesSearch && matchesUseCases && matchesProducts && matchesLevel;
     });
-  }, [quickStartsData, searchTerm, selectedUseCases, selectedProducts, selectedLevels]);
+  }, [quickStartsData, searchTerm, selectedUseCases, selectedProducts, selectedLevels, featuredIds]);
 
-  // Dropdown component
-  const Dropdown = ({ label, options, selectedOptions, onToggle, isOpen, setIsOpen }) => {
-    const dropdownRef = useRef(null);
-
-    useEffect(() => {
-      const handleClickOutside = (event) => {
-        if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-          setIsOpen(false);
-        }
-      };
-
-      if (isOpen) {
-        document.addEventListener('mousedown', handleClickOutside);
-      }
-
-      return () => {
-        document.removeEventListener('mousedown', handleClickOutside);
-      };
-    }, [isOpen, setIsOpen]);
-
-    const displayLabel = selectedOptions.length > 0 && !selectedOptions.includes('All')
-      ? `${label} (${selectedOptions.length})`
-      : label;
+  // Expandable filter component
+  const Expandable = ({ label, options, selectedOptions, onToggle, isOpen, setIsOpen }) => {
+    const activeCount = selectedOptions.filter(o => o !== 'All').length;
+    const displayLabel = activeCount > 0 ? `${label} (${activeCount})` : label;
 
     return (
-      <div ref={dropdownRef} className="relative" style={{ minWidth: '160px' }}>
+      <div style={{ minWidth: '160px' }}>
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className={`text-sm font-medium rounded-lg transition-all cursor-pointer flex items-center justify-between w-full border ${
-            selectedOptions.length > 0 && !selectedOptions.includes('All')
-              ? 'bg-black dark:bg-[#FAFF69] text-white dark:text-black border-black dark:border-[#FAFF69]'
-              : 'bg-white dark:bg-[#1B1B18] text-black dark:text-white border-gray-300 dark:border-white/20 hover:border-[#FAFF69]'
-          }`}
-          style={{ padding: '8px 12px', gap: '8px' }}
+          className="text-sm font-medium transition-all cursor-pointer flex items-center justify-between w-full text-black dark:text-white"
+          style={{ padding: '4px 0', gap: '8px' }}
         >
-          <span>{displayLabel}</span>
+          <span className="font-semibold">{displayLabel}</span>
           <svg
             width="12"
             height="12"
@@ -213,18 +193,30 @@ export const QuickStartsGrid = ({ quickStartsData, featuredIds = [] }) => {
           </svg>
         </button>
         {isOpen && (
-          <div className="absolute z-50 mt-2 w-full rounded-lg shadow-lg border bg-white dark:bg-[#1B1B18] border-gray-200 dark:border-white/20 max-h-[300px] overflow-y-auto">
+          <div className="mt-1">
             {options.map(option => (
               <label
                 key={option}
-                className="flex items-center gap-2 px-3 py-2 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+                className="flex items-center gap-2 py-1.5 cursor-pointer transition-colors"
+                onClick={(e) => { e.preventDefault(); onToggle(option); }}
               >
-                <input
-                  type="checkbox"
-                  checked={selectedOptions.includes(option)}
-                  onChange={() => onToggle(option)}
-                  className="w-4 h-4 cursor-pointer accent-[#FAFF69]"
-                />
+                <span
+                  className="flex items-center justify-center w-4 h-4 rounded border flex-shrink-0"
+                  style={{
+                    borderColor: selectedOptions.includes(option)
+                      ? '#FAFF69'
+                      : 'rgba(156, 163, 175, 0.6)',
+                    backgroundColor: selectedOptions.includes(option)
+                      ? '#FAFF69'
+                      : 'transparent',
+                  }}
+                >
+                  {selectedOptions.includes(option) && (
+                    <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M2 5L4 7L8 3" stroke="black" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  )}
+                </span>
                 <span className="text-sm text-black dark:text-white">
                   {option}
                 </span>
@@ -242,113 +234,112 @@ export const QuickStartsGrid = ({ quickStartsData, featuredIds = [] }) => {
 
   return (
     <>
-      <div className="px-4">
-        {/* Main content area with sidebar */}
-        <div className="flex flex-col lg:flex-row gap-8 my-8">
-          {/* Left sidebar - Search and filters (fixed position) */}
-          <div className="lg:w-64 flex-shrink-0">
-            <div className="lg:fixed lg:w-64 space-y-6" style={{ top: '8.5rem' }}>
-              {/* Search input */}
-              <div>
-                <label className="block text-sm font-semibold text-gray-900 dark:text-zinc-50 mb-3">
-                  Search
-                </label>
-                <div className="relative w-full">
-                  <svg
-                    className="absolute pointer-events-none z-10"
-                    style={{ left: '12px', top: '50%', transform: 'translateY(-50%)', width: '16px', height: '16px', color: '#666' }}
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
+      <div style={{ paddingLeft: '1.75rem', paddingRight: '1.75rem' }}>
+        <div className="my-8">
+          {/* Featured quickstarts section - full width */}
+          {featuredQuickStarts.length > 0 && (
+            <div className="mb-8">
+              <h2 className="text-2xl font-semibold text-gray-900 dark:text-zinc-50 mb-6">Featured quickstarts</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                {featuredQuickStarts.map(quickStart => (
+                  <Card
+                    key={quickStart.id}
+                    title={quickStart.title}
+                    icon={quickStart.icon}
+                    href={quickStart.href}
                   >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                    />
-                  </svg>
-                  <input
-                    type="text"
-                    placeholder="Search quickstarts..."
-                    value={searchTerm}
-                    onChange={(e) => setSearchTerm(e.target.value)}
-                    className="w-full text-sm border rounded-xl focus:outline-none bg-white dark:bg-[#1B1B18] text-black dark:text-white border-gray-300 dark:border-gray-600 focus:border-gray-400 dark:focus:border-[#FAFF69]"
-                    style={{
-                      height: '42px',
-                      padding: '0.5rem 0.75rem 0.5rem 2.75rem',
-                      lineHeight: '1.4',
-                      boxSizing: 'border-box'
-                    }}
-                  />
-                </div>
+                    <span className="block mt-6">{quickStart.description}</span>
+                  </Card>
+                ))}
               </div>
-
-              {/* Filters */}
-              <div>
-                <div className="space-y-3">
-                  <Dropdown
-                    label="Use cases"
-                    options={useCaseOptions}
-                    selectedOptions={selectedUseCases}
-                    onToggle={toggleUseCase}
-                    isOpen={useCasesDropdownOpen}
-                    setIsOpen={setUseCasesDropdownOpen}
-                  />
-                  <Dropdown
-                    label="Features"
-                    options={productOptions}
-                    selectedOptions={selectedProducts}
-                    onToggle={toggleProduct}
-                    isOpen={productsDropdownOpen}
-                    setIsOpen={setProductsDropdownOpen}
-                  />
-                  <Dropdown
-                    label="Level"
-                    options={levelOptions}
-                    selectedOptions={selectedLevels}
-                    onToggle={toggleLevel}
-                    isOpen={levelsDropdownOpen}
-                    setIsOpen={setLevelsDropdownOpen}
-                  />
-                </div>
-              </div>
-
-              {/* Reset button */}
-              {hasActiveFilters && (
-                <button
-                  onClick={resetFilters}
-                  className="w-full text-sm font-medium px-4 py-2 rounded-lg transition-all cursor-pointer border border-gray-300 dark:border-white/20 hover:border-[#FAFF69] bg-white dark:bg-[#1B1B18] text-black dark:text-white"
-                >
-                  Reset filters
-                </button>
-              )}
             </div>
-          </div>
+          )}
 
-          {/* Right content area */}
-          <div className="flex-1">
-            {/* Featured quickstarts section */}
-            {featuredQuickStarts.length > 0 && (
-              <div className="mb-8">
-                <h2 className="text-2xl font-semibold text-gray-900 dark:text-zinc-50 mb-6">Featured</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {featuredQuickStarts.map(quickStart => (
-                    <Card
-                      key={quickStart.id}
-                      title={quickStart.title}
-                      icon={quickStart.icon}
-                      href={quickStart.href}
+          {/* Explore section with sidebar */}
+          <div className="flex flex-col lg:flex-row gap-8">
+            {/* Left sidebar - Search and filters (fixed position) */}
+            <div className="lg:w-64 flex-shrink-0">
+              <div className="lg:sticky space-y-6" style={{ top: '8.5rem' }}>
+                {/* Search input */}
+                <div>
+                  <label className="block text-sm font-semibold text-gray-900 dark:text-zinc-50 mb-3">
+                    Search
+                  </label>
+                  <div className="relative w-full">
+                    <svg
+                      className="absolute pointer-events-none z-10"
+                      style={{ left: '12px', top: '50%', transform: 'translateY(-50%)', width: '16px', height: '16px', color: '#666' }}
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
                     >
-                      <span className="block mt-6">{quickStart.description}</span>
-                    </Card>
-                  ))}
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                      />
+                    </svg>
+                    <input
+                      type="text"
+                      placeholder="Search quickstarts..."
+                      value={searchTerm}
+                      onChange={(e) => setSearchTerm(e.target.value)}
+                      className="w-full text-sm border rounded-xl focus:outline-none bg-white dark:bg-[#1B1B18] text-black dark:text-white border-gray-300 dark:border-gray-600 focus:border-black dark:focus:border-[#FAFF69]"
+                      style={{
+                        height: '42px',
+                        padding: '0.5rem 0.75rem 0.5rem 2.75rem',
+                        lineHeight: '1.4',
+                        boxSizing: 'border-box'
+                      }}
+                    />
+                  </div>
                 </div>
-              </div>
-            )}
 
-            {/* Explore quickstarts section */}
-            <div>
+                {/* Filters */}
+                <div>
+                  <div className="space-y-3">
+                    <Expandable
+                      label="Use cases"
+                      options={useCaseOptions}
+                      selectedOptions={selectedUseCases}
+                      onToggle={toggleUseCase}
+                      isOpen={useCasesDropdownOpen}
+                      setIsOpen={setUseCasesDropdownOpen}
+                    />
+                    <Expandable
+                      label="Features"
+                      options={productOptions}
+                      selectedOptions={selectedProducts}
+                      onToggle={toggleProduct}
+                      isOpen={productsDropdownOpen}
+                      setIsOpen={setProductsDropdownOpen}
+                    />
+                    <Expandable
+                      label="Level"
+                      options={levelOptions}
+                      selectedOptions={selectedLevels}
+                      onToggle={toggleLevel}
+                      isOpen={levelsDropdownOpen}
+                      setIsOpen={setLevelsDropdownOpen}
+                    />
+                  </div>
+                </div>
+
+                {/* Reset button */}
+                {hasActiveFilters && (
+                  <button
+                    onClick={resetFilters}
+                    className="w-full text-sm font-medium px-4 py-2 rounded-lg transition-all cursor-pointer border border-gray-300 dark:border-white/20 hover:border-black dark:hover:border-[#FAFF69] bg-white dark:bg-[#1B1B18] text-black dark:text-white"
+                  >
+                    Reset filters
+                  </button>
+                )}
+              </div>
+            </div>
+
+            {/* Right content area */}
+            <div className="flex-1">
               <h2 className="text-2xl font-semibold text-gray-900 dark:text-zinc-50 mb-6">Explore quickstarts</h2>
               {filteredQuickStarts.length > 0 ? (
                 <>
@@ -426,3 +417,5 @@ export const QuickStartsGrid = ({ quickStartsData, featuredIds = [] }) => {
     </>
   );
 };
+
+

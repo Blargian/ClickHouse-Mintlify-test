@@ -379,7 +379,7 @@ html:not(.dark) .hero-aside .product-item img {
 /* Dark mode - white text for product item titles */
 .dark .hero-aside .product-item h3,
 :is(.dark) .hero-aside .product-item h3,
-[data-theme='dark'] .hero-aside .product-item h3 {
+.dark .hero-aside .product-item h3 {
     color: #ffffff !important;
 }
 
@@ -398,26 +398,26 @@ html:not(.dark) .hero-aside .product-item img {
 /* Global color fixes for product selector - ensure text visibility in all modes */
 /* Light mode - force dark text */
 html:not(.dark) .nav-dropdown-products-selector-item-title,
-html:not([data-theme="dark"]) .nav-dropdown-products-selector-item-title {
+html:not(.dark) .nav-dropdown-products-selector-item-title {
     color: #1a1a1a !important;
 }
 
 html:not(.dark) .nav-dropdown-products-selector-item-description,
 html:not(.dark) .nav-dropdown-products-selector-item p:last-child,
-html:not([data-theme="dark"]) .nav-dropdown-products-selector-item-description,
-html:not([data-theme="dark"]) .nav-dropdown-products-selector-item p:last-child,
+html:not(.dark) .nav-dropdown-products-selector-item-description,
+html:not(.dark) .nav-dropdown-products-selector-item p:last-child,
 html:not(.dark) .nav-dropdown-products-selector-item .flex.flex-col p:last-child,
-html:not([data-theme="dark"]) .nav-dropdown-products-selector-item .flex.flex-col p:last-child {
+html:not(.dark) .nav-dropdown-products-selector-item .flex.flex-col p:last-child {
     color: #666666 !important;
 }
 
 /* Dark mode color overrides */
 :is(.dark) .nav-dropdown-products-selector-item-title,
-:is([data-theme="dark"]) .nav-dropdown-products-selector-item-title,
-[data-theme='dark'] a .nav-dropdown-products-selector-item-title,
+:is(.dark) .nav-dropdown-products-selector-item-title,
+.dark a .nav-dropdown-products-selector-item-title,
 .dark a .nav-dropdown-products-selector-item-title,
 :is(.dark) a .nav-dropdown-products-selector-item-title,
-[data-theme='dark'] a .nav-dropdown-products-selector-item p:first-child,
+.dark a .nav-dropdown-products-selector-item p:first-child,
 .dark a .nav-dropdown-products-selector-item p:first-child,
 :is(.dark) a .nav-dropdown-products-selector-item p:first-child {
     color: #ffffff !important;
@@ -425,10 +425,10 @@ html:not([data-theme="dark"]) .nav-dropdown-products-selector-item .flex.flex-co
 
 :is(.dark) .nav-dropdown-products-selector-item-description,
 :is(.dark) .nav-dropdown-products-selector-item p:last-child,
-:is([data-theme="dark"]) .nav-dropdown-products-selector-item-description,
-:is([data-theme="dark"]) .nav-dropdown-products-selector-item p:last-child,
+:is(.dark) .nav-dropdown-products-selector-item-description,
+:is(.dark) .nav-dropdown-products-selector-item p:last-child,
 :is(.dark) .nav-dropdown-products-selector-item .flex.flex-col p:last-child,
-:is([data-theme="dark"]) .nav-dropdown-products-selector-item .flex.flex-col p:last-child {
+:is(.dark) .nav-dropdown-products-selector-item .flex.flex-col p:last-child {
     color: #a3a3a3 !important;
 }
 
@@ -659,26 +659,26 @@ body.clickpipes_home .hero-text {
 }
 
 /* Dark mode - white body text for document content */
-[data-theme='dark'] .prose,
+.dark .prose,
 .dark .prose,
 :is(.dark) .prose,
-[data-theme='dark'] .prose p,
+.dark .prose p,
 .dark .prose p,
 :is(.dark) .prose p,
-[data-theme='dark'] .prose li,
+.dark .prose li,
 .dark .prose li,
 :is(.dark) .prose li,
-[data-theme='dark'] .prose td,
+.dark .prose td,
 .dark .prose td,
 :is(.dark) .prose td,
-[data-theme='dark'] .prose th,
+.dark .prose th,
 .dark .prose th,
 :is(.dark) .prose th {
     color: #ffffff !important;
 }
 
 /* ClickHouse yellow links in dark mode - content area only, excluding cards */
-[data-theme='dark'] .prose a:not(.card):not(.card *),
+.dark .prose a:not(.card):not(.card *),
 .dark .prose a:not(.card):not(.card *),
 :is(.dark) .prose a:not(.card):not(.card *) {
     color: #FAFF69 !important;
@@ -686,7 +686,7 @@ body.clickpipes_home .hero-text {
     text-decoration: none;
 }
 
-[data-theme='dark'] .prose a:not(.card):not(.card *):hover,
+.dark .prose a:not(.card):not(.card *):hover,
 .dark .prose a:not(.card):not(.card *):hover,
 :is(.dark) .prose a:not(.card):not(.card *):hover {
     color: #FAFF69 !important;
@@ -695,9 +695,9 @@ body.clickpipes_home .hero-text {
 }
 
 /* Override yellow links for product selector items */
-[data-theme='dark'] .product-selector-radio-group a,
-[data-theme='dark'] [role="radiogroup"] a,
-[data-theme='dark'] .nav-dropdown-products-selector-content a,
+.dark .product-selector-radio-group a,
+.dark [role="radiogroup"] a,
+.dark .nav-dropdown-products-selector-content a,
 .dark .product-selector-radio-group a,
 .dark [role="radiogroup"] a,
 .dark .nav-dropdown-products-selector-content a,
@@ -708,10 +708,10 @@ body.clickpipes_home .hero-text {
 }
 
 /* Prevent dropdown menu icons from turning yellow on hover */
-[data-theme='dark'] .product-selector-radio-group a svg,
-[data-theme='dark'] [role="radiogroup"] a svg,
-[data-theme='dark'] .nav-dropdown-products-selector-content a svg,
-[data-theme='dark'] .nav-dropdown-products-selector-item svg,
+.dark .product-selector-radio-group a svg,
+.dark [role="radiogroup"] a svg,
+.dark .nav-dropdown-products-selector-content a svg,
+.dark .nav-dropdown-products-selector-item svg,
 .dark .product-selector-radio-group a svg,
 .dark [role="radiogroup"] a svg,
 .dark .nav-dropdown-products-selector-content a svg,
@@ -720,10 +720,10 @@ body.clickpipes_home .hero-text {
 :is(.dark) [role="radiogroup"] a svg,
 :is(.dark) .nav-dropdown-products-selector-content a svg,
 :is(.dark) .nav-dropdown-products-selector-item svg,
-[data-theme='dark'] .product-selector-radio-group a:hover svg,
-[data-theme='dark'] [role="radiogroup"] a:hover svg,
-[data-theme='dark'] .nav-dropdown-products-selector-content a:hover svg,
-[data-theme='dark'] .nav-dropdown-products-selector-item:hover svg,
+.dark .product-selector-radio-group a:hover svg,
+.dark [role="radiogroup"] a:hover svg,
+.dark .nav-dropdown-products-selector-content a:hover svg,
+.dark .nav-dropdown-products-selector-item:hover svg,
 .dark .product-selector-radio-group a:hover svg,
 .dark [role="radiogroup"] a:hover svg,
 .dark .nav-dropdown-products-selector-content a:hover svg,
@@ -736,10 +736,10 @@ body.clickpipes_home .hero-text {
 }
 
 /* Also prevent the ::before pseudo-elements (product icons) from turning yellow */
-[data-theme='dark'] .nav-dropdown-products-selector-item::before,
+.dark .nav-dropdown-products-selector-item::before,
 .dark .nav-dropdown-products-selector-item::before,
 :is(.dark) .nav-dropdown-products-selector-item::before,
-[data-theme='dark'] .nav-dropdown-products-selector-item:hover::before,
+.dark .nav-dropdown-products-selector-item:hover::before,
 .dark .nav-dropdown-products-selector-item:hover::before,
 :is(.dark) .nav-dropdown-products-selector-item:hover::before {
     color: inherit !important;
@@ -771,16 +771,16 @@ body.clickpipes_home .hero-text {
     color: black;
 }
 
-[data-theme='dark'] .betaBadge {
+.dark .betaBadge {
     background-color: #1A332D;
     color: #66FFE5;
 }
 
-[data-theme='dark'] .betaBadge a {
+.dark .betaBadge a {
     color: #66FFE5;
 }
 
-[data-theme='dark'] .betaIcon svg path {
+.dark .betaIcon svg path {
     fill: #66FFE5;
 }
 
@@ -809,16 +809,16 @@ body.clickpipes_home .hero-text {
     color: black;
 }
 
-[data-theme="dark"] .ClickHouseSupportedBadge {
+.dark .ClickHouseSupportedBadge {
     background-color: #faff69;
     color: #161517;
 }
 
-[data-theme="dark"] .ClickHouseSupportedBadge a {
+.dark .ClickHouseSupportedBadge a {
     color: #161517;
 }
 
-[data-theme="dark"] .ClickHouseSupportedIcon svg path {
+.dark .ClickHouseSupportedIcon svg path {
     fill: #161517;
 }
 
@@ -843,12 +843,12 @@ body.clickpipes_home .hero-text {
     stroke: #660099;
 }
 
-[data-theme='dark'] .cloudNotSupportedBadge {
+.dark .cloudNotSupportedBadge {
     background-color: #33004D;
     color: #EECCFF;
 }
 
-[data-theme='dark'] .cloudNotSupportedIcon svg path {
+.dark .cloudNotSupportedIcon svg path {
     stroke: #EECCFF;
 }
 
@@ -865,7 +865,7 @@ body.clickpipes_home .hero-text {
     font-size: 0.875rem;
 }
 
-[data-theme='dark'] .cloudBadge {
+.dark .cloudBadge {
     background-color: #061D48;
     color: #DAE6FC;
 }
@@ -878,7 +878,7 @@ body.clickpipes_home .hero-text {
     stroke: #061D48;
 }
 
-[data-theme='dark'] .cloudIcon svg path {
+.dark .cloudIcon svg path {
     stroke: #DAE6FC;
 }
 
@@ -912,16 +912,16 @@ body.clickpipes_home .hero-text {
     color: #69afff;
 }
 
-[data-theme="dark"] .CommunityMaintainedBadge {
+.dark .CommunityMaintainedBadge {
     background-color: #69afff;
     color: #ffffff;
 }
 
-[data-theme="dark"] .CommunityMaintainedBadge a {
+.dark .CommunityMaintainedBadge a {
     color: #ffffff;
 }
 
-[data-theme="dark"] .CommunityMaintainedIcon svg path {
+.dark .CommunityMaintainedIcon svg path {
     fill: #ffffff;
     stroke: none;
 }
@@ -946,12 +946,12 @@ body.clickpipes_home .hero-text {
     color: black;
 }
 
-[data-theme='dark'] .deprecatedBadge {
+.dark .deprecatedBadge {
     background-color: #414141;
     color: #000000;
 }
 
-[data-theme='dark'] .deprecatedBadge a {
+.dark .deprecatedBadge a {
     color: #000000;
 }
 
@@ -959,7 +959,7 @@ body.clickpipes_home .hero-text {
     stroke: #53575F;
 }
 
-[data-theme='dark'] .deprecatedIcon svg path {
+.dark .deprecatedIcon svg path {
     stroke: #E6E7E9;
 }
 
@@ -993,16 +993,12 @@ body.clickpipes_home .hero-text {
     font-size: 0.875rem;
 }
 
-[data-theme='dark'] .enterprisePlanFeatureContainer,
-.dark .enterprisePlanFeatureContainer,
-:is(.dark) .enterprisePlanFeatureContainer {
+.dark .enterprisePlanFeatureContainer {
     background-color: #F6F7FA;
     border: 1px solid #414141;
 }
 
-[data-theme='dark'] .enterprisePlanFeatureBadge,
-.dark .enterprisePlanFeatureBadge,
-:is(.dark) .enterprisePlanFeatureBadge {
+.dark .enterprisePlanFeatureBadge {
     background-color: #99FFA1;
     color: #1F1F1C;
 }
@@ -1028,12 +1024,12 @@ body.clickpipes_home .hero-text {
     color: black;
 }
 
-[data-theme='dark'] .experimentalBadge {
+.dark .experimentalBadge {
     background-color: #E9D5FF;
     color: #000000;
 }
 
-[data-theme='dark'] .experimentalBadge a {
+.dark .experimentalBadge a {
     color: #000000;
 }
 
@@ -1041,7 +1037,7 @@ body.clickpipes_home .hero-text {
     stroke: #4F2B00;
 }
 
-[data-theme='dark'] .experimentalIcon svg path {
+.dark .experimentalIcon svg path {
     stroke: #000000;
 }
 
@@ -1075,16 +1071,16 @@ body.clickpipes_home .hero-text {
     color: #990073;
 }
 
-[data-theme="dark"] .PartnerBadge {
+.dark .PartnerBadge {
     background-color: #990073;
     color: #fbeff8;
 }
 
-[data-theme="dark"] .PartnerBadge a {
+.dark .PartnerBadge a {
     color: #fbeff8;
 }
 
-[data-theme="dark"] .PartnerBadgeIcon svg path {
+.dark .PartnerBadgeIcon svg path {
     fill: #990073;
     stroke: #fbeff8;
 }
@@ -1102,7 +1098,7 @@ body.clickpipes_home .hero-text {
     font-size: 0.875rem;
 }
 
-[data-theme='dark'] .privatePreviewBadge {
+.dark .privatePreviewBadge {
     background-color: #3C4601;
     color: #FEFFC2;
 }
@@ -1115,7 +1111,7 @@ body.clickpipes_home .hero-text {
     stroke: #4A4D00;
 }
 
-[data-theme='dark'] .privatePreviewIcon svg path {
+.dark .privatePreviewIcon svg path {
     stroke: #FEFFC2;
 }
 
@@ -1146,12 +1142,12 @@ body.clickpipes_home .hero-text {
     font-size: 0.875rem;
 }
 
-[data-theme='dark'] .scalePlanFeatureContainer {
+.dark .scalePlanFeatureContainer {
     background-color: #1F1F1C;
     border: 1px solid #414141;
 }
 
-[data-theme='dark'] .scalePlanFeatureBadge {
+.dark .scalePlanFeatureBadge {
     background-color: #1D64EC;
     color: #FFFFFF;
 }

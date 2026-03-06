@@ -10,12 +10,54 @@ import { QuickStartsGrid } from '/snippets/components/QuickStartsGrid/QuickStart
 
 {/* Define featured quickstarts - just list the IDs */}
 export const featuredQuickStartIds = [
-  'create-your-first-service-on-cloud',
-  'obtain-your-cloud-connection-details'
+  'get-started-real-time-analytics',
+  'get-started-observability',
+  'get-started-data-warehousing',
+  'get-started-machine-learning-and-genai'
 ];
 
 {/* Define quickstarts data */}
 export const quickStartsData = [
+  {
+    id: 'get-started-real-time-analytics',
+    title: 'Real-time analytics',
+    description: 'Learn how to build real-time analytics applications with ClickHouse Cloud for instant insights and data-driven decision making.',
+    href: '/docs/get-started/use_cases/real-time-analytics',
+    icon: 'bolt',
+    useCases: ['Real-time analytics'],
+    products: ['Cloud'],
+    level: 'Beginner',
+  },
+  {
+    id: 'get-started-observability',
+    title: 'Observability',
+    description: 'Use ClickHouse Cloud for observability, monitoring, logging, and system performance analysis in distributed applications.',
+    href: '/docs/get-started/use_cases/observability',
+    icon: 'chart-line',
+    useCases: ['Observability'],
+    products: ['Cloud'],
+    level: 'Beginner',
+  },
+  {
+    id: 'get-started-data-warehousing',
+    title: 'Data warehousing',
+    description: 'Build modern data warehousing architectures with ClickHouse Cloud combining the flexibility of data lakes with database performance.',
+    href: '/docs/get-started/use_cases/data_warehousing',
+    icon: 'database',
+    useCases: ['Data warehousing'],
+    products: ['Cloud'],
+    level: 'Beginner',
+  },
+  {
+    id: 'get-started-machine-learning-and-genai',
+    title: 'Machine learning & GenAI',
+    description: 'Learn how ClickHouse powers machine learning and generative AI applications across the ML pipeline.',
+    href: '/docs/get-started/use_cases/machine_learning_and_genAI/machine_learning',
+    icon: 'brain',
+    useCases: ['AI/ML'],
+    products: ['Cloud'],
+    level: 'Beginner',
+  },
   {
     id: 'build-etl-pipeline-using-clickhouse',
     title: 'Build an ETL pipeline using ClickHouse',

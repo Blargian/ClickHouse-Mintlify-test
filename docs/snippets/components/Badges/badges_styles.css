@@ -23,16 +23,16 @@
     color: black;
 }
 
-[data-theme='dark'] .betaBadge {
+.dark .betaBadge {
     background-color: #1A332D;
     color: #66FFE5;
 }
 
-[data-theme='dark'] .betaBadge a {
+.dark .betaBadge a {
     color: #66FFE5;
 }
 
-[data-theme='dark'] .betaIcon svg path {
+.dark .betaIcon svg path {
     fill: #66FFE5;
 }
 
@@ -61,16 +61,16 @@
     color: black;
 }
 
-[data-theme="dark"] .ClickHouseSupportedBadge {
+.dark .ClickHouseSupportedBadge {
     background-color: #faff69;
     color: #161517;
 }
 
-[data-theme="dark"] .ClickHouseSupportedBadge a {
+.dark .ClickHouseSupportedBadge a {
     color: #161517;
 }
 
-[data-theme="dark"] .ClickHouseSupportedIcon svg path {
+.dark .ClickHouseSupportedIcon svg path {
     fill: #161517;
 }
 
@@ -95,12 +95,12 @@
     stroke: #660099;
 }
 
-[data-theme='dark'] .cloudNotSupportedBadge {
+.dark .cloudNotSupportedBadge {
     background-color: #33004D;
     color: #EECCFF;
 }
 
-[data-theme='dark'] .cloudNotSupportedIcon svg path {
+.dark .cloudNotSupportedIcon svg path {
     stroke: #EECCFF;
 }
 
@@ -117,7 +117,7 @@
     font-size: 0.875rem;
 }
 
-[data-theme='dark'] .cloudBadge {
+.dark .cloudBadge {
     background-color: #061D48;
     color: #DAE6FC;
 }
@@ -130,7 +130,7 @@
     stroke: #061D48;
 }
 
-[data-theme='dark'] .cloudIcon svg path {
+.dark .cloudIcon svg path {
     stroke: #DAE6FC;
 }
 
@@ -164,16 +164,16 @@
     color: #69afff;
 }
 
-[data-theme="dark"] .CommunityMaintainedBadge {
+.dark .CommunityMaintainedBadge {
     background-color: #69afff;
     color: #ffffff;
 }
 
-[data-theme="dark"] .CommunityMaintainedBadge a {
+.dark .CommunityMaintainedBadge a {
     color: #ffffff;
 }
 
-[data-theme="dark"] .CommunityMaintainedIcon svg path {
+.dark .CommunityMaintainedIcon svg path {
     fill: #ffffff;
     stroke: none;
 }
@@ -198,12 +198,12 @@
     color: black;
 }
 
-[data-theme='dark'] .deprecatedBadge {
+.dark .deprecatedBadge {
     background-color: #414141;
     color: #000000;
 }
 
-[data-theme='dark'] .deprecatedBadge a {
+.dark .deprecatedBadge a {
     color: #000000;
 }
 
@@ -211,7 +211,7 @@
     stroke: #53575F;
 }
 
-[data-theme='dark'] .deprecatedIcon svg path {
+.dark .deprecatedIcon svg path {
     stroke: #E6E7E9;
 }
 
@@ -245,16 +245,12 @@
     font-size: 0.875rem;
 }
 
-[data-theme='dark'] .enterprisePlanFeatureContainer,
-.dark .enterprisePlanFeatureContainer,
-:is(.dark) .enterprisePlanFeatureContainer {
+.dark .enterprisePlanFeatureContainer {
     background-color: #F6F7FA;
     border: 1px solid #414141;
 }
 
-[data-theme='dark'] .enterprisePlanFeatureBadge,
-.dark .enterprisePlanFeatureBadge,
-:is(.dark) .enterprisePlanFeatureBadge {
+.dark .enterprisePlanFeatureBadge {
     background-color: #99FFA1;
     color: #1F1F1C;
 }
@@ -280,12 +276,12 @@
     color: black;
 }
 
-[data-theme='dark'] .experimentalBadge {
+.dark .experimentalBadge {
     background-color: #E9D5FF;
     color: #000000;
 }
 
-[data-theme='dark'] .experimentalBadge a {
+.dark .experimentalBadge a {
     color: #000000;
 }
 
@@ -293,7 +289,7 @@
     stroke: #4F2B00;
 }
 
-[data-theme='dark'] .experimentalIcon svg path {
+.dark .experimentalIcon svg path {
     stroke: #000000;
 }
 
@@ -327,16 +323,16 @@
     color: #990073;
 }
 
-[data-theme="dark"] .PartnerBadge {
+.dark .PartnerBadge {
     background-color: #990073;
     color: #fbeff8;
 }
 
-[data-theme="dark"] .PartnerBadge a {
+.dark .PartnerBadge a {
     color: #fbeff8;
 }
 
-[data-theme="dark"] .PartnerBadgeIcon svg path {
+.dark .PartnerBadgeIcon svg path {
     fill: #990073;
     stroke: #fbeff8;
 }
@@ -354,7 +350,7 @@
     font-size: 0.875rem;
 }
 
-[data-theme='dark'] .privatePreviewBadge {
+.dark .privatePreviewBadge {
     background-color: #3C4601;
     color: #FEFFC2;
 }
@@ -367,7 +363,7 @@
     stroke: #4A4D00;
 }
 
-[data-theme='dark'] .privatePreviewIcon svg path {
+.dark .privatePreviewIcon svg path {
     stroke: #FEFFC2;
 }
 
@@ -398,12 +394,12 @@
     font-size: 0.875rem;
 }
 
-[data-theme='dark'] .scalePlanFeatureContainer {
+.dark .scalePlanFeatureContainer {
     background-color: #1F1F1C;
     border: 1px solid #414141;
 }
 
-[data-theme='dark'] .scalePlanFeatureBadge {
+.dark .scalePlanFeatureBadge {
     background-color: #1D64EC;
     color: #FFFFFF;
 }
