@@ -21,6 +21,9 @@
   "scripts": [
     {
       "src": "/inject-product-headers.js"
+    },
+    {
+      "src": "/cookie-banner.js"
     }
   ],
   "navigation": {
@@ -370,6 +373,24 @@
                           "docs/concepts/features/backup-restore/azure_blob_storage",
                           "docs/concepts/features/backup-restore/alternative_methods"
                         ]
+                      },
+                      {
+                        "group": "Tools and utilities",
+                        "root": "docs/concepts/features/tools-and-utilities/index",
+                        "expanded": false,
+                        "pages": [
+                          "docs/concepts/features/tools-and-utilities/backupview",
+                          "docs/concepts/features/tools-and-utilities/clickhouse-benchmark",
+                          "docs/concepts/features/tools-and-utilities/clickhouse-compressor",
+                          "docs/concepts/features/tools-and-utilities/clickhouse-disks",
+                          "docs/concepts/features/tools-and-utilities/clickhouse-format",
+                          "docs/concepts/features/tools-and-utilities/clickhouse-keeper-client",
+                          "docs/concepts/features/tools-and-utilities/clickhouse-keeper-http-api",
+                          "docs/concepts/features/tools-and-utilities/clickhouse-local",
+                          "docs/concepts/features/tools-and-utilities/clickhouse-obfuscator",
+                          "docs/concepts/features/tools-and-utilities/odbc-bridge",
+                          "docs/concepts/features/tools-and-utilities/static-files-disk-uploader"
+                        ]
                       }
                     ]
                   },
@@ -525,6 +546,38 @@
                               }
                             ]
                           }
+                        ]
+                      },
+                      {
+                        "group": "Aggregate combinator examples",
+                        "expanded": false,
+                        "pages": [
+                          "docs/guides/examples/aggregate_function_combinators/anyIf",
+                          "docs/guides/examples/aggregate_function_combinators/argMaxIf",
+                          "docs/guides/examples/aggregate_function_combinators/argMinIf",
+                          "docs/guides/examples/aggregate_function_combinators/avgIf",
+                          "docs/guides/examples/aggregate_function_combinators/avgMap",
+                          "docs/guides/examples/aggregate_function_combinators/avgMerge",
+                          "docs/guides/examples/aggregate_function_combinators/avgMergeState",
+                          "docs/guides/examples/aggregate_function_combinators/avgResample",
+                          "docs/guides/examples/aggregate_function_combinators/avgState",
+                          "docs/guides/examples/aggregate_function_combinators/countIf",
+                          "docs/guides/examples/aggregate_function_combinators/countResample",
+                          "docs/guides/examples/aggregate_function_combinators/groupArrayDistinct",
+                          "docs/guides/examples/aggregate_function_combinators/groupArrayResample",
+                          "docs/guides/examples/aggregate_function_combinators/maxMap",
+                          "docs/guides/examples/aggregate_function_combinators/maxSimpleState",
+                          "docs/guides/examples/aggregate_function_combinators/minMap",
+                          "docs/guides/examples/aggregate_function_combinators/minSimpleState",
+                          "docs/guides/examples/aggregate_function_combinators/quantilesTimingArrayIf",
+                          "docs/guides/examples/aggregate_function_combinators/quantilesTimingIf",
+                          "docs/guides/examples/aggregate_function_combinators/sumArray",
+                          "docs/guides/examples/aggregate_function_combinators/sumForEach",
+                          "docs/guides/examples/aggregate_function_combinators/sumIf",
+                          "docs/guides/examples/aggregate_function_combinators/sumMap",
+                          "docs/guides/examples/aggregate_function_combinators/sumSimpleState",
+                          "docs/guides/examples/aggregate_function_combinators/uniqArray",
+                          "docs/guides/examples/aggregate_function_combinators/uniqArrayIf"
                         ]
                       }
                     ]
@@ -747,6 +800,7 @@
                         "pages": [
                           "docs/reference/statements/alter/index",
                           "docs/reference/statements/alter/apply-deleted-mask",
+                          "docs/reference/statements/alter/apply-patches",
                           "docs/reference/statements/alter/column",
                           "docs/reference/statements/alter/comment",
                           "docs/reference/statements/alter/constraint",
@@ -767,6 +821,7 @@
                           "docs/reference/statements/alter/ttl",
                           "docs/reference/statements/alter/update",
                           "docs/reference/statements/alter/user",
+                          "docs/reference/statements/alter/masking-policy",
                           "docs/reference/statements/alter/view"
                         ]
                       },
@@ -828,6 +883,7 @@
                               }
                             ]
                           },
+                          "docs/reference/statements/create/masking-policy",
                           "docs/reference/statements/create/function",
                           "docs/reference/statements/create/named-collection",
                           "docs/reference/statements/create/quota",
@@ -899,10 +955,21 @@
                     ]
                   },
                   {
+                    "group": "Operators",
+                    "expandable": true,
+                    "expanded": false,
+                    "root": "docs/reference/operators/index",
+                    "pages": [
+                      "docs/reference/operators/exists",
+                      "docs/reference/operators/distributed-ddl"
+                    ]
+                  },
+                  {
                     "group": "Data Types",
                     "icon": "file-brackets-curly",
                     "expandable": true,
                     "expanded": false,
+                    "root": "docs/reference/data-types/index",
                     "pages": [
                       {
                         "group": "Numeric types",
@@ -1126,6 +1193,7 @@
                       }
                     ]
                   },
+                  "docs/reference/datalakes",
                   {
                     "group": "Functions",
                     "icon": "function",
@@ -1159,6 +1227,8 @@
                             "pages": [
                               "docs/reference/functions/regular-functions/geo/index",
                               "docs/reference/functions/regular-functions/geo/coordinates",
+                              "docs/reference/functions/regular-functions/geo/flipCoordinates",
+                              "docs/reference/functions/regular-functions/geo/geometry",
                               "docs/reference/functions/regular-functions/geo/geohash",
                               "docs/reference/functions/regular-functions/geo/h3",
                               "docs/reference/functions/regular-functions/geo/polygon",
@@ -1377,6 +1447,7 @@
                           "docs/reference/functions/table-functions/merge",
                           "docs/reference/functions/table-functions/mergeTreeIndex",
                           "docs/reference/functions/table-functions/mergeTreeProjection",
+                          "docs/reference/functions/table-functions/mergeTreeTextIndex",
                           "docs/reference/functions/table-functions/mongodb",
                           "docs/reference/functions/table-functions/mysql",
                           "docs/reference/functions/table-functions/null",
@@ -1385,6 +1456,7 @@
                           "docs/reference/functions/table-functions/paimon",
                           "docs/reference/functions/table-functions/paimonCluster",
                           "docs/reference/functions/table-functions/postgresql",
+                          "docs/reference/functions/table-functions/primes",
                           "docs/reference/functions/table-functions/prometheusQuery",
                           "docs/reference/functions/table-functions/prometheusQueryRange",
                           "docs/reference/functions/table-functions/redis",
@@ -1426,7 +1498,8 @@
                       {
                         "group": "User Defined Functions",
                         "pages": [
-                          "docs/reference/functions/regular-functions/udf"
+                          "docs/reference/functions/regular-functions/udf",
+                          "docs/reference/functions/regular-functions/wasm_udf"
                         ]
                       }
                     ]
@@ -1435,6 +1508,7 @@
                     "group": "Formats",
                     "icon": "file-code",
                     "expandable": true,
+                    "root": "docs/reference/formats/index",
                     "expanded": false,
                     "pages": [
                       {
@@ -1635,123 +1709,126 @@
                     "icon": "table",
                     "expandable": true,
                     "expanded": false,
+                    "root": "docs/reference/system-tables/index",
                     "pages": [
-                      {
-                        "group": "System tables",
-                        "expanded": false,
-                        "pages": [
-                          "docs/reference/system-tables/index",
-                          "docs/reference/system-tables/asynchronous_insert_log",
-                          "docs/reference/system-tables/asynchronous_inserts",
-                          "docs/reference/system-tables/asynchronous_loader",
-                          "docs/reference/system-tables/asynchronous_metric_log",
-                          "docs/reference/system-tables/asynchronous_metrics",
-                          "docs/reference/system-tables/azure_queue_settings",
-                          "docs/reference/system-tables/backup_log",
-                          "docs/reference/system-tables/backups",
-                          "docs/reference/system-tables/blob_storage_log",
-                          "docs/reference/system-tables/build_options",
-                          "docs/reference/system-tables/clusters",
-                          "docs/reference/system-tables/codecs",
-                          "docs/reference/system-tables/columns",
-                          "docs/reference/system-tables/contributors",
-                          "docs/reference/system-tables/crash_log",
-                          "docs/reference/system-tables/current_roles",
-                          "docs/reference/system-tables/dashboards",
-                          "docs/reference/system-tables/data_skipping_indices",
-                          "docs/reference/system-tables/data_type_families",
-                          "docs/reference/system-tables/database_engines",
-                          "docs/reference/system-tables/database_replicas",
-                          "docs/reference/system-tables/databases",
-                          "docs/reference/system-tables/dead_letter_queue",
-                          "docs/reference/system-tables/delta_metadata_log",
-                          "docs/reference/system-tables/detached_parts",
-                          "docs/reference/system-tables/detached_tables",
-                          "docs/reference/system-tables/dictionaries",
-                          "docs/reference/system-tables/dimensional_metrics",
-                          "docs/reference/system-tables/disks",
-                          "docs/reference/system-tables/distributed_ddl_queue",
-                          "docs/reference/system-tables/distribution_queue",
-                          "docs/reference/system-tables/dns_cache",
-                          "docs/reference/system-tables/dropped_tables",
-                          "docs/reference/system-tables/dropped_tables_parts",
-                          "docs/reference/system-tables/enabled_roles",
-                          "docs/reference/system-tables/error_log",
-                          "docs/reference/system-tables/errors",
-                          "docs/reference/system-tables/events",
-                          "docs/reference/system-tables/functions",
-                          "docs/reference/system-tables/grants",
-                          "docs/reference/system-tables/graphite_retentions",
-                          "docs/reference/system-tables/histogram_metrics",
-                          "docs/reference/system-tables/iceberg_history",
-                          "docs/reference/system-tables/iceberg_metadata_log",
-                          "docs/reference/system-tables/information_schema",
-                          "docs/reference/system-tables/jemalloc_bins",
-                          "docs/reference/system-tables/kafka_consumers",
-                          "docs/reference/system-tables/licenses",
-                          "docs/reference/system-tables/merge_tree_settings",
-                          "docs/reference/system-tables/merges",
-                          "docs/reference/system-tables/metric_log",
-                          "docs/reference/system-tables/metrics",
-                          "docs/reference/system-tables/moves",
-                          "docs/reference/system-tables/mutations",
-                          "docs/reference/system-tables/numbers",
-                          "docs/reference/system-tables/numbers_mt",
-                          "docs/reference/system-tables/one",
-                          "docs/reference/system-tables/opentelemetry_span_log",
-                          "docs/reference/system-tables/part_log",
-                          "docs/reference/system-tables/parts",
-                          "docs/reference/system-tables/parts_columns",
-                          "docs/reference/system-tables/processes",
-                          "docs/reference/system-tables/processors_profile_log",
-                          "docs/reference/system-tables/projection_parts",
-                          "docs/reference/system-tables/projection_parts_columns",
-                          "docs/reference/system-tables/projections",
-                          "docs/reference/system-tables/query_cache",
-                          "docs/reference/system-tables/query_condition_cache",
-                          "docs/reference/system-tables/query_log",
-                          "docs/reference/system-tables/query_metric_log",
-                          "docs/reference/system-tables/query_thread_log",
-                          "docs/reference/system-tables/query_views_log",
-                          "docs/reference/system-tables/quota_limits",
-                          "docs/reference/system-tables/quota_usage",
-                          "docs/reference/system-tables/quotas",
-                          "docs/reference/system-tables/quotas_usage",
-                          "docs/reference/system-tables/replicas",
-                          "docs/reference/system-tables/replicated_fetches",
-                          "docs/reference/system-tables/replication_queue",
-                          "docs/reference/system-tables/resources",
-                          "docs/reference/system-tables/role_grants",
-                          "docs/reference/system-tables/roles",
-                          "docs/reference/system-tables/row_policies",
-                          "docs/reference/system-tables/s3_queue_settings",
-                          "docs/reference/system-tables/scheduler",
-                          "docs/reference/system-tables/schema_inference_cache",
-                          "docs/reference/system-tables/server_settings",
-                          "docs/reference/system-tables/session_log",
-                          "docs/reference/system-tables/settings",
-                          "docs/reference/system-tables/settings_changes",
-                          "docs/reference/system-tables/settings_profile_elements",
-                          "docs/reference/system-tables/settings_profiles",
-                          "docs/reference/system-tables/stack_trace",
-                          "docs/reference/system-tables/storage_policies",
-                          "docs/reference/system-tables/symbols",
-                          "docs/reference/system-tables/system_warnings",
-                          "docs/reference/system-tables/table_engines",
-                          "docs/reference/system-tables/tables",
-                          "docs/reference/system-tables/text_log",
-                          "docs/reference/system-tables/time_zones",
-                          "docs/reference/system-tables/trace_log",
-                          "docs/reference/system-tables/user_processes",
-                          "docs/reference/system-tables/users",
-                          "docs/reference/system-tables/view_refreshes",
-                          "docs/reference/system-tables/workloads",
-                          "docs/reference/system-tables/zookeeper",
-                          "docs/reference/system-tables/zookeeper_connection",
-                          "docs/reference/system-tables/zookeeper_connection_log",
-                          "docs/reference/system-tables/zookeeper_log"
-                        ]
-                      }
+                      "docs/reference/system-tables/asynchronous_insert_log",
+                      "docs/reference/system-tables/asynchronous_inserts",
+                      "docs/reference/system-tables/asynchronous_loader",
+                      "docs/reference/system-tables/asynchronous_metric_log",
+                      "docs/reference/system-tables/asynchronous_metrics",
+                      "docs/reference/system-tables/azure_queue_settings",
+                      "docs/reference/system-tables/backup_log",
+                      "docs/reference/system-tables/backups",
+                      "docs/reference/system-tables/background_schedule_pool",
+                      "docs/reference/system-tables/background_schedule_pool_log",
+                      "docs/reference/system-tables/blob_storage_log",
+                      "docs/reference/system-tables/build_options",
+                      "docs/reference/system-tables/clusters",
+                      "docs/reference/system-tables/codecs",
+                      "docs/reference/system-tables/columns",
+                      "docs/reference/system-tables/contributors",
+                      "docs/reference/system-tables/crash_log",
+                      "docs/reference/system-tables/current_roles",
+                      "docs/reference/system-tables/dashboards",
+                      "docs/reference/system-tables/data_skipping_indices",
+                      "docs/reference/system-tables/data_type_families",
+                      "docs/reference/system-tables/database_engines",
+                      "docs/reference/system-tables/database_replicas",
+                      "docs/reference/system-tables/databases",
+                      "docs/reference/system-tables/dead_letter_queue",
+                      "docs/reference/system-tables/delta_metadata_log",
+                      "docs/reference/system-tables/detached_parts",
+                      "docs/reference/system-tables/detached_tables",
+                      "docs/reference/system-tables/dictionaries",
+                      "docs/reference/system-tables/dimensional_metrics",
+                      "docs/reference/system-tables/disks",
+                      "docs/reference/system-tables/distributed_ddl_queue",
+                      "docs/reference/system-tables/distribution_queue",
+                      "docs/reference/system-tables/dns_cache",
+                      "docs/reference/system-tables/dropped_tables",
+                      "docs/reference/system-tables/dropped_tables_parts",
+                      "docs/reference/system-tables/enabled_roles",
+                      "docs/reference/system-tables/error_log",
+                      "docs/reference/system-tables/errors",
+                      "docs/reference/system-tables/events",
+                      "docs/reference/system-tables/functions",
+                      "docs/reference/system-tables/grants",
+                      "docs/reference/system-tables/graphite_retentions",
+                      "docs/reference/system-tables/histogram_metrics",
+                      "docs/reference/system-tables/iceberg_history",
+                      "docs/reference/system-tables/iceberg_metadata_log",
+                      "docs/reference/system-tables/information_schema",
+                      "docs/reference/system-tables/instrumentation",
+                      "docs/reference/system-tables/jemalloc_bins",
+                      "docs/reference/system-tables/kafka_consumers",
+                      "docs/reference/system-tables/licenses",
+                      "docs/reference/system-tables/masking_policies",
+                      "docs/reference/system-tables/merge_tree_settings",
+                      "docs/reference/system-tables/merges",
+                      "docs/reference/system-tables/metric_log",
+                      "docs/reference/system-tables/metrics",
+                      "docs/reference/system-tables/moves",
+                      "docs/reference/system-tables/mutations",
+                      "docs/reference/system-tables/numbers",
+                      "docs/reference/system-tables/numbers_mt",
+                      "docs/reference/system-tables/one",
+                      "docs/reference/system-tables/opentelemetry_span_log",
+                      "docs/reference/system-tables/part_log",
+                      "docs/reference/system-tables/parts",
+                      "docs/reference/system-tables/parts_columns",
+                      "docs/reference/system-tables/primes",
+                      "docs/reference/system-tables/processes",
+                      "docs/reference/system-tables/processors_profile_log",
+                      "docs/reference/system-tables/projection_parts",
+                      "docs/reference/system-tables/projection_parts_columns",
+                      "docs/reference/system-tables/projections",
+                      "docs/reference/system-tables/query_cache",
+                      "docs/reference/system-tables/query_condition_cache",
+                      "docs/reference/system-tables/query_log",
+                      "docs/reference/system-tables/query_metric_log",
+                      "docs/reference/system-tables/query_thread_log",
+                      "docs/reference/system-tables/query_views_log",
+                      "docs/reference/system-tables/quota_limits",
+                      "docs/reference/system-tables/quota_usage",
+                      "docs/reference/system-tables/quotas",
+                      "docs/reference/system-tables/quotas_usage",
+                      "docs/reference/system-tables/replicas",
+                      "docs/reference/system-tables/replicated_fetches",
+                      "docs/reference/system-tables/replication_queue",
+                      "docs/reference/system-tables/resources",
+                      "docs/reference/system-tables/role_grants",
+                      "docs/reference/system-tables/roles",
+                      "docs/reference/system-tables/row_policies",
+                      "docs/reference/system-tables/s3_queue_settings",
+                      "docs/reference/system-tables/scheduler",
+                      "docs/reference/system-tables/schema_inference_cache",
+                      "docs/reference/system-tables/server_settings",
+                      "docs/reference/system-tables/session_log",
+                      "docs/reference/system-tables/settings",
+                      "docs/reference/system-tables/settings_changes",
+                      "docs/reference/system-tables/settings_profile_elements",
+                      "docs/reference/system-tables/settings_profiles",
+                      "docs/reference/system-tables/stack_trace",
+                      "docs/reference/system-tables/storage_policies",
+                      "docs/reference/system-tables/symbols",
+                      "docs/reference/system-tables/system_warnings",
+                      "docs/reference/system-tables/table_engines",
+                      "docs/reference/system-tables/tables",
+                      "docs/reference/system-tables/text_log",
+                      "docs/reference/system-tables/time_zones",
+                      "docs/reference/system-tables/tokenizers",
+                      "docs/reference/system-tables/trace_log",
+                      "docs/reference/system-tables/unicode",
+                      "docs/reference/system-tables/user_defined_functions",
+                      "docs/reference/system-tables/user_processes",
+                      "docs/reference/system-tables/users",
+                      "docs/reference/system-tables/view_refreshes",
+                      "docs/reference/system-tables/workloads",
+                      "docs/reference/system-tables/zookeeper",
+                      "docs/reference/system-tables/zookeeper_info",
+                      "docs/reference/system-tables/zookeeper_connection",
+                      "docs/reference/system-tables/zookeeper_connection_log",
+                      "docs/reference/system-tables/zookeeper_log"
                     ]
                   }
                 ]
@@ -1900,8 +1977,8 @@
                       "docs/clickstack/overview",
                       {
                         "group": "Getting started",
+                        "root": "docs/clickstack/getting-started/index",
                         "pages": [
-                          "docs/clickstack/getting-started",
                           "docs/clickstack/getting-started/managed",
                           "docs/clickstack/getting-started/oss"
                         ]
@@ -2006,7 +2083,8 @@
                               "docs/clickstack/integration-examples/postgres-logs",
                               "docs/clickstack/integration-examples/postgres-metrics",
                               "docs/clickstack/integration-examples/systemd",
-                              "docs/clickstack/integration-examples/temporal"
+                              "docs/clickstack/integration-examples/temporal",
+                              "docs/clickstack/integration-examples/cloudflare"
                             ]
                           },
                           {
@@ -2050,6 +2128,14 @@
                     ]
                   },
                   {
+                    "group": "Integration partners",
+                    "icon": "handshake",
+                    "root": "docs/clickstack/integration-partners/index",
+                    "pages": [
+                      "docs/clickstack/integration-partners/bindplane"
+                    ]
+                  },
+                  {
                     "group": "API reference",
                     "icon": "code",
                     "root": "docs/clickstack/api-reference",
@@ -2080,7 +2166,8 @@
                       "docs/managed-postgres/high-availability",
                       "docs/managed-postgres/read-replicas",
                       "docs/managed-postgres/backup-and-restore",
-                      "docs/managed-postgres/extensions"
+                      "docs/managed-postgres/extensions",
+                      "docs/managed-postgres/upgrades"
                     ]
                   },
                   {
