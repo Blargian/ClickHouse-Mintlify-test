@@ -24,6 +24,9 @@
     },
     {
       "src": "/cookie-banner.js"
+    },
+    {
+      "src": "/custom-footer.js"
     }
   ],
   "navigation": {
@@ -258,6 +261,7 @@
                         "pages": [
                           "docs/concepts/features/performance/prewhere",
                           "docs/concepts/features/performance/allocation-profiling",
+                          "docs/concepts/features/performance/allocation-profiling-old",
                           {
                             "group": "Caches",
                             "pages": [
@@ -359,6 +363,44 @@
                               "docs/concepts/features/configuration/server-config/quotas",
                               "docs/concepts/features/configuration/server-config/composable-protocols",
                               "docs/concepts/features/configuration/server-config/startup-scripts"
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "group": "Security and authentication",
+                        "expanded": false,
+                        "pages": [
+                          "docs/concepts/features/security/access-rights",
+                          "docs/concepts/features/security/network-ports",
+                          {
+                            "group": "TLS",
+                            "root": "docs/concepts/features/security/tls/index",
+                            "pages": [
+                              "docs/concepts/features/security/tls/configuring-tls",
+                              "docs/concepts/features/security/tls/configuring-tls-acme-client"
+                            ]
+                          },
+                          {
+                            "group": "External authenticators",
+                            "root": "docs/concepts/features/security/external-authenticators/index",
+                            "pages": [
+                              {
+                                "group": "SSL",
+                                "pages": [
+                                  "docs/concepts/features/security/external-authenticators/ssl-x509",
+                                  "docs/concepts/features/security/ssl-user-auth"
+                                ]
+                              },
+                              {
+                                "group": "LDAP",
+                                "pages": [
+                                  "docs/concepts/features/security/external-authenticators/ldap",
+                                  "docs/concepts/features/security/configuring-ldap"
+                                ]
+                              },
+                              "docs/concepts/features/security/external-authenticators/http",
+                              "docs/concepts/features/security/external-authenticators/kerberos"
                             ]
                           }
                         ]
@@ -3115,7 +3157,7 @@
     ],
     "primary": {
       "type": "button",
-      "label": "Get started",
+      "label": "Cloud console",
       "href": "https://clickhouse.cloud"
     }
   },
