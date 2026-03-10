@@ -349,7 +349,8 @@
                               "docs/concepts/features/configuration/settings/permissions-for-queries",
                               "docs/concepts/features/configuration/settings/memory-overcommit",
                               "docs/concepts/features/configuration/settings/server-overload",
-                              "docs/concepts/features/configuration/settings/tcp-connection-limits"
+                              "docs/concepts/features/configuration/settings/tcp-connection-limits",
+                              "docs/concepts/features/configuration/settings/alternative-query-languages"
                             ]
                           },
                           {
@@ -469,6 +470,8 @@
                           "docs/guides/data_modelling/sparse-primary-indexes",
                           "docs/guides/data_modelling/denormalization",
                           "docs/guides/data_modelling/backfilling",
+                          "docs/guides/data_modelling/merge-table-function",
+                          "docs/guides/data_modelling/stored-procedures-and-prepared-statements",
                           {
                             "group": "Compression",
                             "expanded": false,
@@ -484,7 +487,8 @@
                         "pages": [
                           "docs/guides/performance_and_monitoring/query-optimization",
                           "docs/guides/performance_and_monitoring/analyzer",
-                          "docs/guides/performance_and_monitoring/understanding-query-execution-with-the-analyzer"
+                          "docs/guides/performance_and_monitoring/understanding-query-execution-with-the-analyzer",
+                          "docs/guides/performance_and_monitoring/dynamic-column-selection"
                         ]
                       },
                       {
@@ -3001,17 +3005,52 @@
                       {
                         "group": "General & FAQs",
                         "pages": [
-                          "docs/support/knowledge-base/general-faqs/columnar-database",
-                          "docs/support/knowledge-base/general-faqs/dbms-naming",
-                          "docs/support/knowledge-base/general-faqs/how-do-i-contribute-code-to-clickhouse",
-                          "docs/support/knowledge-base/general-faqs/key-value",
-                          "docs/support/knowledge-base/general-faqs/mapreduce",
-                          "docs/support/knowledge-base/general-faqs/olap",
-                          "docs/support/knowledge-base/general-faqs/time-series",
-                          "docs/support/knowledge-base/general-faqs/use-clickhouse-for-log-analytics",
-                          "docs/support/knowledge-base/general-faqs/vector-search",
-                          "docs/support/knowledge-base/general-faqs/who-is-using-clickhouse",
-                          "docs/support/knowledge-base/general-faqs/why_recommend_clickhouse_keeper_over_zookeeper"
+                          {
+                            "group": "General",
+                            "pages": [
+                              "docs/support/knowledge-base/general-faqs/columnar-database",
+                              "docs/support/knowledge-base/general-faqs/concurrency",
+                              "docs/support/knowledge-base/general-faqs/cost-based",
+                              "docs/support/knowledge-base/general-faqs/datalake",
+                              "docs/support/knowledge-base/general-faqs/dbms-naming",
+                              "docs/support/knowledge-base/general-faqs/dependencies",
+                              "docs/support/knowledge-base/general-faqs/distributed-join",
+                              "docs/support/knowledge-base/general-faqs/federated",
+                              "docs/support/knowledge-base/general-faqs/how-do-i-contribute-code-to-clickhouse",
+                              "docs/support/knowledge-base/general-faqs/mapreduce",
+                              "docs/support/knowledge-base/general-faqs/ne-tormozit",
+                              "docs/support/knowledge-base/general-faqs/olap",
+                              "docs/support/knowledge-base/general-faqs/sql",
+                              "docs/support/knowledge-base/general-faqs/updates",
+                              "docs/support/knowledge-base/general-faqs/who-is-using-clickhouse",
+                              "docs/support/knowledge-base/general-faqs/why_recommend_clickhouse_keeper_over_zookeeper"
+                            ]
+                          },
+                          {
+                            "group": "Use Cases",
+                            "pages": [
+                              "docs/support/knowledge-base/general-faqs/key-value",
+                              "docs/support/knowledge-base/general-faqs/time-series",
+                              "docs/support/knowledge-base/general-faqs/use-clickhouse-for-log-analytics",
+                              "docs/support/knowledge-base/general-faqs/vector-search"
+                            ]
+                          },
+                          {
+                            "group": "Integration",
+                            "pages": [
+                              "docs/support/knowledge-base/data-import-export/json-import",
+                              "docs/support/knowledge-base/integrations/oracle-odbc"
+                            ]
+                          },
+                          {
+                            "group": "Operations",
+                            "pages": [
+                              "docs/support/knowledge-base/tables-schema/delete-old-data",
+                              "docs/support/knowledge-base/cloud-services/multi-region-replication",
+                              "docs/support/knowledge-base/setup-installation/production",
+                              "docs/support/knowledge-base/general-faqs/separate-storage"
+                            ]
+                          }
                         ]
                       },
                       {
