@@ -77,9 +77,10 @@ export const QuickStartsGrid = ({ quickStartsData, featuredIds = [] }) => {
       } else {
         // If any other option is clicked, remove "All" and toggle the option
         const withoutAll = prev.filter(uc => uc !== 'All');
-        return withoutAll.includes(useCase)
+        const result = withoutAll.includes(useCase)
           ? withoutAll.filter(uc => uc !== useCase)
           : [...withoutAll, useCase];
+        return result.length === 0 ? ['All'] : result;
       }
     });
   };
@@ -92,9 +93,10 @@ export const QuickStartsGrid = ({ quickStartsData, featuredIds = [] }) => {
       } else {
         // If any other option is clicked, remove "All" and toggle the option
         const withoutAll = prev.filter(p => p !== 'All');
-        return withoutAll.includes(product)
+        const result = withoutAll.includes(product)
           ? withoutAll.filter(p => p !== product)
           : [...withoutAll, product];
+        return result.length === 0 ? ['All'] : result;
       }
     });
   };
@@ -107,9 +109,10 @@ export const QuickStartsGrid = ({ quickStartsData, featuredIds = [] }) => {
       } else {
         // If any other option is clicked, remove "All" and toggle the option
         const withoutAll = prev.filter(l => l !== 'All');
-        return withoutAll.includes(level)
+        const result = withoutAll.includes(level)
           ? withoutAll.filter(l => l !== level)
           : [...withoutAll, level];
+        return result.length === 0 ? ['All'] : result;
       }
     });
   };
@@ -143,9 +146,10 @@ export const QuickStartsGrid = ({ quickStartsData, featuredIds = [] }) => {
         quickStart.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
         quickStart.description.toLowerCase().includes(searchTerm.toLowerCase());
 
-      // Use cases filter (OR logic) - "All" means no filter
+      // Use cases filter (OR logic) - "All" in selection means no filter, "All" in quickstart means it matches any use case
       const matchesUseCases = selectedUseCases.length === 0 ||
         selectedUseCases.includes('All') ||
+        quickStart.useCases.includes('All') ||
         selectedUseCases.some(uc => quickStart.useCases.includes(uc));
 
       // Products filter (OR logic) - "All" means no filter

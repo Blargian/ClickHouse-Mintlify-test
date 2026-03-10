@@ -155,8 +155,12 @@ def generate_badges(use_cases: List[str], products: List[str], level: str = 'Beg
     level_color = level_color_map.get(level, 'gray')
     second_line_badges.append(f'<Badge size="lg" color="{level_color}">{level}</Badge>')
 
+    # Expand 'All' to all use cases for badge display
+    all_use_cases = ['Real-Time Analytics', 'Data Warehousing', 'Observability', 'AI/ML']
+    display_use_cases = all_use_cases if 'All' in use_cases else use_cases
+
     # Add use case badges (blue)
-    for use_case in use_cases:
+    for use_case in display_use_cases:
         # Capitalize properly
         display_text = use_case.title() if use_case.lower() != 'ai/ml' else 'AI/ML'
         second_line_badges.append(f'<Badge size="lg" color="blue">{display_text}</Badge>')
