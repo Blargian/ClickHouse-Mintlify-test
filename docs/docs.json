@@ -466,18 +466,18 @@
                       {
                         "group": "Data modelling",
                         "pages": [
-                          "docs/guides/data_modelling/schema-design",
-                          "docs/guides/data_modelling/sparse-primary-indexes",
-                          "docs/guides/data_modelling/denormalization",
-                          "docs/guides/data_modelling/backfilling",
-                          "docs/guides/data_modelling/merge-table-function",
-                          "docs/guides/data_modelling/stored-procedures-and-prepared-statements",
+                          "docs/guides/cloud-oss/data_modelling/schema-design",
+                          "docs/guides/cloud-oss/data_modelling/sparse-primary-indexes",
+                          "docs/guides/cloud-oss/data_modelling/denormalization",
+                          "docs/guides/cloud-oss/data_modelling/backfilling",
+                          "docs/guides/cloud-oss/data_modelling/merge-table-function",
+                          "docs/guides/cloud-oss/data_modelling/stored-procedures-and-prepared-statements",
                           {
                             "group": "Compression",
                             "expanded": false,
                             "pages": [
-                              "docs/guides/data_modelling/compression/compression-in-clickhouse",
-                              "docs/guides/data_modelling/compression/compression-modes"
+                              "docs/guides/cloud-oss/data_modelling/compression/compression-in-clickhouse",
+                              "docs/guides/cloud-oss/data_modelling/compression/compression-modes"
                             ]
                           }
                         ]
@@ -485,289 +485,143 @@
                       {
                         "group": "Performance & monitoring",
                         "pages": [
-                          "docs/guides/performance_and_monitoring/query-optimization",
-                          "docs/guides/performance_and_monitoring/analyzer",
-                          "docs/guides/performance_and_monitoring/understanding-query-execution-with-the-analyzer",
-                          "docs/guides/performance_and_monitoring/dynamic-column-selection"
-                        ]
-                      },
-                      {
-                        "group": "Use cases",
-                        "expanded": true,
-                        "pages": [
-                          {
-                            "group": "Time series",
-                            "expanded": false,
-                            "pages": [
-                              "docs/guides/use-case-guides/time-series/index",
-                              "docs/guides/use-case-guides/time-series/date-time-data-types",
-                              "docs/guides/use-case-guides/time-series/basic-operations",
-                              "docs/guides/use-case-guides/time-series/analysis-functions",
-                              "docs/guides/use-case-guides/time-series/storage-efficiency",
-                              "docs/guides/use-case-guides/time-series/query-performance",
-                              "docs/guides/use-case-guides/time-series/materialized-view-rollup",
-                              "docs/guides/use-case-guides/time-series/time-series-filling-gaps"
-                            ]
-                          },
-                          {
-                            "group": "Observability",
-                            "expanded": false,
-                            "pages": [
-                              "docs/guides/use-case-guides/observability/index",
-                              "docs/guides/use-case-guides/observability/cloud-monitoring",
-                              "docs/guides/use-case-guides/observability/self-managed-monitoring",
-                              {
-                                "group": "Build your own",
-                                "pages": [
-                                  "docs/guides/use-case-guides/observability/build-your-own/index",
-                                  "docs/guides/use-case-guides/observability/build-your-own/introduction",
-                                  "docs/guides/use-case-guides/observability/build-your-own/schema-design",
-                                  "docs/guides/use-case-guides/observability/build-your-own/integrating-opentelemetry",
-                                  "docs/guides/use-case-guides/observability/build-your-own/managing-data",
-                                  "docs/guides/use-case-guides/observability/build-your-own/grafana",
-                                  "docs/guides/use-case-guides/observability/build-your-own/demo-application"
-                                ]
-                              }
-                            ]
-                          },
-                          {
-                            "group": "Data lake",
-                            "expanded": false,
-                            "pages": [
-                              "docs/guides/use-case-guides/data_lake/index",
-                              "docs/guides/use-case-guides/data_lake/glue_catalog",
-                              "docs/guides/use-case-guides/data_lake/lakekeeper_catalog",
-                              "docs/guides/use-case-guides/data_lake/nessie_catalog",
-                              "docs/guides/use-case-guides/data_lake/onelake_catalog",
-                              "docs/guides/use-case-guides/data_lake/rest_catalog",
-                              "docs/guides/use-case-guides/data_lake/unity_catalog"
-                            ]
-                          },
-                          {
-                            "group": "AI/ML",
-                            "expanded": false,
-                            "pages": [
-                              "docs/guides/use-case-guides/AI_ML/index",
-                              "docs/guides/use-case-guides/AI_ML/vector-search",
-                              "docs/guides/use-case-guides/AI_ML/ai-powered-sql-generation",
-                              {
-                                "group": "Data exploration",
-                                "pages": [
-                                  "docs/guides/use-case-guides/AI_ML/data-exploration/jupyter-notebook",
-                                  "docs/guides/use-case-guides/AI_ML/data-exploration/marimo-notebook"
-                                ]
-                              },
-                              {
-                                "group": "MCP",
-                                "pages": [
-                                  "docs/guides/use-case-guides/AI_ML/MCP/index",
-                                  "docs/guides/use-case-guides/AI_ML/MCP/claude-desktop",
-                                  "docs/guides/use-case-guides/AI_ML/MCP/librechat",
-                                  "docs/guides/use-case-guides/AI_ML/MCP/anythingllm",
-                                  "docs/guides/use-case-guides/AI_ML/MCP/open-webui",
-                                  "docs/guides/use-case-guides/AI_ML/MCP/ollama",
-                                  "docs/guides/use-case-guides/AI_ML/MCP/janai",
-                                  {
-                                    "group": "AI agent libraries",
-                                    "pages": [
-                                      "docs/guides/use-case-guides/AI_ML/MCP/ai_agent_libraries/index",
-                                      "docs/guides/use-case-guides/AI_ML/MCP/ai_agent_libraries/streamlit",
-                                      "docs/guides/use-case-guides/AI_ML/MCP/ai_agent_libraries/langchain",
-                                      "docs/guides/use-case-guides/AI_ML/MCP/ai_agent_libraries/llamaindex",
-                                      "docs/guides/use-case-guides/AI_ML/MCP/ai_agent_libraries/pydantic-ai",
-                                      "docs/guides/use-case-guides/AI_ML/MCP/ai_agent_libraries/slackbot",
-                                      "docs/guides/use-case-guides/AI_ML/MCP/ai_agent_libraries/agno",
-                                      "docs/guides/use-case-guides/AI_ML/MCP/ai_agent_libraries/chainlit",
-                                      "docs/guides/use-case-guides/AI_ML/MCP/ai_agent_libraries/claude-agent-sdk",
-                                      "docs/guides/use-case-guides/AI_ML/MCP/ai_agent_libraries/copilotkit",
-                                      "docs/guides/use-case-guides/AI_ML/MCP/ai_agent_libraries/crewai",
-                                      "docs/guides/use-case-guides/AI_ML/MCP/ai_agent_libraries/dspy",
-                                      "docs/guides/use-case-guides/AI_ML/MCP/ai_agent_libraries/mcp-agent",
-                                      "docs/guides/use-case-guides/AI_ML/MCP/ai_agent_libraries/microsoft-agent-framework",
-                                      "docs/guides/use-case-guides/AI_ML/MCP/ai_agent_libraries/upsonic",
-                                      "docs/guides/use-case-guides/AI_ML/MCP/ai_agent_libraries/openai-agents"
-                                    ]
-                                  }
-                                ]
-                              }
-                            ]
-                          }
+                          "docs/guides/cloud-oss/performance_and_monitoring/query-optimization",
+                          "docs/guides/cloud-oss/performance_and_monitoring/analyzer",
+                          "docs/guides/cloud-oss/performance_and_monitoring/understanding-query-execution-with-the-analyzer",
+                          "docs/guides/cloud-oss/performance_and_monitoring/dynamic-column-selection"
                         ]
                       },
                       {
                         "group": "Aggregate combinator examples",
                         "expanded": false,
                         "pages": [
-                          "docs/guides/examples/aggregate_function_combinators/anyIf",
-                          "docs/guides/examples/aggregate_function_combinators/argMaxIf",
-                          "docs/guides/examples/aggregate_function_combinators/argMinIf",
-                          "docs/guides/examples/aggregate_function_combinators/avgIf",
-                          "docs/guides/examples/aggregate_function_combinators/avgMap",
-                          "docs/guides/examples/aggregate_function_combinators/avgMerge",
-                          "docs/guides/examples/aggregate_function_combinators/avgMergeState",
-                          "docs/guides/examples/aggregate_function_combinators/avgResample",
-                          "docs/guides/examples/aggregate_function_combinators/avgState",
-                          "docs/guides/examples/aggregate_function_combinators/countIf",
-                          "docs/guides/examples/aggregate_function_combinators/countResample",
-                          "docs/guides/examples/aggregate_function_combinators/groupArrayDistinct",
-                          "docs/guides/examples/aggregate_function_combinators/groupArrayResample",
-                          "docs/guides/examples/aggregate_function_combinators/maxMap",
-                          "docs/guides/examples/aggregate_function_combinators/maxSimpleState",
-                          "docs/guides/examples/aggregate_function_combinators/minMap",
-                          "docs/guides/examples/aggregate_function_combinators/minSimpleState",
-                          "docs/guides/examples/aggregate_function_combinators/quantilesTimingArrayIf",
-                          "docs/guides/examples/aggregate_function_combinators/quantilesTimingIf",
-                          "docs/guides/examples/aggregate_function_combinators/sumArray",
-                          "docs/guides/examples/aggregate_function_combinators/sumForEach",
-                          "docs/guides/examples/aggregate_function_combinators/sumIf",
-                          "docs/guides/examples/aggregate_function_combinators/sumMap",
-                          "docs/guides/examples/aggregate_function_combinators/sumSimpleState",
-                          "docs/guides/examples/aggregate_function_combinators/uniqArray",
-                          "docs/guides/examples/aggregate_function_combinators/uniqArrayIf"
+                          "docs/guides/cloud-oss/examples/aggregate_function_combinators/anyIf",
+                          "docs/guides/cloud-oss/examples/aggregate_function_combinators/argMaxIf",
+                          "docs/guides/cloud-oss/examples/aggregate_function_combinators/argMinIf",
+                          "docs/guides/cloud-oss/examples/aggregate_function_combinators/avgIf",
+                          "docs/guides/cloud-oss/examples/aggregate_function_combinators/avgMap",
+                          "docs/guides/cloud-oss/examples/aggregate_function_combinators/avgMerge",
+                          "docs/guides/cloud-oss/examples/aggregate_function_combinators/avgMergeState",
+                          "docs/guides/cloud-oss/examples/aggregate_function_combinators/avgResample",
+                          "docs/guides/cloud-oss/examples/aggregate_function_combinators/avgState",
+                          "docs/guides/cloud-oss/examples/aggregate_function_combinators/countIf",
+                          "docs/guides/cloud-oss/examples/aggregate_function_combinators/countResample",
+                          "docs/guides/cloud-oss/examples/aggregate_function_combinators/groupArrayDistinct",
+                          "docs/guides/cloud-oss/examples/aggregate_function_combinators/groupArrayResample",
+                          "docs/guides/cloud-oss/examples/aggregate_function_combinators/maxMap",
+                          "docs/guides/cloud-oss/examples/aggregate_function_combinators/maxSimpleState",
+                          "docs/guides/cloud-oss/examples/aggregate_function_combinators/minMap",
+                          "docs/guides/cloud-oss/examples/aggregate_function_combinators/minSimpleState",
+                          "docs/guides/cloud-oss/examples/aggregate_function_combinators/quantilesTimingArrayIf",
+                          "docs/guides/cloud-oss/examples/aggregate_function_combinators/quantilesTimingIf",
+                          "docs/guides/cloud-oss/examples/aggregate_function_combinators/sumArray",
+                          "docs/guides/cloud-oss/examples/aggregate_function_combinators/sumForEach",
+                          "docs/guides/cloud-oss/examples/aggregate_function_combinators/sumIf",
+                          "docs/guides/cloud-oss/examples/aggregate_function_combinators/sumMap",
+                          "docs/guides/cloud-oss/examples/aggregate_function_combinators/sumSimpleState",
+                          "docs/guides/cloud-oss/examples/aggregate_function_combinators/uniqArray",
+                          "docs/guides/cloud-oss/examples/aggregate_function_combinators/uniqArrayIf"
                         ]
                       }
                     ]
                   },
                   {
-                    "group": "Cloud",
-                    "icon": "/images/icon/icon-clickhouse-cloud.svg",
+                    "group": "Real-time analytics",
+                    "icon": "clock",
                     "pages": [
                       {
-                        "group": "Best practices",
+                        "group": "Time series",
+                        "expanded": false,
                         "pages": [
-                          "docs/guides/cloud/best_practices/multitenancy",
-                          "docs/guides/cloud/best_practices/usagelimits"
+                          "docs/guides/real-time-analytics/time-series/index",
+                          "docs/guides/real-time-analytics/time-series/date-time-data-types",
+                          "docs/guides/real-time-analytics/time-series/basic-operations",
+                          "docs/guides/real-time-analytics/time-series/analysis-functions",
+                          "docs/guides/real-time-analytics/time-series/storage-efficiency",
+                          "docs/guides/real-time-analytics/time-series/query-performance",
+                          "docs/guides/real-time-analytics/time-series/materialized-view-rollup",
+                          "docs/guides/real-time-analytics/time-series/time-series-filling-gaps"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "group": "Observability",
+                    "icon": "chart-line",
+                    "pages": [
+                      "docs/guides/observability/index",
+                      "docs/guides/observability/cloud-monitoring",
+                      "docs/guides/observability/self-managed-monitoring",
+                      {
+                        "group": "Build your own",
+                        "pages": [
+                          "docs/guides/observability/build-your-own/index",
+                          "docs/guides/observability/build-your-own/introduction",
+                          "docs/guides/observability/build-your-own/schema-design",
+                          "docs/guides/observability/build-your-own/integrating-opentelemetry",
+                          "docs/guides/observability/build-your-own/managing-data",
+                          "docs/guides/observability/build-your-own/grafana",
+                          "docs/guides/observability/build-your-own/demo-application"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "group": "Data lake",
+                    "icon": "warehouse",
+                    "pages": [
+                      "docs/guides/data_lake/index",
+                      "docs/guides/data_lake/glue_catalog",
+                      "docs/guides/data_lake/lakekeeper_catalog",
+                      "docs/guides/data_lake/nessie_catalog",
+                      "docs/guides/data_lake/onelake_catalog",
+                      "docs/guides/data_lake/rest_catalog",
+                      "docs/guides/data_lake/unity_catalog"
+                    ]
+                  },
+                  {
+                    "group": "AI/ML",
+                    "icon": "brain",
+                    "pages": [
+                      "docs/guides/ai-ml/index",
+                      "docs/guides/ai-ml/vector-search",
+                      "docs/guides/ai-ml/ai-powered-sql-generation",
+                      {
+                        "group": "Data exploration",
+                        "pages": [
+                          "docs/guides/ai-ml/data-exploration/jupyter-notebook",
+                          "docs/guides/ai-ml/data-exploration/marimo-notebook"
                         ]
                       },
                       {
-                        "group": "General",
-                        "expanded": false,
+                        "group": "MCP",
                         "pages": [
-                          "docs/guides/cloud/cloud-compatibility"
-                        ]
-                      },
-                      {
-                        "group": "SQL console",
-                        "expanded": false,
-                        "pages": [
-                          "docs/guides/cloud/SQL_console/connection_details",
-                          "docs/guides/cloud/SQL_console/query-endpoints"
-                        ]
-                      },
-                      {
-                        "group": "Backups",
-                        "expanded": false,
-                        "pages": [
-                          "docs/guides/cloud/backups/01_review-and-restore-backups",
-                          "docs/guides/cloud/backups/02_configurable-backups",
+                          "docs/guides/ai-ml/MCP/index",
+                          "docs/guides/ai-ml/MCP/claude-desktop",
+                          "docs/guides/ai-ml/MCP/librechat",
+                          "docs/guides/ai-ml/MCP/anythingllm",
+                          "docs/guides/ai-ml/MCP/open-webui",
+                          "docs/guides/ai-ml/MCP/ollama",
+                          "docs/guides/ai-ml/MCP/janai",
                           {
-                            "group": "Bring Your Own Backup",
-                            "expanded": false,
+                            "group": "AI agent libraries",
                             "pages": [
-                              "docs/guides/cloud/backups/03_bring_your_own_backup/01_export-backups-to-own-cloud-account",
-                              "docs/guides/cloud/backups/03_bring_your_own_backup/02_backup_restore_from_ui",
-                              "docs/guides/cloud/backups/03_bring_your_own_backup/03_backup_restore_using_commands"
-                            ]
-                          }
-                        ]
-                      },
-                      {
-                        "group": "Data sources",
-                        "expanded": false,
-                        "pages": [
-                          "docs/guides/cloud/data_sources/01_cloud-endpoints-api",
-                          "docs/guides/cloud/data_sources/02_accessing-s3-data-securely"
-                        ]
-                      },
-                      {
-                        "group": "Infrastructure",
-                        "expanded": false,
-                        "pages": [
-                          {
-                            "group": "Deployment modes",
-                            "expanded": false,
-                            "pages": [
-                              "docs/guides/cloud/infrastructure/01_deployment_options/02_clickhouse-private",
-                              "docs/guides/cloud/infrastructure/01_deployment_options/03_clickhouse-government",
-                              {
-                                "group": "Bring Your Own Cloud (BYOC)",
-                                "expanded": false,
-                                "pages": [
-                                  "docs/guides/cloud/infrastructure/01_deployment_options/byoc/01_overview",
-                                  "docs/guides/cloud/infrastructure/01_deployment_options/byoc/02_architecture",
-                                  {
-                                    "group": "Onboarding",
-                                    "expanded": false,
-                                    "pages": [
-                                      "docs/guides/cloud/infrastructure/01_deployment_options/byoc/03_onboarding/01_aws"
-                                    ]
-                                  },
-                                  {
-                                    "group": "FAQ",
-                                    "expanded": true,
-                                    "pages": [
-                                      "docs/guides/cloud/infrastructure/01_deployment_options/byoc/04_faq/01_aws"
-                                    ]
-                                  },
-                                  {
-                                    "group": "Observability",
-                                    "expanded": false,
-                                    "pages": [
-                                      "docs/guides/cloud/infrastructure/01_deployment_options/byoc/05_observability/01_aws"
-                                    ]
-                                  }
-                                ]
-                              }
-                            ]
-                          }
-                        ]
-                      },
-                      {
-                        "group": "Security",
-                        "expanded": false,
-                        "pages": [
-                          {
-                            "group": "Cloud access management",
-                            "expanded": false,
-                            "pages": [
-                              "docs/guides/cloud/security/01_cloud_access_management/01_manage-my-account",
-                              "docs/guides/cloud/security/01_cloud_access_management/02_manage-cloud-users",
-                              "docs/guides/cloud/security/01_cloud_access_management/03_manage-sql-console-role-assignments",
-                              "docs/guides/cloud/security/01_cloud_access_management/04_manage-database-users",
-                              "docs/guides/cloud/security/01_cloud_access_management/04_saml-sso-setup",
-                              "docs/guides/cloud/security/01_cloud_access_management/05_common-access-management-queries"
-                            ]
-                          },
-                          {
-                            "group": "Connectivity",
-                            "expanded": false,
-                            "pages": [
-                              "docs/guides/cloud/security/02_connectivity/01_setting-ip-filters",
-                              {
-                                "group": "Private networking",
-                                "expanded": false,
-                                "pages": [
-                                  "docs/guides/cloud/security/02_connectivity/private_networking/02_aws-privatelink",
-                                  "docs/guides/cloud/security/02_connectivity/private_networking/03_gcp-private-service-connect",
-                                  "docs/guides/cloud/security/02_connectivity/private_networking/04_azure-privatelink"
-                                ]
-                              }
-                            ]
-                          },
-                          {
-                            "group": "Data security",
-                            "expanded": false,
-                            "pages": [
-                              "docs/guides/cloud/security/03_data-masking",
-                              "docs/guides/cloud/security/04_cmek"
-                            ]
-                          },
-                          {
-                            "group": "Compliance",
-                            "expanded": false,
-                            "pages": [
-                              "docs/guides/cloud/security/06_compliance/hipaa-onboarding",
-                              "docs/guides/cloud/security/06_compliance/pci-onboarding"
+                              "docs/guides/ai-ml/MCP/ai_agent_libraries/index",
+                              "docs/guides/ai-ml/MCP/ai_agent_libraries/streamlit",
+                              "docs/guides/ai-ml/MCP/ai_agent_libraries/langchain",
+                              "docs/guides/ai-ml/MCP/ai_agent_libraries/llamaindex",
+                              "docs/guides/ai-ml/MCP/ai_agent_libraries/pydantic-ai",
+                              "docs/guides/ai-ml/MCP/ai_agent_libraries/slackbot",
+                              "docs/guides/ai-ml/MCP/ai_agent_libraries/agno",
+                              "docs/guides/ai-ml/MCP/ai_agent_libraries/chainlit",
+                              "docs/guides/ai-ml/MCP/ai_agent_libraries/claude-agent-sdk",
+                              "docs/guides/ai-ml/MCP/ai_agent_libraries/copilotkit",
+                              "docs/guides/ai-ml/MCP/ai_agent_libraries/crewai",
+                              "docs/guides/ai-ml/MCP/ai_agent_libraries/dspy",
+                              "docs/guides/ai-ml/MCP/ai_agent_libraries/mcp-agent",
+                              "docs/guides/ai-ml/MCP/ai_agent_libraries/microsoft-agent-framework",
+                              "docs/guides/ai-ml/MCP/ai_agent_libraries/upsonic",
+                              "docs/guides/ai-ml/MCP/ai_agent_libraries/openai-agents"
                             ]
                           }
                         ]
@@ -1922,7 +1776,11 @@
                             "group": "Automatic scaling",
                             "pages": [
                               "docs/cloud/features/04_infrastructure/automatic_scaling/01_auto_scaling",
-                              "docs/cloud/features/04_infrastructure/automatic_scaling/02_make_before_break"
+                              "docs/cloud/features/04_infrastructure/automatic_scaling/02_make_before_break",
+                              "docs/cloud/features/autoscaling/vertical",
+                              "docs/cloud/features/autoscaling/horizontal",
+                              "docs/cloud/features/autoscaling/idling",
+                              "docs/cloud/features/autoscaling/scaling-recommendations"
                             ]
                           },
                           "docs/cloud/features/04_infrastructure/deployment-options",
@@ -1958,7 +1816,17 @@
                         ]
                       },
                       "docs/cloud/features/08_backups",
-                      "docs/cloud/features/09_support"
+                      "docs/cloud/features/09_support",
+                      {
+                        "group": "AI/ML",
+                        "expanded": false,
+                        "pages": [
+                          "docs/cloud/features/ai-ml/index",
+                          "docs/cloud/features/ai-ml/ask-ai",
+                          "docs/cloud/features/ai-ml/langfuse",
+                          "docs/cloud/features/ai-ml/remote-mcp"
+                        ]
+                      }
                     ]
                   },
                   {
@@ -2003,6 +1871,171 @@
                       "docs/cloud/reference/03_billing/04_network-data-transfer",
                       "docs/cloud/reference/03_billing/05_payment-thresholds",
                       "docs/cloud/reference/03_billing/06_billing_compliance"
+                    ]
+                  },
+                  {
+                    "group": "Guides",
+                    "icon": "book",
+                    "pages": [
+                      {
+                        "group": "Best practices",
+                        "pages": [
+                          "docs/cloud/guides/best_practices/multitenancy",
+                          "docs/cloud/guides/best_practices/usagelimits"
+                        ]
+                      },
+                      {
+                        "group": "General",
+                        "expanded": false,
+                        "pages": [
+                          "docs/cloud/guides/cloud-compatibility"
+                        ]
+                      },
+                      {
+                        "group": "SQL console",
+                        "expanded": false,
+                        "pages": [
+                          "docs/cloud/guides/SQL_console/connection_details",
+                          "docs/cloud/guides/SQL_console/query-endpoints"
+                        ]
+                      },
+                      {
+                        "group": "Backups",
+                        "expanded": false,
+                        "pages": [
+                          "docs/cloud/guides/backups/01_review-and-restore-backups",
+                          "docs/cloud/guides/backups/02_configurable-backups",
+                          {
+                            "group": "Bring Your Own Backup",
+                            "expanded": false,
+                            "pages": [
+                              "docs/cloud/guides/backups/03_bring_your_own_backup/01_export-backups-to-own-cloud-account",
+                              "docs/cloud/guides/backups/03_bring_your_own_backup/02_backup_restore_from_ui",
+                              "docs/cloud/guides/backups/03_bring_your_own_backup/03_backup_restore_using_commands"
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "group": "Data sources",
+                        "expanded": false,
+                        "pages": [
+                          "docs/cloud/guides/data_sources/01_cloud-endpoints-api",
+                          "docs/cloud/guides/data_sources/02_accessing-s3-data-securely",
+                          "docs/cloud/guides/data-sources/secure-azure",
+                          "docs/cloud/guides/data-sources/secure-gcs"
+                        ]
+                      },
+                      {
+                        "group": "Infrastructure",
+                        "expanded": false,
+                        "pages": [
+                          {
+                            "group": "Deployment modes",
+                            "expanded": false,
+                            "pages": [
+                              "docs/cloud/guides/infrastructure/01_deployment_options/02_clickhouse-private",
+                              "docs/cloud/guides/infrastructure/01_deployment_options/03_clickhouse-government",
+                              {
+                                "group": "Bring Your Own Cloud (BYOC)",
+                                "expanded": false,
+                                "pages": [
+                                  "docs/cloud/guides/infrastructure/01_deployment_options/byoc/01_overview",
+                                  "docs/cloud/guides/infrastructure/01_deployment_options/byoc/02_architecture",
+                                  "docs/cloud/reference/byoc/configurations",
+                                  "docs/cloud/reference/byoc/connect",
+                                  "docs/cloud/reference/byoc/operations",
+                                  {
+                                    "group": "Onboarding",
+                                    "expanded": false,
+                                    "pages": [
+                                      "docs/cloud/guides/infrastructure/01_deployment_options/byoc/03_onboarding/01_aws",
+                                      "docs/cloud/reference/byoc/onboarding/standard",
+                                      "docs/cloud/reference/byoc/onboarding/customization",
+                                      "docs/cloud/reference/byoc/onboarding/network",
+                                      "docs/cloud/reference/byoc/onboarding/new_region",
+                                      "docs/cloud/reference/byoc/onboarding/azure-private-preview"
+                                    ]
+                                  },
+                                  {
+                                    "group": "Reference",
+                                    "expanded": false,
+                                    "pages": [
+                                      "docs/cloud/reference/byoc/reference/faq",
+                                      "docs/cloud/reference/byoc/reference/network_security",
+                                      "docs/cloud/reference/byoc/reference/privilege"
+                                    ]
+                                  },
+                                  {
+                                    "group": "FAQ (Legacy)",
+                                    "expanded": false,
+                                    "pages": [
+                                      "docs/cloud/guides/infrastructure/01_deployment_options/byoc/04_faq/01_aws"
+                                    ]
+                                  },
+                                  {
+                                    "group": "Observability",
+                                    "expanded": false,
+                                    "pages": [
+                                      "docs/cloud/guides/infrastructure/01_deployment_options/byoc/05_observability/01_aws"
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "group": "Security",
+                        "expanded": false,
+                        "pages": [
+                          {
+                            "group": "Cloud access management",
+                            "expanded": false,
+                            "pages": [
+                              "docs/cloud/guides/security/01_cloud_access_management/01_manage-my-account",
+                              "docs/cloud/guides/security/01_cloud_access_management/02_manage-cloud-users",
+                              "docs/cloud/guides/security/01_cloud_access_management/03_manage-sql-console-role-assignments",
+                              "docs/cloud/guides/security/01_cloud_access_management/04_manage-database-users",
+                              "docs/cloud/guides/security/01_cloud_access_management/04_saml-sso-setup",
+                              "docs/cloud/guides/security/01_cloud_access_management/05_common-access-management-queries"
+                            ]
+                          },
+                          {
+                            "group": "Connectivity",
+                            "expanded": false,
+                            "pages": [
+                              "docs/cloud/guides/security/02_connectivity/01_setting-ip-filters",
+                              {
+                                "group": "Private networking",
+                                "expanded": false,
+                                "pages": [
+                                  "docs/cloud/guides/security/02_connectivity/private_networking/02_aws-privatelink",
+                                  "docs/cloud/guides/security/02_connectivity/private_networking/03_gcp-private-service-connect",
+                                  "docs/cloud/guides/security/02_connectivity/private_networking/04_azure-privatelink"
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "group": "Data security",
+                            "expanded": false,
+                            "pages": [
+                              "docs/cloud/guides/security/03_data-masking",
+                              "docs/cloud/guides/security/04_cmek"
+                            ]
+                          },
+                          {
+                            "group": "Compliance",
+                            "expanded": false,
+                            "pages": [
+                              "docs/cloud/guides/security/06_compliance/hipaa-onboarding",
+                              "docs/cloud/guides/security/06_compliance/pci-onboarding"
+                            ]
+                          }
+                        ]
+                      }
                     ]
                   },
                   {
@@ -2082,7 +2115,7 @@
                     ]
                   },
                   {
-                    "group": "Managing ClicKStack",
+                    "group": "Managing ClickStack",
                     "expanded": true,
                     "icon": "gear",
                     "root": "docs/clickstack/managing",
@@ -2266,13 +2299,6 @@
                 "icon": "/images/icons/icon-chdb.svg",
                 "groups": [
                   {
-                    "group": "Home",
-                    "icon": "house",
-                    "pages": [
-                      "docs/chdb/home"
-                    ]
-                  },
-                  {
                     "group": "Get started",
                     "icon": "rocket",
                     "pages": [
@@ -2293,6 +2319,42 @@
                     ]
                   },
                   {
+                    "group": "DataStore",
+                    "icon": "database",
+                    "pages": [
+                      "docs/chdb/datastore/index",
+                      "docs/chdb/datastore/quickstart",
+                      "docs/chdb/datastore/factory-methods",
+                      "docs/chdb/datastore/query-building",
+                      "docs/chdb/datastore/aggregation",
+                      "docs/chdb/datastore/accessors",
+                      "docs/chdb/datastore/io",
+                      "docs/chdb/datastore/execution-model",
+                      "docs/chdb/datastore/pandas-compat",
+                      "docs/chdb/datastore/class-reference"
+                    ]
+                  },
+                  {
+                    "group": "Configuration",
+                    "icon": "sliders",
+                    "pages": [
+                      "docs/chdb/configuration/index",
+                      "docs/chdb/configuration/execution-engine",
+                      "docs/chdb/configuration/function-config",
+                      "docs/chdb/configuration/performance-mode"
+                    ]
+                  },
+                  {
+                    "group": "Debugging",
+                    "icon": "bug",
+                    "pages": [
+                      "docs/chdb/debugging/index",
+                      "docs/chdb/debugging/explain",
+                      "docs/chdb/debugging/logging",
+                      "docs/chdb/debugging/profiling"
+                    ]
+                  },
+                  {
                     "group": "Developer guides",
                     "icon": "book",
                     "pages": [
@@ -2302,7 +2364,12 @@
                       "docs/chdb/guides/querying-s3-bucket",
                       "docs/chdb/guides/querying-parquet",
                       "docs/chdb/guides/query-remote-clickhouse",
-                      "docs/chdb/guides/clickhouse-local"
+                      "docs/chdb/guides/clickhouse-local",
+                      "docs/chdb/guides/migration-from-pandas",
+                      "docs/chdb/guides/pandas-cookbook",
+                      "docs/chdb/guides/pandas-differences",
+                      "docs/chdb/guides/pandas-performance",
+                      "docs/chdb/guides/pandas-to-sql"
                     ]
                   },
                   {
@@ -2312,6 +2379,39 @@
                       "docs/chdb/reference/data-formats",
                       "docs/chdb/reference/sql-reference",
                       "docs/chdb/api/python"
+                    ]
+                  }
+                ]
+              },
+              {
+                "item": "Kubernetes Operator",
+                "icon": "/images/icons/icon-kubernetes-operator.svg",
+                "groups": [
+                  {
+                    "group": "Overview",
+                    "pages": [
+                      "docs/kubernetes-operator/overview"
+                    ]
+                  },
+                  {
+                    "group": "Install",
+                    "pages": [
+                      "docs/kubernetes-operator/install/kubectl",
+                      "docs/kubernetes-operator/install/helm",
+                      "docs/kubernetes-operator/install/olm"
+                    ]
+                  },
+                  {
+                    "group": "Guides",
+                    "pages": [
+                      "docs/kubernetes-operator/guides/introduction",
+                      "docs/kubernetes-operator/guides/configuration"
+                    ]
+                  },
+                  {
+                    "group": "Reference",
+                    "pages": [
+                      "docs/kubernetes-operator/reference/api-reference"
                     ]
                   }
                 ]
@@ -2326,163 +2426,187 @@
                 "icon": "/images/icons/icon-clickpipes.svg",
                 "groups": [
                   {
-                    "group": "Cloud object stores",
+                    "group": "Home",
+                    "icon": "house",
+                    "pages": [
+                      "docs/clickpipes/home"
+                    ]
+                  },
+                  {
+                    "group": "ClickPipes for Object Storage",
                     "icon": "cloud",
                     "pages": [
+                      "docs/clickpipes/object-storage/01_create_clickpipe_for_object_storage",
+                      "docs/clickpipes/object-storage/02_reference",
+                      "docs/clickpipes/object-storage/03_faq",
                       {
-                        "group": "Object storage ClickPipes",
-                        "expanded": false,
+                        "group": "Amazon S3",
                         "pages": [
-                          "docs/clickpipes/cloud-object-stores/object-storage/01_create_clickpipe_for_object_storage",
-                          "docs/clickpipes/cloud-object-stores/object-storage/02_reference",
-                          "docs/clickpipes/cloud-object-stores/object-storage/03_faq"
+                          "docs/clickpipes/object-storage/amazon-s3/overview",
+                          "docs/clickpipes/object-storage/amazon-s3/get-started"
+                        ]
+                      },
+                      {
+                        "group": "Google Cloud Storage",
+                        "pages": [
+                          "docs/clickpipes/object-storage/google-cloud-storage/overview",
+                          "docs/clickpipes/object-storage/google-cloud-storage/get-started"
+                        ]
+                      },
+                      {
+                        "group": "Azure Blob Storage",
+                        "pages": [
+                          "docs/clickpipes/object-storage/azure-blob-storage/overview",
+                          "docs/clickpipes/object-storage/azure-blob-storage/get-started"
                         ]
                       }
                     ]
                   },
                   {
-                    "group": "Databases & data lakehouses",
+                    "group": "ClickPipes for Postgres",
                     "icon": "database",
                     "pages": [
+                      "docs/clickpipes/postgres/index",
+                      "docs/clickpipes/postgres/deduplication",
+                      "docs/clickpipes/postgres/ordering_keys",
+                      "docs/clickpipes/postgres/toast",
+                      "docs/clickpipes/postgres/connecting-to-postgresql",
+                      "docs/clickpipes/postgres/inserting-data",
+                      "docs/clickpipes/postgres/schema-changes",
+                      "docs/clickpipes/postgres/faq",
+                      "docs/clickpipes/postgres/parallel_initial_load",
+                      "docs/clickpipes/postgres/lifecycle",
+                      "docs/clickpipes/postgres/auth",
                       {
-                        "group": "Postgres",
-                        "expanded": false,
+                        "group": "Operations",
                         "pages": [
-                          "docs/clickpipes/database-datalake/postgres/index",
-                          "docs/clickpipes/database-datalake/postgres/deduplication",
-                          "docs/clickpipes/database-datalake/postgres/ordering_keys",
-                          "docs/clickpipes/database-datalake/postgres/toast",
-                          "docs/clickpipes/database-datalake/postgres/connecting-to-postgresql",
-                          "docs/clickpipes/database-datalake/postgres/inserting-data",
-                          "docs/clickpipes/database-datalake/postgres/schema-changes",
-                          "docs/clickpipes/database-datalake/postgres/faq",
-                          "docs/clickpipes/database-datalake/postgres/parallel_initial_load",
-                          "docs/clickpipes/database-datalake/postgres/lifecycle",
-                          {
-                            "group": "Operations",
-                            "pages": [
-                              "docs/clickpipes/database-datalake/postgres/add_table",
-                              "docs/clickpipes/database-datalake/postgres/pause_and_resume",
-                              "docs/clickpipes/database-datalake/postgres/remove_table",
-                              "docs/clickpipes/database-datalake/postgres/table_resync",
-                              "docs/clickpipes/database-datalake/postgres/resync",
-                              "docs/clickpipes/database-datalake/postgres/controlling_sync",
-                              "docs/clickpipes/database-datalake/postgres/scaling"
-                            ]
-                          },
-                          {
-                            "group": "Source",
-                            "pages": [
-                              "docs/clickpipes/database-datalake/postgres/source/rds",
-                              "docs/clickpipes/database-datalake/postgres/source/aurora",
-                              "docs/clickpipes/database-datalake/postgres/source/supabase",
-                              "docs/clickpipes/database-datalake/postgres/source/google-cloudsql",
-                              "docs/clickpipes/database-datalake/postgres/source/azure-flexible-server-postgres",
-                              "docs/clickpipes/database-datalake/postgres/source/neon-postgres",
-                              "docs/clickpipes/database-datalake/postgres/source/crunchy-postgres",
-                              "docs/clickpipes/database-datalake/postgres/source/generic",
-                              "docs/clickpipes/database-datalake/postgres/source/timescale",
-                              "docs/clickpipes/database-datalake/postgres/source/planetscale"
-                            ]
-                          }
+                          "docs/clickpipes/postgres/add_table",
+                          "docs/clickpipes/postgres/pause_and_resume",
+                          "docs/clickpipes/postgres/remove_table",
+                          "docs/clickpipes/postgres/table_resync",
+                          "docs/clickpipes/postgres/resync",
+                          "docs/clickpipes/postgres/controlling_sync",
+                          "docs/clickpipes/postgres/scaling"
                         ]
                       },
                       {
-                        "group": "MongoDB",
-                        "expanded": false,
+                        "group": "Source",
                         "pages": [
-                          "docs/clickpipes/database-datalake/mongodb/index",
-                          "docs/clickpipes/database-datalake/mongodb/datatypes",
-                          "docs/clickpipes/database-datalake/mongodb/quickstart",
-                          "docs/clickpipes/database-datalake/mongodb/lifecycle",
-                          "docs/clickpipes/database-datalake/mongodb/faq",
-                          {
-                            "group": "Operations",
-                            "pages": [
-                              "docs/clickpipes/database-datalake/mongodb/add_table",
-                              "docs/clickpipes/database-datalake/mongodb/remove_table",
-                              "docs/clickpipes/database-datalake/mongodb/pause_and_resume",
-                              "docs/clickpipes/database-datalake/mongodb/table_resync",
-                              "docs/clickpipes/database-datalake/mongodb/resync"
-                            ]
-                          },
-                          {
-                            "group": "Source",
-                            "pages": [
-                              "docs/clickpipes/database-datalake/mongodb/source/atlas",
-                              "docs/clickpipes/database-datalake/mongodb/source/generic"
-                            ]
-                          }
-                        ]
-                      },
-                      {
-                        "group": "MySQL",
-                        "expanded": false,
-                        "pages": [
-                          "docs/clickpipes/database-datalake/mysql/index",
-                          "docs/clickpipes/database-datalake/mysql/faq",
-                          "docs/clickpipes/database-datalake/mysql/datatypes",
-                          "docs/clickpipes/database-datalake/mysql/parallel_initial_load",
-                          "docs/clickpipes/database-datalake/mysql/schema-changes",
-                          "docs/clickpipes/database-datalake/mysql/lifecycle",
-                          {
-                            "group": "Operations",
-                            "pages": [
-                              "docs/clickpipes/database-datalake/mysql/add_table",
-                              "docs/clickpipes/database-datalake/mysql/pause_and_resume",
-                              "docs/clickpipes/database-datalake/mysql/remove_table",
-                              "docs/clickpipes/database-datalake/mysql/table_resync",
-                              "docs/clickpipes/database-datalake/mysql/resync",
-                              "docs/clickpipes/database-datalake/mysql/controlling_sync"
-                            ]
-                          },
-                          {
-                            "group": "Source",
-                            "pages": [
-                              "docs/clickpipes/database-datalake/mysql/source/rds",
-                              "docs/clickpipes/database-datalake/mysql/source/aurora",
-                              "docs/clickpipes/database-datalake/mysql/source/gcp",
-                              "docs/clickpipes/database-datalake/mysql/source/generic",
-                              "docs/clickpipes/database-datalake/mysql/source/rds_maria",
-                              "docs/clickpipes/database-datalake/mysql/source/generic_maria"
-                            ]
-                          }
+                          "docs/clickpipes/postgres/source/alloydb",
+                          "docs/clickpipes/postgres/source/rds",
+                          "docs/clickpipes/postgres/source/aurora",
+                          "docs/clickpipes/postgres/source/supabase",
+                          "docs/clickpipes/postgres/source/google-cloudsql",
+                          "docs/clickpipes/postgres/source/azure-flexible-server-postgres",
+                          "docs/clickpipes/postgres/source/neon-postgres",
+                          "docs/clickpipes/postgres/source/crunchy-postgres",
+                          "docs/clickpipes/postgres/source/generic",
+                          "docs/clickpipes/postgres/source/timescale",
+                          "docs/clickpipes/postgres/source/planetscale"
                         ]
                       }
                     ]
                   },
                   {
-                    "group": "Amazon databases",
-                    "icon": "aws",
-                    "pages": [
-                      {
-                        "group": "AWS",
-                        "expanded": false,
-                        "pages": [
-                          "docs/clickpipes/amazon-databases/kinesis",
-                          "docs/clickpipes/amazon-databases/secure-kinesis",
-                          "docs/clickpipes/amazon-databases/secure-rds",
-                          "docs/clickpipes/amazon-databases/aws-privatelink"
-                        ]
-                      },
-                      "docs/clickpipes/amazon-databases/dynamodb"
-                    ]
-                  },
-                  {
-                    "group": "Event streams",
+                    "group": "ClickPipes for Kafka",
                     "icon": "stream",
                     "pages": [
+                      "docs/clickpipes/kafka/index",
+                      "docs/clickpipes/kafka/01_create-kafka-clickpipe",
+                      "docs/clickpipes/kafka/02_schema-registries",
+                      "docs/clickpipes/kafka/03_reference",
+                      "docs/clickpipes/kafka/04_best_practices",
+                      "docs/clickpipes/kafka/05_faq"
+                    ]
+                  },
+                  {
+                    "group": "ClickPipes for Kinesis",
+                    "icon": "stream",
+                    "pages": [
+                      "docs/clickpipes/kinesis/index",
+                      "docs/clickpipes/kinesis/secure-kinesis"
+                    ]
+                  },
+                  {
+                    "group": "ClickPipes for MySQL",
+                    "icon": "database",
+                    "pages": [
+                      "docs/clickpipes/mysql/index",
+                      "docs/clickpipes/mysql/faq",
+                      "docs/clickpipes/mysql/datatypes",
+                      "docs/clickpipes/mysql/parallel_initial_load",
+                      "docs/clickpipes/mysql/schema-changes",
+                      "docs/clickpipes/mysql/lifecycle",
                       {
-                        "group": "Kafka ClickPipes",
-                        "expanded": false,
+                        "group": "Operations",
                         "pages": [
-                          "docs/clickpipes/event-streams/kafka/01_create-kafka-clickpipe",
-                          "docs/clickpipes/event-streams/kafka/02_schema-registries",
-                          "docs/clickpipes/event-streams/kafka/03_reference",
-                          "docs/clickpipes/event-streams/kafka/04_best_practices",
-                          "docs/clickpipes/event-streams/kafka/05_faq"
+                          "docs/clickpipes/mysql/add_table",
+                          "docs/clickpipes/mysql/pause_and_resume",
+                          "docs/clickpipes/mysql/remove_table",
+                          "docs/clickpipes/mysql/table_resync",
+                          "docs/clickpipes/mysql/resync",
+                          "docs/clickpipes/mysql/controlling_sync"
+                        ]
+                      },
+                      {
+                        "group": "Source",
+                        "pages": [
+                          "docs/clickpipes/mysql/source/rds",
+                          "docs/clickpipes/mysql/source/aurora",
+                          "docs/clickpipes/mysql/source/gcp",
+                          "docs/clickpipes/mysql/source/azure-flexible-server-mysql",
+                          "docs/clickpipes/mysql/source/generic",
+                          "docs/clickpipes/mysql/source/rds_maria",
+                          "docs/clickpipes/mysql/source/generic_maria"
                         ]
                       }
+                    ]
+                  },
+                  {
+                    "group": "ClickPipes for MongoDB",
+                    "icon": "database",
+                    "pages": [
+                      "docs/clickpipes/mongodb/index",
+                      "docs/clickpipes/mongodb/datatypes",
+                      "docs/clickpipes/mongodb/quickstart",
+                      "docs/clickpipes/mongodb/lifecycle",
+                      "docs/clickpipes/mongodb/faq",
+                      {
+                        "group": "Operations",
+                        "pages": [
+                          "docs/clickpipes/mongodb/add_table",
+                          "docs/clickpipes/mongodb/remove_table",
+                          "docs/clickpipes/mongodb/pause_and_resume",
+                          "docs/clickpipes/mongodb/table_resync",
+                          "docs/clickpipes/mongodb/resync",
+                          "docs/clickpipes/mongodb/controlling_sync"
+                        ]
+                      },
+                      {
+                        "group": "Source",
+                        "pages": [
+                          "docs/clickpipes/mongodb/source/atlas",
+                          "docs/clickpipes/mongodb/source/generic",
+                          "docs/clickpipes/mongodb/source/documentdb"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "group": "ClickPipes for BigQuery",
+                    "icon": "database",
+                    "pages": [
+                      "docs/clickpipes/bigquery/overview",
+                      "docs/clickpipes/bigquery/get-started"
+                    ]
+                  },
+                  {
+                    "group": "Other",
+                    "icon": "ellipsis",
+                    "pages": [
+                      "docs/clickpipes/aws-privatelink",
+                      "docs/clickpipes/secure-rds",
+                      "docs/clickpipes/dynamodb"
                     ]
                   }
                 ]
@@ -3057,7 +3181,11 @@
                         "group": "Tips & Tricks",
                         "pages": [
                           "docs/tips-and-tricks/community-wisdom",
+                          "docs/tips-and-tricks/cost-optimization",
+                          "docs/tips-and-tricks/debugging-insights",
                           "docs/tips-and-tricks/materialized-views",
+                          "docs/tips-and-tricks/performance-optimization",
+                          "docs/tips-and-tricks/success-stories",
                           "docs/tips-and-tricks/too-many-parts"
                         ]
                       }
