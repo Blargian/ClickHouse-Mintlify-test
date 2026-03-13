@@ -1,4 +1,5 @@
 ---
+slug: /cloud/managed-postgres/upgrades
 sidebarTitle: 'Upgrades'
 title: 'Upgrades'
 description: 'How PostgreSQL version upgrades work in ClickHouse Managed Postgres'
