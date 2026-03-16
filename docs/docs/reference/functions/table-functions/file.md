@@ -13,7 +13,6 @@ doc_type: 'reference'
 import {ExperimentalBadge} from '/snippets/components/ExperimentalBadge/ExperimentalBadge.jsx'
 import {CloudNotSupportedBadge} from '/snippets/components/CloudNotSupportedBadge/CloudNotSupportedBadge.jsx'
 
-# file Table Function
 
 A table engine which provides a table-like interface to SELECT from and INSERT into files, similar to the [s3](/sql-reference/table-functions/url.md) table function. Use `file()` when working with local files, and `s3()` when working with buckets in object storage such as S3, GCS, or MinIO.
 

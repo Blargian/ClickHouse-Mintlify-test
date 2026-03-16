@@ -8,7 +8,6 @@ sidebarTitle: 'Overview'
 doc_type: 'guide'
 ---
 
-# Comparing ClickHouse Cloud and BigQuery 
 
 ## Resource organization 
 

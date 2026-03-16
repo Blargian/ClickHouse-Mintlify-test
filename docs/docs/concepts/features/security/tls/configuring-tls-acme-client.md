@@ -9,7 +9,6 @@ doc_type: 'guide'
 import SelfManaged from '/snippets/_self_managed_only_automated.mdx';
 import {ExperimentalBadge} from '/snippets/components/ExperimentalBadge/ExperimentalBadge.jsx'
 
-# Configuring automatic TLS provisioning via ACME
 
 <ExperimentalBadge/>
 <SelfManaged />

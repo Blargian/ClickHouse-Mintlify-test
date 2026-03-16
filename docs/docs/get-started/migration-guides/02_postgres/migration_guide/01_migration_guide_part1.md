@@ -25,7 +25,6 @@ We will migrate each of these concepts to their ClickHouse equivalents.
 For those users who wish to populate this dataset into a PostgreSQL instance to test migration steps, we have provided the data in `pg_dump` format for download with the DDL, and subsequent data load commands are shown below:
 
 ```bash
-# users
 wget https://datasets-documentation.s3.eu-west-3.amazonaws.com/stackoverflow/pdump/2024/users.sql.gz
 gzip -d users.sql.gz
 psql < users.sql

@@ -9,7 +9,6 @@ doc_type: 'reference'
 
 import {PrivatePreviewBadge} from '/snippets/components/PrivatePreviewBadge/PrivatePreviewBadge.jsx'
 
-# Full-text search using text indexes
 
 <PrivatePreviewBadge/>
 

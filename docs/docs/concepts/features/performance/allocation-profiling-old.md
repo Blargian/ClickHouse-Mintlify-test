@@ -6,7 +6,6 @@ title: 'Allocation profiling for versions before 25.9'
 doc_type: 'reference'
 ---
 
-# Allocation profiling for versions before 25.9
 
 ClickHouse uses [jemalloc](https://github.com/jemalloc/jemalloc) as its global allocator. Jemalloc comes with some tools for allocation sampling and profiling.
 To make allocation profiling more convenient, `SYSTEM` commands are provided along with four letter word (4LW) commands in Keeper.

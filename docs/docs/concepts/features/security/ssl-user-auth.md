@@ -8,7 +8,6 @@ keywords: ['ssl', 'authentication', 'security', 'certificates', 'user management
 
 import SelfManaged from '/snippets/_self_managed_only_no_roadmap.mdx';
 
-# Configuring SSL user certificate for authentication
 
 <SelfManaged />
 

@@ -6,7 +6,6 @@ title: 'Functions for working with strings'
 doc_type: 'reference'
 ---
 
-# Functions for working with strings
 
 Functions for [searching](string-search-functions.md) in strings and for [replacing](string-replace-functions.md) in strings are described separately.
 

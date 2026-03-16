@@ -11,7 +11,6 @@ doc_type: 'reference'
 import {ExperimentalBadge} from '/snippets/components/ExperimentalBadge/ExperimentalBadge.jsx'
 import {CloudNotSupportedBadge} from '/snippets/components/CloudNotSupportedBadge/CloudNotSupportedBadge.jsx'
 
-# hdfs Table Function
 
 Creates a table from files in HDFS. This table function is similar to the [url](../../sql-reference/table-functions/url.md) and [file](../../sql-reference/table-functions/file.md) table functions.
 

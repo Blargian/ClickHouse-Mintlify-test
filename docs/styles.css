@@ -10,6 +10,94 @@
     border-radius: 4px;
 }
 
+/* ============================================
+   Accordion Dark Mode Background
+   ============================================ */
+
+/* Accordion group and individual accordions: use grey instead of codeblock black.
+   Page background is #1d1d1d, code blocks are #282828, so #242424 sits between them. */
+.dark .accordion-group,
+:is(.dark) .accordion-group,
+.dark details.accordion,
+:is(.dark) details.accordion {
+    background-color: #242424 !important;
+}
+
+/* Override the built-in dark:bg-codeblock on accordion elements */
+.dark .accordion-group > details,
+:is(.dark) .accordion-group > details,
+.dark details.accordion.bg-background-light,
+:is(.dark) details.accordion.bg-background-light {
+    background-color: #242424 !important;
+}
+
+/* Accordion borders in dark mode - outer border and dividers between items */
+.dark .accordion-group,
+:is(.dark) .accordion-group {
+    border-color: #3c3c3c !important;
+}
+
+.dark .accordion-group > details + details,
+:is(.dark) .accordion-group > details + details {
+    border-top-color: #3c3c3c !important;
+}
+
+.dark details.accordion,
+:is(.dark) details.accordion {
+    border-color: #3c3c3c !important;
+}
+
+/* Accordion summary hover and open (selected) state */
+.dark details.accordion > summary:hover,
+:is(.dark) details.accordion > summary:hover,
+.dark .accordion-group > details > summary:hover,
+:is(.dark) .accordion-group > details > summary:hover,
+.dark details.accordion[open] > summary,
+:is(.dark) details.accordion[open] > summary,
+.dark .accordion-group > details[open] > summary,
+:is(.dark) .accordion-group > details[open] > summary {
+    background-color: #2a2a2a !important;
+}
+
+/* ============================================
+   Pagination Links - Light Mode
+   ============================================ */
+
+html:not(.dark) .pagination-next,
+html:not(.dark) .pagination-prev {
+    background-color: #f7f7f7 !important;
+}
+
+html:not(.dark) .pagination-next:hover,
+html:not(.dark) .pagination-prev:hover {
+    background-color: #efefef !important;
+}
+
+/* ============================================
+   Pagination Links - Dark Mode
+   ============================================ */
+
+.dark .pagination-next,
+.dark .pagination-prev,
+:is(.dark) .pagination-next,
+:is(.dark) .pagination-prev {
+    border-color: rgba(255, 255, 255, 0.15) !important;
+    background-color: rgba(255, 255, 255, 0.05) !important;
+}
+
+.dark .pagination-next:hover,
+.dark .pagination-prev:hover,
+:is(.dark) .pagination-next:hover,
+:is(.dark) .pagination-prev:hover {
+    border-color: rgba(255, 255, 255, 0.3) !important;
+    background-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+.dark .pagination-title,
+:is(.dark) .pagination-title {
+    color: #E6E7E9 !important;
+}
+
 /* Override code block background border radius */
 .code-block-background,
 [data-component-part="code-block-root"],
@@ -523,9 +611,18 @@ html.dark .dark\:bg-primary-light,
    Card styling (Light & Dark Mode)
    ============================================ */
 
+/* Card background in dark mode - match pagination cards */
+.dark .card,
+:is(.dark) .card {
+    border-color: rgba(255, 255, 255, 0.15) !important;
+    background-color: rgba(255, 255, 255, 0.05) !important;
+}
+
 /* Override card hover border color in dark mode */
-.dark .card:hover {
+.dark .card:hover,
+:is(.dark) .card:hover {
     border-color: #fdff75 !important;
+    background-color: rgba(255, 255, 255, 0.08) !important;
 }
 
 /* Navbar link styling */
