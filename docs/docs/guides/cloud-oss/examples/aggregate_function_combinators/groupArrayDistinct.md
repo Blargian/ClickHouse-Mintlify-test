@@ -6,7 +6,6 @@ keywords: ['groupArray', 'Distinct', 'combinator', 'examples', 'groupArrayDistin
 doc_type: 'reference'
 ---
 
-# groupArrayDistinct
 
 ## Description
 

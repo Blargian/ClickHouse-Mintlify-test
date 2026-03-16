@@ -6,7 +6,6 @@ keywords: ['avg', 'if', 'combinator', 'examples', 'avgIf']
 doc_type: 'reference'
 ---
 
-# avgIf
 
 ## Description
 

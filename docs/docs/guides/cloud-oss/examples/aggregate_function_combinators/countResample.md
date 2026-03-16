@@ -6,7 +6,6 @@ keywords: ['count', 'Resample', 'combinator', 'examples', 'countResample']
 doc_type: 'reference'
 ---
 
-# countResample
 
 ## Description
 

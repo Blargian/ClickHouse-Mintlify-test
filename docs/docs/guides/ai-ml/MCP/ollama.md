@@ -14,11 +14,9 @@ import {CardHorizontal} from '@clickhouse/click-ui/bundled'
 import Link from '@docusaurus/Link';
 import Image from '@theme/IdealImage';
 
-# Using ClickHouse MCP server with Ollama
 
 > This guide explains how to use the ClickHouse MCP Server with Ollama.
 
-<VerticalStepper headerLevel="h2">
 
 ## Install Ollama
 
@@ -219,4 +217,3 @@ In our experience when using smaller models (the default qwen3 model has 8 billi
 For example, you'll need to explicitly ask it to list the databases and tables rather than straight away asking it to query a certain table.
 You can partially eleviate this problem by using a large model (e.g. qwen3:14b), but that will run more slowly on consumer hardware.
 
-</VerticalStepper>

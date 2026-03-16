@@ -5,7 +5,6 @@ title: 'clickhouse-local'
 doc_type: 'reference'
 ---
 
-# clickhouse-local
 
 ## When to use clickhouse-local vs. ClickHouse
 

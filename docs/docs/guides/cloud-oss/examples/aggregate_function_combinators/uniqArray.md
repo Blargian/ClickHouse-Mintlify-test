@@ -6,7 +6,6 @@ keywords: ['uniq', 'array', 'combinator', 'examples', 'uniqArray']
 doc_type: 'reference'
 ---
 
-# uniqArray
 
 ## Description
 

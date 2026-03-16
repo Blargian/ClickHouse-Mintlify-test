@@ -10,7 +10,6 @@ show_related_blogs: true
 doc_type: 'guide'
 ---
 
-# How to build a ClickHouse-backed AI Agent with Streamlit
 
 In this guide you'll learn how to build a web-based AI agent using [Streamlit](https://streamlit.io/) that can interact with [ClickHouse's SQL playground](https://sql.clickhouse.com/) using [ClickHouse's MCP Server](https://github.com/ClickHouse/mcp-clickhouse) and [Agno](https://github.com/agno-agi/agno).
 
@@ -26,7 +25,6 @@ You can find the source code for this example in the [examples repository](https
 
 You can run the following steps to create your Streamlit application.
 
-<VerticalStepper headerLevel="h2">
 
 ## Install libraries
 
@@ -220,4 +218,3 @@ This will open your web browser and navigate to `http://localhost:8501` where yo
 can interact with your AI agent and ask it questions about the example datasets
 available in ClickHouse's SQL playground.
 
-</VerticalStepper>

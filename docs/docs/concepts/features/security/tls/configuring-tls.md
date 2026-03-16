@@ -8,7 +8,6 @@ doc_type: 'guide'
 
 import SelfManaged from '/snippets/_self_managed_only_automated.mdx';
 
-# Configuring TLS
 
 <SelfManaged />
 
@@ -20,7 +19,6 @@ TLS implementation is complex and there are many options to consider to ensure a
 Review this [basic tutorial on certificate usage](https://ubuntu.com/server/docs/security-certificates) for an introductory overview.
 </Note>
 
-<VerticalStepper headerLevel="h2">
 
 ## Create a ClickHouse Deployment
 
@@ -498,7 +496,6 @@ The typical [4 letter word (4lW)](/guides/sre/keeper#four-letter-word-commands) 
     └────┴────────────┴─────────┘
     ```
 
-</VerticalStepper>
 
 ## Configure OpenSSL for standalone ClickHouse Keeper
 

@@ -6,7 +6,6 @@ keywords: ['quantilesTiming', 'if', 'combinator', 'examples', 'quantilesTimingIf
 doc_type: 'reference'
 ---
 
-# quantilesTimingIf
 
 ## Description
 

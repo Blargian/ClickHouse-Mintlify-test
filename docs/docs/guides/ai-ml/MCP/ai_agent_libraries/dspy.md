@@ -10,7 +10,6 @@ show_related_blogs: true
 doc_type: 'guide'
 ---
 
-# How to build an AI Agent with DSPy and the ClickHouse MCP Server
 
 In this guide, you'll learn how to build an AI agent with [DSPy](https://github.com/langchain-ai/langgraph) that
 can interact with [ClickHouse's SQL playground](https://sql.clickhouse.com/) using [ClickHouse's MCP Server](https://github.com/ClickHouse/mcp-clickhouse).
@@ -27,7 +26,6 @@ You can run the following steps either from your Python REPL or via script.
 This example can be found as a notebook in the [examples repository](https://github.com/ClickHouse/examples/blob/main/ai/mcp/dspy/dspy.ipynb).
 :::
 
-<VerticalStepper headerLevel="h2">
 
 ## Install libraries
 
@@ -235,4 +233,3 @@ Here are the top 10 most popular Amazon product categories by review count:
 It's interesting to note that Books and Digital Ebook Purchase (which are related categories) together account for over 37 million reviews, showing the strong popularity of reading materials on Amazon's platform.
 ================================================================================
 ```
-</VerticalStepper>

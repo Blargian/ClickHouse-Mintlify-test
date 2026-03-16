@@ -6,7 +6,6 @@ keywords: ['avg', 'map', 'combinator', 'examples', 'avgMap']
 doc_type: 'reference'
 ---
 
-# avgMap
 
 ## Description
 

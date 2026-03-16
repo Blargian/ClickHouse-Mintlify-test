@@ -6,7 +6,6 @@ keywords: ['argMax', 'if', 'combinator', 'examples', 'argMaxIf']
 doc_type: 'reference'
 ---
 
-# argMaxIf
 
 ## Description
 

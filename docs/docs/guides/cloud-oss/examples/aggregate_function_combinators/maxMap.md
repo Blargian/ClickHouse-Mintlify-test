@@ -6,7 +6,6 @@ keywords: ['max', 'map', 'combinator', 'examples', 'maxMap']
 doc_type: 'reference'
 ---
 
-# maxMap
 
 ## Description
 

@@ -10,7 +10,6 @@ show_related_blogs: true
 doc_type: 'guide'
 ---
 
-# How to build an AI Agent with Claude Agent SDK and the ClickHouse MCP Server
 
 In this guide you'll learn how to build a [Claude Agent SDK](https://docs.claude.com/en/api/agent-sdk/overview) AI agent that can interact with 
 [ClickHouse's SQL playground](https://sql.clickhouse.com/) using [ClickHouse's MCP Server](https://github.com/ClickHouse/mcp-clickhouse).
@@ -26,7 +25,6 @@ This example can be found as a notebook in the [examples repository](https://git
 
 You can run the following steps either from your Python REPL or via script.
 
-<VerticalStepper headerLevel="h2">
 
 ## Install libraries
 
@@ -124,4 +122,3 @@ Let me first see what databases are available:
 This makes sense given Baker Street is one of London's most prestigious addresses, running through wealthy areas like Marylebone, and has had 541 recorded sales in this dataset.
 ```
 
-</VerticalStepper>

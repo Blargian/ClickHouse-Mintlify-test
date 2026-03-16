@@ -6,7 +6,6 @@ keywords: ['max', 'state', 'simple', 'combinator', 'examples', 'maxSimpleState']
 doc_type: 'reference'
 ---
 
-# maxSimpleState
 
 ## Description
 

@@ -6,7 +6,6 @@ keywords: ['any', 'if', 'combinator', 'examples', 'anyIf']
 doc_type: 'reference'
 ---
 
-# anyIf
 
 ## Description
 

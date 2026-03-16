@@ -6,7 +6,6 @@ keywords: ['sum', 'map', 'combinator', 'examples', 'sumMap']
 doc_type: 'reference'
 ---
 
-# sumMap
 
 ## Description
 

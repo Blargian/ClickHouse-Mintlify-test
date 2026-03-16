@@ -10,7 +10,6 @@ show_related_blogs: true
 doc_type: 'guide'
 ---
 
-# How to build a LlamaIndex AI agent using ClickHouse MCP Server
 
 In this guide, you'll learn how to build a [LlamaIndex](https://docs.llamaindex.ai) AI agent that
 can interact with [ClickHouse's SQL playground](https://sql.clickhouse.com/) using [ClickHouse's MCP Server](https://github.com/ClickHouse/mcp-clickhouse).
@@ -26,7 +25,6 @@ This example can be found as a notebook in the [examples repository](https://git
 
 You can run the following steps either from your Python REPL or via script.
 
-<VerticalStepper headerLevel="h2">
 
 ## Install libraries
 
@@ -156,4 +154,3 @@ Here are the top 10 most popular repositories by star count:
 The `sindresorhus/awesome` repository is a curated list of awesome lists, which explains its popularity as it serves as a comprehensive directory of resources across many different topics in software development.
 ```
 
-</VerticalStepper>

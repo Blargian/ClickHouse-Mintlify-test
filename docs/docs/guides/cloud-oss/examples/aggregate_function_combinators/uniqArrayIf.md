@@ -6,7 +6,6 @@ keywords: ['uniq', 'array', 'if', 'combinator', 'examples', 'uniqArrayIf']
 doc_type: 'reference'
 ---
 
-# uniqArrayIf
 
 ## Description
 

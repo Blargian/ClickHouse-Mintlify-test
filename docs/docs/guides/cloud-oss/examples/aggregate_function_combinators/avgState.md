@@ -6,7 +6,6 @@ keywords: ['avg', 'state', 'combinator', 'examples', 'avgState']
 doc_type: 'reference'
 ---
 
-# avgState
 
 ## Description
 

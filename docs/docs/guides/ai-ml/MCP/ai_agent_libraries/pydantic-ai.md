@@ -10,7 +10,6 @@ show_related_blogs: true
 doc_type: 'guide'
 ---
 
-# How to build a PydanticAI agent using ClickHouse MCP Server
 
 In this guide, you'll learn how to build a [PydanticAI](https://ai.pydantic.dev/mcp/client/#__tabbed_1_1) agent that
 can interact with [ClickHouse's SQL playground](https://sql.clickhouse.com/) using [ClickHouse's MCP Server](https://github.com/ClickHouse/mcp-clickhouse).
@@ -26,7 +25,6 @@ This example can be found as a notebook in the [examples repository](https://git
 
 You can run the following steps either from your Python REPL or via script.
 
-<VerticalStepper headerLevel="h2">
 
 ## Install libraries
 
@@ -125,4 +123,3 @@ The data also shows that alexey-milovidov has been very active in managing PRs, 
 It's worth noting that I filtered out various robot/bot accounts that handle automated processes, focusing on human contributors to give you the most meaningful answer about who has contributed the most PRs to ClickHouse.
 ```
 
-</VerticalStepper>

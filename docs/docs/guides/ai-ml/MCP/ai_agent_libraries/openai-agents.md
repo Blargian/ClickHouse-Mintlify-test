@@ -10,7 +10,6 @@ show_related_blogs: true
 doc_type: 'guide'
 ---
 
-# How to build an OpenAI agent using ClickHouse MCP Server
 
 In this guide, you'll learn how to build an [OpenAI](https://github.com/openai/openai-agents-python) agent that
 can interact with [ClickHouse's SQL playground](https://sql.clickhouse.com/) using [ClickHouse's MCP Server](https://github.com/ClickHouse/mcp-clickhouse).
@@ -26,7 +25,6 @@ This example can be found as a notebook in the [examples repository](https://git
 
 You can run the following steps either from your Python REPL or via script.
 
-<VerticalStepper headerLevel="h2">
 
 ## Install libraries
 
@@ -186,4 +184,3 @@ log...
 The biggest GitHub project in 2025, based on stars, is "[sindresorhus/awesome](https://github.com/sindresorhus/awesome)" with 402,893 stars.💬 Response: The biggest GitHub project in 2025, based on stars, is "[sindresorhus/awesome](https://github.com/sindresorhus/awesome)" with 402,893 stars.
 ```
 
-</VerticalStepper>

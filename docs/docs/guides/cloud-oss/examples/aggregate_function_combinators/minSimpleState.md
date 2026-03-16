@@ -6,7 +6,6 @@ keywords: ['min', 'state', 'simple', 'combinator', 'examples', 'minSimpleState']
 doc_type: 'reference'
 ---
 
-# minSimpleState
 
 ## Description
 

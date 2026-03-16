@@ -6,7 +6,6 @@ keywords: ['groupArray', 'Resample', 'combinator', 'examples', 'groupArrayResamp
 doc_type: 'reference'
 ---
 
-# groupArrayResample
 
 ## Description
 

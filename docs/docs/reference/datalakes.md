@@ -8,7 +8,6 @@ doc_type: 'reference'
 In this section, we will take a look at ClickHouse's support for Data Lakes.
 ClickHouse supports many of the most popular table formats and data catalogs, including Iceberg, Delta Lake, Hudi, AWS Glue, REST Catalog, Unity Catalog and Microsoft OneLake.
 
-# Open table formats
 
 ## Iceberg
 

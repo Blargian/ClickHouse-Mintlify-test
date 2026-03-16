@@ -6,7 +6,6 @@ keywords: ['count', 'if', 'combinator', 'examples', 'countIf']
 doc_type: 'reference'
 ---
 
-# countIf
 
 ## Description
 

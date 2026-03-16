@@ -224,7 +224,7 @@ export const ContentSwitcher = () => {
                                 { label: "Setup/Install", href: "/docs/get-started/install/quick-start-cloud" },
                                 { label: "Explore quickstarts", href: "/docs/get-started/quickstarts/home" },
                                 { label: "Migration guides", href: "/docs/get-started/migration-guides/01_overview" },
-                                { label: "Core concepts & best practices", href: "/docs/get-started/concepts/parts" },
+                                { label: "Core concepts & best practices", href: "/docs/concepts/best-practices/index" },
                                 { label: "Sample datasets", href: "/docs/get-started/sample-datasets/github" }
                             ]}
                         />
@@ -287,7 +287,7 @@ export const ContentSwitcher = () => {
                             darkFilename="use-cases/observability.png"
                             title="Observability"
                             description="Store and query logs, metrics and traces at scale using ClickStack, the open source observability stack powered by ClickHouse."
-                            href="/docs/clickstack/overview"
+                            href="/docs/products/clickstack/overview"
                         />
                         <HeroCard
                             filename="use-cases/data-warehousing-light.png"
@@ -319,19 +319,19 @@ export const ContentSwitcher = () => {
                             filename="product-cloud-light.png"
                             title="ClickHouse Cloud"
                             description="Explore product docs for ClickHouse Cloud, a serverless offering that takes care of the details so you can spend more time getting insight from your data."
-                            href="/docs/cloud/getting-started/intro"
+                            href="/docs/products/cloud/getting-started/intro"
                         />
                         <HeroCard
                             filename="product-clickstack-light.png"
                             title="ClickStack"
                             description="Explore product docs for ClickStack, the all in one observability stack powered by ClickHouse, which gives you lightning-fast queries and powerful aggregations on logs, metrics, traces, session replays and errors with unmatched resource efficiency for even your highest-cardinality OTel data."
-                            href="/docs/clickstack/overview"
+                            href="/docs/products/clickstack/overview"
                         />
                         <HeroCard
                             filename="product-chdb-light.png"
                             title="chDB"
                             description="Explore product docs for chDB - a fast, reliable, and scalable in-process database. Experience the power of ClickHouse, in-process. With unparalleled performance, reliability, and scalability for any data-intensive application."
-                            href="/docs/chdb/home"
+                            href="/docs/products/chdb/home"
                         />
                         <HeroCard
                             title="Managed Postgres"
@@ -341,7 +341,7 @@ export const ContentSwitcher = () => {
                                     <path d="M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160ZM176,24H80A56.06,56.06,0,0,0,24,80v96a56.06,56.06,0,0,0,56,56h96a56.06,56.06,0,0,0,56-56V80A56.06,56.06,0,0,0,176,24Zm40,152a40,40,0,0,1-40,40H80a40,40,0,0,1-40-40V80A40,40,0,0,1,80,40h96a40,40,0,0,1,40,40Z"></path>
                                 </svg>
                             }
-                            href="/docs/managed-postgres"
+                            href="/docs/products/managed-postgres"
                         />
                         <HeroCard
                             title="Kubernetes Operator"
@@ -351,7 +351,7 @@ export const ContentSwitcher = () => {
                                     <path d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32Zm0,176H48V48H208V208ZM88,112a8,8,0,0,1,8-8h16V88a8,8,0,0,1,16,0v16h16a8,8,0,0,1,0,16H128v16a8,8,0,0,1-16,0V128H96A8,8,0,0,1,88,112Zm96,56a8,8,0,0,1-8,8H80a8,8,0,0,1,0-16h96A8,8,0,0,1,184,168Z"></path>
                                 </svg>
                             }
-                            href="/docs/kubernetes-operator"
+                            href="/docs/products/kubernetes-operator"
                         />
                         <HeroCard
                             title="Agentic Data Stack"
@@ -412,7 +412,7 @@ export const ContentSwitcher = () => {
 
         <div className="text-center my-6">
             <a className="inline-block text-gray-900 dark:text-[#fdff75] hover:underline text-xs font-normal" href="/docs/get-started/quickstarts/create-your-first-service-on-cloud">Get started with ClickHouse Cloud →</a>
-            <p className="text-xs font-normal lg:py-6 text-gray-500 dark:text-zinc-500">Cannot find what you are searching for? Check out our <a href="/docs/support/home" className="underline text-gray-500 dark:text-zinc-500 hover:text-gray-900 dark:hover:text-[#fdff75]">support center</a>.</p>
+            <p className="text-xs font-normal lg:py-6 text-gray-500 dark:text-zinc-500">Cannot find what you are searching for? Check out our <a href="/docs/resources/support-center/home" className="underline text-gray-500 dark:text-zinc-500 hover:text-gray-900 dark:hover:text-[#fdff75]">support center</a>.</p>
         </div>
         <ContentSwitcher />
     </div>

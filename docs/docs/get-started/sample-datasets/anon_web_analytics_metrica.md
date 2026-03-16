@@ -18,7 +18,6 @@ The tables can be downloaded as compressed `tsv.xz` files. In addition to the sa
 
 ```bash
 curl https://datasets.clickhouse.com/hits/tsv/hits_v1.tsv.xz | unxz --threads=`nproc` > hits_v1.tsv
-# Validate the checksum
 md5sum hits_v1.tsv
 # Checksum should be equal to: f3631b6295bf06989c1437491f7592cb
 ```

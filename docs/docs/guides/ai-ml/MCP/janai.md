@@ -26,11 +26,9 @@ import ToolsCalled from '@site/static/images/use-cases/AI_ML/MCP/8_janai_tools_c
 import ToolsCalledExpanded from '@site/static/images/use-cases/AI_ML/MCP/9_janai_tools_called_expanded.png';  
 import Result from '@site/static/images/use-cases/AI_ML/MCP/10_janai_result.png';  
 
-# Using ClickHouse MCP server with Jan.ai
 
 > This guide explains how to use the ClickHouse MCP Server with [Jan.ai](https://jan.ai/docs).
 
-<VerticalStepper headerLevel="h2">
 
 ## Install Jan.ai
 
@@ -99,4 +97,3 @@ And then underneath, we have our result:
 
 <Image img={Result} alt="Result" size="md"/>    
 
-</VerticalStepper>

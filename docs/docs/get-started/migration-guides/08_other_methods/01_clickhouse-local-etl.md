@@ -9,7 +9,6 @@ doc_type: 'guide'
 
 import AddRemoteIpAccessListDetail from '/snippets/_add_remote_ip_access_list_detail.mdx';
 
-# Migrating to ClickHouse using clickhouse-local
 
 <img src="/images/integrations/migration/ch-local-01.png" alt="Migrating Self-managed ClickHouse"/>
 

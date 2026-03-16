@@ -11,6 +11,7 @@ Usage:
 
 import argparse
 import csv
+import json
 import os
 import re
 import sys
@@ -45,7 +46,7 @@ def normalize_slug(slug: str) -> str:
     return slug.strip().strip("/").lower()
 
 
-def scan_docs(root: Path, skip_dirs: tuple = ("snippets", "_snippets", "__pycache__", "en", "i18n")) -> dict:
+def scan_docs(root: Path, skip_dirs: tuple = ("snippets", "_snippets", "__pycache__", "en", "i18n", "src")) -> dict:
     """Scan a docs directory and return {normalized_slug: {slug, title, path}}."""
     pages = {}
     duplicates = []
@@ -161,6 +162,54 @@ def interactive_menu(docusaurus: dict, mintlify: dict, mapped: list, unmapped: l
             print(f"  {YELLOW}Invalid option.{RESET}\n")
 
 
+def load_redirects(mintlify_root: Path) -> set:
+    """Load redirects from docs.json and return normalized source slugs."""
+    redirects = set()
+    docs_json = mintlify_root.parent / "docs.json"
+    if not docs_json.is_file():
+        # Also check in the mintlify root itself
+        docs_json = mintlify_root / "docs.json"
+    if not docs_json.is_file():
+        return redirects
+    try:
+        data = json.loads(docs_json.read_text(encoding="utf-8"))
+        for r in data.get("redirects", []):
+            source = r.get("source", "")
+            # Strip leading /docs/ prefix to match slug format
+            slug = re.sub(r"^/?docs/", "", source.strip("/"))
+            redirects.add(normalize_slug(slug))
+    except Exception as e:
+        print(f"{YELLOW}Warning: Could not parse redirects from {docs_json}: {e}{RESET}")
+    return redirects
+
+
+def scan_unlisted_pages(mintlify_root: Path, skip_dirs: tuple = ("snippets", "_snippets", "__pycache__")) -> set:
+    """Scan directories containing pages that exist but aren't in the nav (e.g. quickstarts).
+    Returns normalized slugs for these pages."""
+    unlisted_slugs = set()
+
+    # Quickstarts directory: pages are rendered via a component, not nav entries
+    quickstarts_dir = mintlify_root / "get-started" / "quickstarts"
+    if quickstarts_dir.is_dir():
+        for filepath in quickstarts_dir.glob("**/*"):
+            if not filepath.suffix in (".md", ".mdx"):
+                continue
+            if filepath.name == "home.mdx":
+                continue
+            if any(part.startswith("_") for part in filepath.relative_to(quickstarts_dir).parts[:-1]):
+                continue
+            try:
+                content = filepath.read_text(encoding="utf-8")
+            except Exception:
+                continue
+            fm = parse_frontmatter(content)
+            slug = fm.get("slug")
+            if slug:
+                unlisted_slugs.add(normalize_slug(slug))
+
+    return unlisted_slugs
+
+
 def main():
     parser = argparse.ArgumentParser(description="Verify mapping from Docusaurus to Mintlify docs.")
     parser.add_argument("--mintlify", required=True, type=str, help="Path to the Mintlify docs folder")
@@ -185,12 +234,22 @@ def main():
     mintlify = scan_docs(mintlify_root)
     print(f"  Found {len(mintlify)} pages with slugs")
 
+    # Load redirects from docs.json to treat redirect sources as mapped
+    redirect_slugs = load_redirects(mintlify_root)
+    if redirect_slugs:
+        print(f"  Found {len(redirect_slugs)} redirects in docs.json")
+
+    # Scan for unlisted pages (e.g. quickstarts) that exist but aren't in the nav
+    unlisted_slugs = scan_unlisted_pages(mintlify_root)
+    if unlisted_slugs:
+        print(f"  Found {len(unlisted_slugs)} unlisted pages (quickstarts, etc.)")
+
     docu_slugs = set(docusaurus.keys())
-    mint_slugs = set(mintlify.keys())
+    mint_slugs = set(mintlify.keys()) | redirect_slugs | unlisted_slugs
 
     mapped = [(s, docusaurus[s]) for s in sorted(docu_slugs & mint_slugs)]
     unmapped = [(s, docusaurus[s]) for s in sorted(docu_slugs - mint_slugs)]
-    new_additions = [(s, mintlify[s]) for s in sorted(mint_slugs - docu_slugs)]
+    new_additions = [(s, mintlify[s]) for s in sorted((set(mintlify.keys())) - docu_slugs)]
 
     print_summary(docusaurus, mintlify, mapped, unmapped, new_additions)
 

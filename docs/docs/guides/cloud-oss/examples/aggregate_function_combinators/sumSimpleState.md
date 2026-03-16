@@ -6,7 +6,6 @@ keywords: ['sum', 'state', 'simple', 'combinator', 'examples', 'sumSimpleState']
 doc_type: 'reference'
 ---
 
-# sumSimpleState
 
 ## Description
 

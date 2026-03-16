@@ -6,7 +6,6 @@ keywords: ['min', 'map', 'combinator', 'examples', 'minMap']
 doc_type: 'reference'
 ---
 
-# minMap
 
 ## Description
 

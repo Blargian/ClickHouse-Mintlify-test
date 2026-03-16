@@ -15,12 +15,10 @@ import Link from '@docusaurus/Link';
 import Image from '@theme/IdealImage';
 import LibreInterface from '@site/static/images/use-cases/AI_ML/MCP/librechat.png';
 
-# Using ClickHouse MCP server with LibreChat
 
 > This guide explains how to set up LibreChat with a ClickHouse MCP server using Docker
 > and connect it to the ClickHouse example datasets.
 
-<VerticalStepper headerLevel="h2">
 
 ## Install docker
 
@@ -226,4 +224,3 @@ You can now prompt the LLM to explore the ClickHouse example datasets. Give it a
 What datasets do you have access to?
 ```
 
-</VerticalStepper>

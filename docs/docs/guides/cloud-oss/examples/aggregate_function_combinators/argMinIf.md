@@ -6,7 +6,6 @@ keywords: ['argMin', 'if', 'combinator', 'examples', 'argMinIf']
 doc_type: 'reference'
 ---
 
-# argMinIf
 
 ## Description
 

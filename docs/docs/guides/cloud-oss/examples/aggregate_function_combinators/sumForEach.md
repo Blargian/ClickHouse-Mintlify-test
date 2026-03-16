@@ -6,7 +6,6 @@ keywords: ['sum', 'ForEach', 'combinator', 'examples', 'sumForEach']
 doc_type: 'reference'
 ---
 
-# sumForEach
 
 ## Description
 

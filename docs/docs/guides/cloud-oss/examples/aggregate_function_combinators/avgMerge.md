@@ -6,7 +6,6 @@ keywords: ['avg', 'merge', 'combinator', 'examples', 'avgMerge']
 doc_type: 'reference'
 ---
 
-# avgMerge
 
 ## Description
 

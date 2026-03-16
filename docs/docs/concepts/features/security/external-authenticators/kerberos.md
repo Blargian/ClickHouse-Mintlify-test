@@ -8,7 +8,6 @@ doc_type: 'reference'
 
 import SelfManagedOnlyNoRoadmap from '/snippets/_self_managed_only_no_roadmap.mdx';
 
-# Kerberos
 
 <SelfManagedOnlyNoRoadmap />
 

@@ -10,7 +10,6 @@ show_related_blogs: true
 doc_type: 'guide'
 ---
 
-# How to build a SlackBot agent using ClickHouse MCP Server
 
 In this guide, you'll learn how to build a [SlackBot](https://slack.com/intl/en-gb/help/articles/202026038-An-introduction-to-Slackbot) agent.
 This bot allows you to ask questions about your ClickHouse data directly from Slack, using natural language. It uses the
@@ -25,7 +24,6 @@ The code for this example can be found in the [examples repository](https://gith
 - You'll need access to a Slack workspace
 - You'll need an Anthropic API key, or API key from another LLM provider
 
-<VerticalStepper headerLevel="h2">
 
 ## Create a Slack App
 
@@ -104,4 +102,3 @@ When replying in a thread, the bot loads all previous messages (except the curre
 **Tool Usage:**
 The bot uses only the tools available via MCP (e.g., schema discovery, SQL execution) and will always show the SQL used and a summary of how the answer was found.
 
-</VerticalStepper>

@@ -6,7 +6,6 @@ keywords: ['sum', 'if', 'combinator', 'examples', 'sumIf']
 doc_type: 'reference'
 ---
 
-# sumIf
 
 ## Description
 

@@ -13,7 +13,6 @@ import observability_12 from '@site/static/images/use-cases/observability/observ
 import observability_13 from '@site/static/images/use-cases/observability/observability-13.png';
 import Image from '@theme/IdealImage';
 
-# Designing a schema for observability
 
 We recommend users always create their own schema for logs and traces for the following reasons:
 

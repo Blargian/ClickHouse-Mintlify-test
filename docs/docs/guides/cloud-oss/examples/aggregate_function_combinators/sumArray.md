@@ -6,7 +6,6 @@ keywords: ['sum', 'array', 'combinator', 'examples', 'sumArray']
 doc_type: 'reference'
 ---
 
-# sumArray
 
 ## Description
 

@@ -18,12 +18,10 @@ import Conversation from '@site/static/images/use-cases/AI_ML/MCP/allm_conversat
 import MCPServers from '@site/static/images/use-cases/AI_ML/MCP/allm_mcp-servers.png';
 import ToolIcon from '@site/static/images/use-cases/AI_ML/MCP/alm_tool-icon.png';
 
-# Using ClickHouse MCP server with AnythingLLM
 
 > This guide explains how to set up [AnythingLLM](https://anythingllm.com/) with a ClickHouse MCP server using Docker
 > and connect it to the ClickHouse example datasets.
 
-<VerticalStepper headerLevel="h2">
 
 ## Install Docker
 
@@ -124,4 +122,3 @@ To make MCP Servers available to a chat, you'll need to prefix the first message
 
 <Image img={Conversation} alt="Conversation" size="md"/>
 
-</VerticalStepper>

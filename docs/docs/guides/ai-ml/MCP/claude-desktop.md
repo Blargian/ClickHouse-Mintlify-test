@@ -18,14 +18,12 @@ import FindMCPServers from '@site/static/images/use-cases/AI_ML/MCP/find-mcp-ser
 import MCPPermission from '@site/static/images/use-cases/AI_ML/MCP/mcp-permission.png';
 import ClaudeConversation from '@site/static/images/use-cases/AI_ML/MCP/claude-conversation.png';
 
-# Using ClickHouse MCP server with Claude Desktop
 
 > This guide explains how to set up Claude Desktop with a ClickHouse MCP server using uv
 > and connect it to the ClickHouse example datasets.
 
 <iframe width="768" height="432" src="https://www.youtube.com/embed/y9biAm_Fkqw?si=9PP3-1Y1fvX8xy7q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-<VerticalStepper headerLevel="h2">
 
 ## Install uv
 
@@ -118,4 +116,3 @@ Below you can see part of a conversation that includes some tool calls to the Cl
 
 <Image img={ClaudeConversation} alt="Claude conversation" size="md" />
 
-</VerticalStepper>
