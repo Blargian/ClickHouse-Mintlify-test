@@ -3316,16 +3316,29 @@
                       "docs/resources/changelogs/cloud/01_changelog",
                       "docs/resources/changelogs/cloud",
                       "docs/resources/changelogs/cloud/release-status",
-                      "docs/resources/changelogs/cloud/02_release_notes/26_02",
-                      "docs/resources/changelogs/cloud/02_release_notes/25_12",
-                      "docs/resources/changelogs/cloud/02_release_notes/25_10"
+                      {
+                        "group": "Release notes",
+                        "pages": [
+                          "docs/resources/changelogs/cloud/02_release_notes/26_02",
+                          "docs/resources/changelogs/cloud/02_release_notes/25_12",
+                          "docs/resources/changelogs/cloud/02_release_notes/25_10",
+                          "docs/resources/changelogs/cloud/02_release_notes/25_08",
+                          "docs/resources/changelogs/cloud/02_release_notes/25_06",
+                          "docs/resources/changelogs/cloud/02_release_notes/25_04",
+                          "docs/resources/changelogs/cloud/02_release_notes/24_12",
+                          "docs/resources/changelogs/cloud/02_release_notes/24_10",
+                          "docs/resources/changelogs/cloud/02_release_notes/24_08",
+                          "docs/resources/changelogs/cloud/02_release_notes/24_06",
+                          "docs/resources/changelogs/cloud/02_release_notes/24_05",
+                          "docs/resources/changelogs/cloud/02_release_notes/24_02"
+                        ]
+                      }
                     ]
                   },
                   {
                     "group": "Self-managed",
                     "icon": "database",
                     "pages": [
-                      "docs/resources/changelogs/2025",
                       "docs/resources/changelogs/oss/2025",
                       "docs/resources/changelogs/oss/2024",
                       "docs/resources/changelogs/oss/2023",
