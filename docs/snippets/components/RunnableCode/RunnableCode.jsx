@@ -1,13 +1,19 @@
 /**
  * RunnableCode - A runnable SQL code block component for ClickHouse docs.
  *
+ * Usage in MDX:
+ *   <RunnableCode>
+ *   ```sql
+ *   SELECT * FROM table
+ *   ```
+ *   </RunnableCode>
+ *
  * Props:
- *   sql        - The SQL query string
  *   run        - If true, auto-run on mount (default: false)
- *   title      - Optional title above the code block
  *   showStats  - Show query statistics (default: true)
+ *   children   - A ```sql code fence, rendered by Mintlify's Shiki at build time
  */
-export const RunnableCode = ({ sql, run = false, title, showStats = true }) => {
+export const RunnableCode = ({ children, run = false, showStats = true }) => {
   const [results, setResults] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -15,6 +21,7 @@ export const RunnableCode = ({ sql, run = false, title, showStats = true }) => {
   const [stats, setStats] = useState(null);
   const [isDark, setIsDark] = useState(false);
   const [hoveredRow, setHoveredRow] = useState(-1);
+  const codeRef = useRef(null);
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -26,7 +33,26 @@ export const RunnableCode = ({ sql, run = false, title, showStats = true }) => {
     }
   }, []);
 
+  useEffect(() => {
+    if (codeRef.current) {
+      const block = codeRef.current.querySelector('.code-block');
+      if (block) {
+        block.style.marginBottom = '0';
+        block.style.marginTop = '0';
+        block.style.borderBottomLeftRadius = '0';
+        block.style.borderBottomRightRadius = '0';
+      }
+    }
+  });
+
+  const getSqlText = () => {
+    if (!codeRef.current) return '';
+    const code = codeRef.current.querySelector('code');
+    return (code || codeRef.current).textContent.trim();
+  };
+
   const executeQuery = async () => {
+    const sql = getSqlText();
     if (!sql) return;
     setLoading(true);
     setError(null);
@@ -140,8 +166,9 @@ export const RunnableCode = ({ sql, run = false, title, showStats = true }) => {
   const bgColor = isDark ? 'rgba(255,255,255,0.05)' : '#f9fafb';
   const headerBg = isDark ? '#2a2a2a' : '#f3f4f6';
   const textColor = isDark ? '#e5e7eb' : '#1f2937';
-  const mutedColor = isDark ? '#9ca3af' : '#6b7280';
-  const accentColor = isDark ? '#FAFF69' : '#eab308';
+  const mutedColor = isDark ? '#d1d5db' : '#6b7280';
+  const accentColor = isDark ? '#FAFF69' : '#323232';
+  const accentTextColor = isDark ? '#000' : '#fff';
 
   const barColor = isDark ? '#35372f' : '#d2d2d2';
   const cellBg = isDark ? '#1f201b' : '#ffffff';
@@ -196,30 +223,12 @@ export const RunnableCode = ({ sql, run = false, title, showStats = true }) => {
 
   return (
     <div className="not-prose" style={{ margin: '1rem 0', width: '100%', boxSizing: 'border-box', contain: 'inline-size' }}>
-      {title && (
-        <div style={{ fontSize: '14px', fontWeight: 600, color: textColor, marginBottom: '8px' }}>
-          {title}
-        </div>
-      )}
 
-      {/* Code display */}
-      <div style={{
-        border: `1px solid ${borderColor}`,
-        borderRadius: '4px',
-        overflow: 'hidden',
-      }}>
-        <pre style={{
-          margin: 0,
-          padding: '12px 16px',
-          backgroundColor: isDark ? '#282828' : '#fff',
-          color: textColor,
-          fontSize: '13px',
-          lineHeight: '1.6',
-          overflowX: 'auto',
-          fontFamily: 'ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace',
-        }}>
-          <code>{sql}</code>
-        </pre>
+      {/* Code display + action bar */}
+      <div>
+        <div ref={codeRef}>
+          {children}
+        </div>
 
         {/* Action bar */}
         <div style={{
@@ -228,7 +237,10 @@ export const RunnableCode = ({ sql, run = false, title, showStats = true }) => {
           alignItems: 'center',
           padding: '6px 12px',
           backgroundColor: headerBg,
-          borderTop: `1px solid ${borderColor}`,
+          borderWidth: '0 1px 1px 1px',
+          borderStyle: 'solid',
+          borderColor: isDark ? 'rgba(255,255,255,0.1)' : 'rgba(11,11,11,0.1)',
+          borderRadius: '0 0 4px 4px',
         }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
             {results && (
@@ -258,7 +270,7 @@ export const RunnableCode = ({ sql, run = false, title, showStats = true }) => {
               border: 'none',
               cursor: loading ? 'wait' : 'pointer',
               backgroundColor: accentColor,
-              color: '#000',
+              color: accentTextColor,
               fontSize: '12px',
               fontWeight: 600,
             }}
