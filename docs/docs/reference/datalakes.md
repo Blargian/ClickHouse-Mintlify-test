@@ -3,6 +3,7 @@ description: 'Documentation for Data Lakes'
 slug: /sql-reference/datalakes
 title: 'Data Lakes'
 doc_type: 'reference'
+icon: 'warehouse'
 ---
 
 In this section, we will take a look at ClickHouse's support for Data Lakes.
