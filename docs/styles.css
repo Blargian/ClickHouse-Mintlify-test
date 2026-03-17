@@ -611,7 +611,11 @@ html.dark .dark\:bg-primary-light,
    Card styling (Light & Dark Mode)
    ============================================ */
 
-/* Card background in dark mode - match pagination cards */
+/* Card background - match pagination cards */
+.card {
+    background-color: #f7f7f7 !important;
+}
+
 .dark .card,
 :is(.dark) .card {
     border-color: rgba(255, 255, 255, 0.15) !important;

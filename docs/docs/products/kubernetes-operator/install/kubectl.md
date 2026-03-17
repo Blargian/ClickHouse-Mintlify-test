@@ -3,6 +3,7 @@ title: 'Install the ClickHouse Operator with kubectl'
 slug: /clickhouse-operator/install/kubectl
 description: 'This guide covers installing the ClickHouse Operator using kubectl and manifest files.'
 keywords: ['kubernetes']
+sidebarTitle: 'kubectl'
 ---
 
 This guide covers installing the ClickHouse Operator using kubectl and manifest files.

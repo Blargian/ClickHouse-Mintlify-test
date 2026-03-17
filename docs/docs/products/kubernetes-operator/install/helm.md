@@ -3,6 +3,7 @@ title: 'Install the ClickHouse Operator with Helm'
 slug: /clickhouse-operator/install/helm
 description: 'This guide covers installing the ClickHouse Operator using Helm charts.'
 keywords: ['kubernetes']
+sidebarTitle: 'Helm'
 ---
 
 This guide covers installing the ClickHouse Operator using Helm charts.

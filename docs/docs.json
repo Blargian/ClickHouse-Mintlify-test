@@ -179,41 +179,36 @@
                     "expanded": false,
                     "root": "docs/get-started/sample-datasets/index",
                     "pages": [
-                      {
-                        "group": "Sample datasets",
-                        "pages": [
-                          "docs/get-started/sample-datasets/playground",
-                          "docs/get-started/sample-datasets/github",
-                          "docs/get-started/sample-datasets/nyc-taxi",
-                          "docs/get-started/sample-datasets/cell-towers",
-                          "docs/get-started/sample-datasets/uk-price-paid",
-                          "docs/get-started/sample-datasets/stackoverflow",
-                          "docs/get-started/sample-datasets/hacker-news",
-                          "docs/get-started/sample-datasets/hacker-news-vector-search",
-                          "docs/get-started/sample-datasets/youtube-dislikes",
-                          "docs/get-started/sample-datasets/covid19",
-                          "docs/get-started/sample-datasets/noaa",
-                          "docs/get-started/sample-datasets/environmental-sensors",
-                          "docs/get-started/sample-datasets/nypd_complaint_data",
-                          "docs/get-started/sample-datasets/amazon-reviews",
-                          "docs/get-started/sample-datasets/laion",
-                          "docs/get-started/sample-datasets/laion5b",
-                          "docs/get-started/sample-datasets/dbpedia",
-                          "docs/get-started/sample-datasets/menus",
-                          "docs/get-started/sample-datasets/foursquare-os-places",
-                          "docs/get-started/sample-datasets/tw-weather",
-                          "docs/get-started/sample-datasets/ontime",
-                          "docs/get-started/sample-datasets/star-schema",
-                          "docs/get-started/sample-datasets/tpch",
-                          "docs/get-started/sample-datasets/tpcds",
-                          "docs/get-started/sample-datasets/brown-benchmark",
-                          "docs/get-started/sample-datasets/amplab-benchmark",
-                          "docs/get-started/sample-datasets/criteo",
-                          "docs/get-started/sample-datasets/wikistat",
-                          "docs/get-started/sample-datasets/github-events",
-                          "docs/get-started/sample-datasets/anon_web_analytics_metrica"
-                        ]
-                      }
+                      "docs/get-started/sample-datasets/playground",
+                      "docs/get-started/sample-datasets/github",
+                      "docs/get-started/sample-datasets/nyc-taxi",
+                      "docs/get-started/sample-datasets/cell-towers",
+                      "docs/get-started/sample-datasets/uk-price-paid",
+                      "docs/get-started/sample-datasets/stackoverflow",
+                      "docs/get-started/sample-datasets/hacker-news",
+                      "docs/get-started/sample-datasets/hacker-news-vector-search",
+                      "docs/get-started/sample-datasets/youtube-dislikes",
+                      "docs/get-started/sample-datasets/covid19",
+                      "docs/get-started/sample-datasets/noaa",
+                      "docs/get-started/sample-datasets/environmental-sensors",
+                      "docs/get-started/sample-datasets/nypd_complaint_data",
+                      "docs/get-started/sample-datasets/amazon-reviews",
+                      "docs/get-started/sample-datasets/laion",
+                      "docs/get-started/sample-datasets/laion5b",
+                      "docs/get-started/sample-datasets/dbpedia",
+                      "docs/get-started/sample-datasets/menus",
+                      "docs/get-started/sample-datasets/foursquare-os-places",
+                      "docs/get-started/sample-datasets/tw-weather",
+                      "docs/get-started/sample-datasets/ontime",
+                      "docs/get-started/sample-datasets/star-schema",
+                      "docs/get-started/sample-datasets/tpch",
+                      "docs/get-started/sample-datasets/tpcds",
+                      "docs/get-started/sample-datasets/brown-benchmark",
+                      "docs/get-started/sample-datasets/amplab-benchmark",
+                      "docs/get-started/sample-datasets/criteo",
+                      "docs/get-started/sample-datasets/wikistat",
+                      "docs/get-started/sample-datasets/github-events",
+                      "docs/get-started/sample-datasets/anon_web_analytics_metrica"
                     ]
                   }
                 ]
@@ -465,11 +460,9 @@
                 "icon": "/images/icons/icon-guides.svg",
                 "pages": [
                   {
-                    "group": "Cloud / OSS",
-                    "icon": "/images/icons/icon-cloud-oss.svg",
+                    "group": "ClickHouse guides",
+                    "icon": "/images/icons/icon-clickhouse.svg",
                     "pages": [
-                      "docs/guides/cloud-oss/working-with-arrays",
-                      "docs/guides/cloud-oss/working-with-joins",
                       {
                         "group": "Data modelling",
                         "root": "docs/guides/cloud-oss/data-modelling/index",
@@ -487,7 +480,9 @@
                               "docs/guides/cloud-oss/data-modelling/compression/compression-in-clickhouse",
                               "docs/guides/cloud-oss/data-modelling/compression/compression-modes"
                             ]
-                          }
+                          },
+                          "docs/guides/cloud-oss/working-with-arrays",
+                          "docs/guides/cloud-oss/working-with-joins"
                         ]
                       },
                       {
@@ -531,120 +526,10 @@
                           "docs/guides/cloud-oss/examples/aggregate_function_combinators/uniqArray",
                           "docs/guides/cloud-oss/examples/aggregate_function_combinators/uniqArrayIf"
                         ]
-                      }
-                    ]
-                  },
-                  {
-                    "group": "Real-time analytics",
-                    "icon": "clock",
-                    "pages": [
-                      {
-                        "group": "Time series",
-                        "expanded": false,
-                        "pages": [
-                          "docs/guides/real-time-analytics/time-series/index",
-                          "docs/guides/real-time-analytics/time-series/date-time-data-types",
-                          "docs/guides/real-time-analytics/time-series/basic-operations",
-                          "docs/guides/real-time-analytics/time-series/analysis-functions",
-                          "docs/guides/real-time-analytics/time-series/storage-efficiency",
-                          "docs/guides/real-time-analytics/time-series/query-performance",
-                          "docs/guides/real-time-analytics/time-series/materialized-view-rollup",
-                          "docs/guides/real-time-analytics/time-series/time-series-filling-gaps"
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "group": "Observability",
-                    "icon": "chart-line",
-                    "root": "docs/guides/observability/index",
-                    "pages": [
-                      "docs/guides/observability/cloud-monitoring",
-                      "docs/guides/observability/self-managed-monitoring",
-                      {
-                        "group": "Build your own",
-                        "pages": [
-                          "docs/guides/observability/build-your-own/index",
-                          "docs/guides/observability/build-your-own/introduction",
-                          "docs/guides/observability/build-your-own/schema-design",
-                          "docs/guides/observability/build-your-own/integrating-opentelemetry",
-                          "docs/guides/observability/build-your-own/managing-data",
-                          "docs/guides/observability/build-your-own/grafana",
-                          "docs/guides/observability/build-your-own/demo-application"
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "group": "Data lake",
-                    "icon": "warehouse",
-                    "root": "docs/guides/data-warehousing/index",
-                    "pages": [
-                      "docs/guides/data-warehousing/glue_catalog",
-                      "docs/guides/data-warehousing/lakekeeper_catalog",
-                      "docs/guides/data-warehousing/nessie_catalog",
-                      "docs/guides/data-warehousing/onelake_catalog",
-                      "docs/guides/data-warehousing/rest_catalog",
-                      "docs/guides/data-warehousing/unity_catalog",
-                      "docs/guides/data-warehousing/biglake-catalog"
-                    ]
-                  },
-                  {
-                    "group": "AI/ML",
-                    "icon": "brain",
-                    "root": "docs/guides/ai-ml/index",
-                    "pages": [
-                      "docs/guides/ai-ml/vector-search",
-                      "docs/guides/ai-ml/ai-powered-sql-generation",
-                      {
-                        "group": "Data exploration",
-                        "pages": [
-                          "docs/guides/ai-ml/data-exploration/jupyter-notebook",
-                          "docs/guides/ai-ml/data-exploration/marimo-notebook"
-                        ]
                       },
-                      {
-                        "group": "MCP",
-                        "pages": [
-                          "docs/guides/ai-ml/MCP/index",
-                          "docs/guides/ai-ml/MCP/claude-desktop",
-                          "docs/guides/ai-ml/MCP/librechat",
-                          "docs/guides/ai-ml/MCP/anythingllm",
-                          "docs/guides/ai-ml/MCP/open-webui",
-                          "docs/guides/ai-ml/MCP/ollama",
-                          "docs/guides/ai-ml/MCP/janai",
-                          {
-                            "group": "AI agent libraries",
-                            "pages": [
-                              "docs/guides/ai-ml/MCP/ai_agent_libraries/index",
-                              "docs/guides/ai-ml/MCP/ai_agent_libraries/streamlit",
-                              "docs/guides/ai-ml/MCP/ai_agent_libraries/langchain",
-                              "docs/guides/ai-ml/MCP/ai_agent_libraries/llamaindex",
-                              "docs/guides/ai-ml/MCP/ai_agent_libraries/pydantic-ai",
-                              "docs/guides/ai-ml/MCP/ai_agent_libraries/slackbot",
-                              "docs/guides/ai-ml/MCP/ai_agent_libraries/agno",
-                              "docs/guides/ai-ml/MCP/ai_agent_libraries/chainlit",
-                              "docs/guides/ai-ml/MCP/ai_agent_libraries/claude-agent-sdk",
-                              "docs/guides/ai-ml/MCP/ai_agent_libraries/copilotkit",
-                              "docs/guides/ai-ml/MCP/ai_agent_libraries/crewai",
-                              "docs/guides/ai-ml/MCP/ai_agent_libraries/dspy",
-                              "docs/guides/ai-ml/MCP/ai_agent_libraries/mcp-agent",
-                              "docs/guides/ai-ml/MCP/ai_agent_libraries/microsoft-agent-framework",
-                              "docs/guides/ai-ml/MCP/ai_agent_libraries/upsonic",
-                              "docs/guides/ai-ml/MCP/ai_agent_libraries/openai-agents"
-                            ]
-                          }
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "group": "OSS",
-                    "icon": "/images/icons/icon-server.svg",
-                    "pages": [
                       "docs/guides/oss/update",
                       {
-                        "group": "Best practices",
+                        "group": "OSS best practices",
                         "pages": [
                           "docs/guides/oss/best_practices/sizing-and-hardware-recommendations",
                           "docs/guides/oss/best_practices/tips"
@@ -688,6 +573,114 @@
                         ]
                       }
                     ]
+                  },
+                  {
+                    "group": "Use case guides",
+                    "icon": "bullseye-arrow",
+                    "expandable": true,
+                    "expanded": false,
+                    "pages": [
+                      {
+                        "group": "Real-time analytics",
+                        "pages": [
+                          {
+                            "group": "Time series",
+                            "expanded": false,
+                            "pages": [
+                              "docs/guides/real-time-analytics/time-series/index",
+                              "docs/guides/real-time-analytics/time-series/date-time-data-types",
+                              "docs/guides/real-time-analytics/time-series/basic-operations",
+                              "docs/guides/real-time-analytics/time-series/analysis-functions",
+                              "docs/guides/real-time-analytics/time-series/storage-efficiency",
+                              "docs/guides/real-time-analytics/time-series/query-performance",
+                              "docs/guides/real-time-analytics/time-series/materialized-view-rollup",
+                              "docs/guides/real-time-analytics/time-series/time-series-filling-gaps"
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "group": "Observability",
+                        "root": "docs/guides/observability/index",
+                        "pages": [
+                          "docs/guides/observability/cloud-monitoring",
+                          "docs/guides/observability/self-managed-monitoring",
+                          {
+                            "group": "Build your own",
+                            "pages": [
+                              "docs/guides/observability/build-your-own/index",
+                              "docs/guides/observability/build-your-own/introduction",
+                              "docs/guides/observability/build-your-own/schema-design",
+                              "docs/guides/observability/build-your-own/integrating-opentelemetry",
+                              "docs/guides/observability/build-your-own/managing-data",
+                              "docs/guides/observability/build-your-own/grafana",
+                              "docs/guides/observability/build-your-own/demo-application"
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "group": "Data warehousing",
+                        "root": "docs/guides/data-warehousing/index",
+                        "pages": [
+                          "docs/guides/data-warehousing/glue_catalog",
+                          "docs/guides/data-warehousing/lakekeeper_catalog",
+                          "docs/guides/data-warehousing/nessie_catalog",
+                          "docs/guides/data-warehousing/onelake_catalog",
+                          "docs/guides/data-warehousing/rest_catalog",
+                          "docs/guides/data-warehousing/unity_catalog",
+                          "docs/guides/data-warehousing/biglake-catalog"
+                        ]
+                      },
+                      {
+                        "group": "AI/ML",
+                        "root": "docs/guides/ai-ml/index",
+                        "pages": [
+                          "docs/guides/ai-ml/vector-search",
+                          "docs/guides/ai-ml/ai-powered-sql-generation",
+                          {
+                            "group": "Data exploration",
+                            "pages": [
+                              "docs/guides/ai-ml/data-exploration/jupyter-notebook",
+                              "docs/guides/ai-ml/data-exploration/marimo-notebook"
+                            ]
+                          },
+                          {
+                            "group": "MCP",
+                            "pages": [
+                              "docs/guides/ai-ml/MCP/index",
+                              "docs/guides/ai-ml/MCP/claude-desktop",
+                              "docs/guides/ai-ml/MCP/librechat",
+                              "docs/guides/ai-ml/MCP/anythingllm",
+                              "docs/guides/ai-ml/MCP/open-webui",
+                              "docs/guides/ai-ml/MCP/ollama",
+                              "docs/guides/ai-ml/MCP/janai",
+                              {
+                                "group": "AI agent libraries",
+                                "pages": [
+                                  "docs/guides/ai-ml/MCP/ai_agent_libraries/index",
+                                  "docs/guides/ai-ml/MCP/ai_agent_libraries/streamlit",
+                                  "docs/guides/ai-ml/MCP/ai_agent_libraries/langchain",
+                                  "docs/guides/ai-ml/MCP/ai_agent_libraries/llamaindex",
+                                  "docs/guides/ai-ml/MCP/ai_agent_libraries/pydantic-ai",
+                                  "docs/guides/ai-ml/MCP/ai_agent_libraries/slackbot",
+                                  "docs/guides/ai-ml/MCP/ai_agent_libraries/agno",
+                                  "docs/guides/ai-ml/MCP/ai_agent_libraries/chainlit",
+                                  "docs/guides/ai-ml/MCP/ai_agent_libraries/claude-agent-sdk",
+                                  "docs/guides/ai-ml/MCP/ai_agent_libraries/copilotkit",
+                                  "docs/guides/ai-ml/MCP/ai_agent_libraries/crewai",
+                                  "docs/guides/ai-ml/MCP/ai_agent_libraries/dspy",
+                                  "docs/guides/ai-ml/MCP/ai_agent_libraries/mcp-agent",
+                                  "docs/guides/ai-ml/MCP/ai_agent_libraries/microsoft-agent-framework",
+                                  "docs/guides/ai-ml/MCP/ai_agent_libraries/upsonic",
+                                  "docs/guides/ai-ml/MCP/ai_agent_libraries/openai-agents"
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
                   }
                 ]
               },
@@ -697,14 +690,17 @@
                 "pages": [
                   "docs/reference/home",
                   {
-                    "group": "Syntax",
-                    "root": "docs/reference/syntax"
-                  },
-                  {
-                    "group": "Statements",
+                    "group": "SQL Reference",
+                    "icon": "code",
                     "expandable": true,
-                    "expanded": false,
-                    "root": "docs/reference/statements/index",
+                    "expanded": true,
+                    "pages": [
+                      "docs/reference/syntax",
+                      {
+                        "group": "Statements",
+                        "expandable": true,
+                        "expanded": false,
+                        "root": "docs/reference/statements/index",
                     "pages": [
                       {
                         "group": "ALTER",
@@ -874,6 +870,8 @@
                     "pages": [
                       "docs/reference/operators/exists",
                       "docs/reference/operators/distributed-ddl"
+                    ]
+                  }
                     ]
                   },
                   {
@@ -1106,12 +1104,12 @@
                       }
                     ]
                   },
-                  "docs/reference/datalakes",
                   {
                     "group": "Functions",
                     "icon": "function",
                     "expandable": true,
                     "expanded": false,
+                    "root": "docs/reference/functions/index",
                     "pages": [
                       {
                         "group": "Regular functions",
@@ -1435,10 +1433,6 @@
                     "root": "docs/reference/formats/index",
                     "expanded": false,
                     "pages": [
-                      {
-                        "group": "Formats",
-                        "expanded": false,
-                        "pages": [
                           {
                             "group": "Arrow",
                             "expanded": false,
@@ -1607,8 +1601,6 @@
                           "docs/reference/formats/Values",
                           "docs/reference/formats/Vertical",
                           "docs/reference/formats/XML"
-                        ]
-                      }
                     ]
                   },
                   {
@@ -1618,16 +1610,11 @@
                     "expanded": false,
                     "root": "docs/reference/settings/index",
                     "pages": [
-                      {
-                        "group": "Settings",
-                        "pages": [
-                          "docs/reference/settings/server-settings/settings",
-                          "docs/reference/settings/session-settings",
-                          "docs/reference/settings/merge-tree-settings",
-                          "docs/reference/settings/format-settings",
-                          "docs/reference/settings/beta-and-experimental-features"
-                        ]
-                      }
+                      "docs/reference/settings/server-settings/settings",
+                      "docs/reference/settings/session-settings",
+                      "docs/reference/settings/merge-tree-settings",
+                      "docs/reference/settings/format-settings",
+                      "docs/reference/settings/beta-and-experimental-features"
                     ]
                   },
                   {
@@ -1758,7 +1745,8 @@
                       "docs/reference/system-tables/zookeeper_connection_log",
                       "docs/reference/system-tables/zookeeper_log"
                     ]
-                  }
+                  },
+                  "docs/reference/datalakes"
                 ]
               }
             ]
@@ -2435,12 +2423,14 @@
                 "groups": [
                   {
                     "group": "Overview",
+                    "icon": "book-open",
                     "pages": [
                       "docs/products/kubernetes-operator/overview"
                     ]
                   },
                   {
                     "group": "Install",
+                    "icon": "download",
                     "pages": [
                       "docs/products/kubernetes-operator/install/kubectl",
                       "docs/products/kubernetes-operator/install/helm",
@@ -2449,6 +2439,7 @@
                   },
                   {
                     "group": "Guides",
+                    "icon": "compass",
                     "pages": [
                       "docs/products/kubernetes-operator/guides/introduction",
                       "docs/products/kubernetes-operator/guides/configuration"
@@ -2456,6 +2447,7 @@
                   },
                   {
                     "group": "Reference",
+                    "icon": "book",
                     "pages": [
                       "docs/products/kubernetes-operator/reference/api-reference"
                     ]
@@ -2905,7 +2897,6 @@
                       },
                       "docs/integrations/connectors/data-ingestion/azure/azure-synapse",
                       "docs/integrations/connectors/data-ingestion/etl-tools/apache-beam",
-                      "docs/integrations/connectors/data-ingestion/artie-and-clickhouse",
                       {
                         "group": "Google Dataflow",
                         "expanded": false,
@@ -2935,7 +2926,6 @@
                         ]
                       },
                       "docs/integrations/connectors/data-ingestion/etl-tools/dlt-and-clickhouse",
-                      "docs/integrations/connectors/data-ingestion/estuary",
                       "docs/integrations/connectors/data-ingestion/etl-tools/fivetran/index",
                       "docs/integrations/connectors/data-ingestion/etl-tools/nifi-and-clickhouse",
                       "docs/integrations/connectors/data-ingestion/etl-tools/vector-to-clickhouse",
@@ -2945,6 +2935,15 @@
                         "pages": [
                           "docs/integrations/connectors/data-ingestion/streamkap/streamkap-and-clickhouse",
                           "docs/integrations/connectors/data-ingestion/streamkap/sql-server-clickhouse"
+                        ]
+                      },
+                      {
+                        "group": "Community integrations",
+                        "icon": "users",
+                        "expanded": false,
+                        "pages": [
+                          "docs/integrations/connectors/data-ingestion/community-integrations/artie-and-clickhouse",
+                          "docs/integrations/connectors/data-ingestion/community-integrations/estuary"
                         ]
                       }
                     ]

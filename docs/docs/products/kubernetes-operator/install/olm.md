@@ -3,6 +3,7 @@ title: 'Install the ClickHouse Operator with Operator Lifecycle Manager (OLM)'
 slug: /clickhouse-operator/install/olm
 description: 'This guide covers installing the ClickHouse Operator using kubectl and manifest files.'
 keywords: ['kubernetes']
+sidebarTitle: 'OLM'
 ---
 
 This guide covers installing the ClickHouse Operator using Operator Lifecycle Manager (OLM).
