@@ -14,6 +14,7 @@ export const RunnableCode = ({ sql, run = false, title, showStats = true }) => {
   const [showResults, setShowResults] = useState(false);
   const [stats, setStats] = useState(null);
   const [isDark, setIsDark] = useState(false);
+  const [hoveredRow, setHoveredRow] = useState(-1);
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -82,12 +83,116 @@ export const RunnableCode = ({ sql, run = false, title, showStats = true }) => {
     return `${b} B`;
   };
 
+  const isNumericType = (type) => {
+    return /^(UInt|Int|Float|Decimal)/.test(type);
+  };
+
+  const isHyperlink = (value) => {
+    return typeof value === 'string' && /^https?:\/\//.test(value);
+  };
+
+  const computeColumnExtremes = (meta, data) => {
+    const extremes = {};
+    for (let i = 0; i < meta.length; i++) {
+      if (isNumericType(meta[i].type)) {
+        let min = Infinity, max = -Infinity;
+        for (const row of data) {
+          const v = Number(row[i]);
+          if (!isNaN(v)) {
+            if (v < min) min = v;
+            if (v > max) max = v;
+          }
+        }
+        if (max > -Infinity) {
+          extremes[i] = { min, max };
+        }
+      }
+    }
+    return extremes;
+  };
+
+  const computeColumnWidths = (meta, data) => {
+    const lengths = meta.map((col, i) => {
+      const headerLen = col.name.length + col.type.length + 1;
+      let maxData = 0;
+      for (const row of data) {
+        const v = row[i];
+        const len = v === null ? 4 : String(v).length;
+        if (len > maxData) maxData = len;
+      }
+      return Math.max(headerLen, maxData);
+    });
+    const total = lengths.reduce((s, l) => s + l, 0);
+    return lengths.map(l => `${((l / total) * 100).toFixed(1)}%`);
+  };
+
+  const copyResultsAsTSV = () => {
+    if (!results || !results.meta || !results.data) return;
+    const header = results.meta.map(col => col.name).join('\t');
+    const rows = results.data.map(row =>
+      row.map(cell => (cell === null ? 'NULL' : String(cell))).join('\t')
+    );
+    const tsv = [header, ...rows].join('\n');
+    navigator.clipboard.writeText(tsv);
+  };
+
   const borderColor = isDark ? 'rgba(255,255,255,0.15)' : '#e5e7eb';
   const bgColor = isDark ? 'rgba(255,255,255,0.05)' : '#f9fafb';
-  const headerBg = isDark ? 'rgba(255,255,255,0.08)' : '#f3f4f6';
+  const headerBg = isDark ? '#2a2a2a' : '#f3f4f6';
   const textColor = isDark ? '#e5e7eb' : '#1f2937';
   const mutedColor = isDark ? '#9ca3af' : '#6b7280';
   const accentColor = isDark ? '#FAFF69' : '#eab308';
+
+  const barColor = isDark ? '#35372f' : '#d2d2d2';
+  const cellBg = isDark ? '#1f201b' : '#ffffff';
+  const cellBgHover = isDark ? 'lch(15.8 0 0)' : '#f0f0f0';
+
+  const extremes = results && results.meta && results.data
+    ? computeColumnExtremes(results.meta, results.data)
+    : {};
+
+  const colWidths = results && results.meta && results.data
+    ? computeColumnWidths(results.meta, results.data)
+    : [];
+
+  const getCellBarStyle = (cell, ci, ri) => {
+    if (cell === null) return null;
+    const colMeta = results.meta[ci];
+    if (!isNumericType(colMeta.type) || !extremes[ci] || results.data.length <= 1 || extremes[ci].max <= 0) return null;
+
+    const ratio = (100 * Number(cell)) / extremes[ci].max;
+    const bg = ri === hoveredRow ? cellBgHover : cellBg;
+    return {
+      background: `linear-gradient(to right, ${barColor} 0%, ${barColor} ${ratio}%, ${bg} ${ratio}%, ${bg} 100%)`,
+    };
+  };
+
+  const renderCell = (cell, ci) => {
+    if (cell === null) {
+      return <span style={{ color: mutedColor, fontStyle: 'italic' }}>NULL</span>;
+    }
+
+    const value = String(cell);
+
+    if (isHyperlink(value)) {
+      return (
+        <a
+          href={value}
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{
+            color: accentColor,
+            textDecoration: 'underline',
+            cursor: 'pointer',
+          }}
+        >
+          {value}
+        </a>
+      );
+    }
+
+    return value;
+  };
 
   return (
     <div className="not-prose" style={{ margin: '1rem 0', width: '100%', boxSizing: 'border-box', contain: 'inline-size' }}>
@@ -126,7 +231,7 @@ export const RunnableCode = ({ sql, run = false, title, showStats = true }) => {
           borderTop: `1px solid ${borderColor}`,
         }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-            {showResults && results && (
+            {results && (
               <button
                 onClick={() => setShowResults(!showResults)}
                 style={{
@@ -134,7 +239,7 @@ export const RunnableCode = ({ sql, run = false, title, showStats = true }) => {
                   color: mutedColor, fontSize: '12px', padding: '2px 4px',
                 }}
               >
-                {showResults ? '▼ Hide results' : '▲ Show results'}
+                {showResults ? '▼ Hide results' : '▶ Show results'}
               </button>
             )}
             {showStats && stats && (
@@ -172,11 +277,11 @@ export const RunnableCode = ({ sql, run = false, title, showStats = true }) => {
 
       {/* Results */}
       {showResults && (
-        <div className="not-prose overflow-x-auto [contain:inline-size]"
+        <div className="not-prose"
           style={{
             marginTop: '8px',
             maxHeight: '350px',
-            overflowY: 'auto',
+            overflow: 'auto',
             border: `1px solid ${borderColor}`,
             borderRadius: '4px',
           }}>
@@ -201,64 +306,91 @@ export const RunnableCode = ({ sql, run = false, title, showStats = true }) => {
           )}
 
           {results && results.meta && results.data && (
-            <table className="m-0 min-w-full max-w-none table [&_td]:min-w-[100px] [&_th]:text-left" style={{
-              width: results.data.length <= 1 ? '100%' : undefined,
-              borderCollapse: 'collapse',
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: colWidths.join(' '),
+              width: '100%',
               fontSize: '13px',
               fontFamily: 'ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace',
             }}>
-              <thead>
-                <tr>
-                  {results.meta.map((col, i) => (
-                    <th key={i} style={{
-                      position: 'sticky', top: 0,
-                      padding: '6px 12px',
-                      textAlign: 'left',
-                      backgroundColor: headerBg,
-                      borderBottom: `1px solid ${borderColor}`,
+              {results.meta.map((col, i) => (
+                <div key={`h-${i}`} style={{
+                  position: 'sticky', top: 0, zIndex: 1,
+                  padding: '6px 12px',
+                  textAlign: isNumericType(col.type) && results.meta.length > 1 ? 'right' : 'left',
+                  backgroundColor: headerBg,
+                  borderBottom: `1px solid ${borderColor}`,
+                  color: textColor,
+                  fontWeight: 600,
+                  fontSize: '12px',
+                  whiteSpace: 'nowrap',
+                  overflow: 'hidden',
+                  textOverflow: 'ellipsis',
+                }}>
+                  {col.name}
+                  <span style={{ color: mutedColor, fontWeight: 400, marginLeft: '4px', fontSize: '10px' }}>
+                    {col.type}
+                  </span>
+                </div>
+              ))}
+              {results.data.map((row, ri) =>
+                row.map((cell, ci) => (
+                  <div
+                    key={`${ri}-${ci}`}
+                    onMouseEnter={() => setHoveredRow(ri)}
+                    onMouseLeave={() => setHoveredRow(-1)}
+                    style={{
+                      padding: '4px 12px',
                       color: textColor,
-                      fontWeight: 600,
-                      fontSize: '12px',
                       whiteSpace: 'nowrap',
-                    }}>
-                      {col.name}
-                      <span style={{ color: mutedColor, fontWeight: 400, marginLeft: '4px', fontSize: '10px' }}>
-                        {col.type}
-                      </span>
-                    </th>
-                  ))}
-                </tr>
-              </thead>
-              <tbody>
-                {results.data.map((row, ri) => (
-                  <tr key={ri} style={{
-                    borderBottom: `1px solid ${borderColor}`,
-                    backgroundColor: ri % 2 === 0 ? 'transparent' : bgColor,
-                  }}>
-                    {row.map((cell, ci) => (
-                      <td key={ci} style={{
-                        padding: '4px 12px',
-                        color: textColor,
-                        whiteSpace: 'nowrap',
-                      }}>
-                        {cell === null ? <span style={{ color: mutedColor }}>NULL</span> : String(cell)}
-                      </td>
-                    ))}
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+                      overflow: 'hidden',
+                      textOverflow: 'ellipsis',
+                      textAlign: isNumericType(results.meta[ci].type) && results.meta.length > 1 ? 'right' : 'left',
+                      borderBottom: `1px solid ${borderColor}`,
+                      backgroundColor: ri === hoveredRow
+                        ? cellBgHover
+                        : ri % 2 === 0 ? 'transparent' : bgColor,
+                      transition: 'background-color 0.1s',
+                      ...getCellBarStyle(cell, ci, ri),
+                    }}
+                  >
+                    {renderCell(cell, ci)}
+                  </div>
+                ))
+              )}
+            </div>
           )}
 
           {results && results.data && (
             <div style={{
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'center',
               padding: '4px 12px',
               fontSize: '11px',
               color: mutedColor,
               borderTop: `1px solid ${borderColor}`,
               backgroundColor: headerBg,
             }}>
-              {results.rows} row{results.rows !== 1 ? 's' : ''}
+              <span>
+                {results.rows} row{results.rows !== 1 ? 's' : ''}
+              </span>
+              <button
+                onClick={copyResultsAsTSV}
+                style={{
+                  background: 'none',
+                  border: 'none',
+                  cursor: 'pointer',
+                  color: mutedColor,
+                  fontSize: '11px',
+                  padding: '2px 6px',
+                  borderRadius: '3px',
+                }}
+                onMouseEnter={(e) => e.target.style.color = textColor}
+                onMouseLeave={(e) => e.target.style.color = mutedColor}
+              >
+                ⧉ Copy TSV
+              </button>
             </div>
           )}
           </div>
