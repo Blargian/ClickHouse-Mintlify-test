@@ -1,7 +1,7 @@
 ---
 title: 'BYOC on AWS Observability'
 slug: /cloud/reference/byoc/observability
-sidebarTitle: 'AWS'
+sidebarTitle: 'Observability (AWS)'
 keywords: ['BYOC', 'cloud', 'bring your own cloud', 'AWS']
 description: 'Deploy ClickHouse on your own cloud infrastructure'
 doc_type: 'reference'

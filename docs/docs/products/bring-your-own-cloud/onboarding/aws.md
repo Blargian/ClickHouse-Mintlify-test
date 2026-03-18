@@ -1,7 +1,7 @@
 ---
 title: 'BYOC Onboarding for AWS'
 slug: /cloud/reference/byoc/onboarding/aws
-sidebarTitle: 'AWS'
+sidebarTitle: 'BYOC Onboarding for AWS'
 keywords: ['BYOC', 'cloud', 'bring your own cloud', 'AWS']
 description: 'Deploy ClickHouse on your own cloud infrastructure'
 doc_type: 'reference'

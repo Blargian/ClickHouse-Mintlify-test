@@ -1965,52 +1965,7 @@
                             "pages": [
                               "docs/products/cloud/guides/infrastructure/01_deployment_options/02_clickhouse-private",
                               "docs/products/cloud/guides/infrastructure/01_deployment_options/03_clickhouse-government",
-                              {
-                                "group": "Bring Your Own Cloud (BYOC)",
-                                "expanded": false,
-                                "pages": [
-                                  "docs/products/cloud/guides/infrastructure/01_deployment_options/byoc/01_overview",
-                                  "docs/products/cloud/guides/infrastructure/01_deployment_options/byoc/02_architecture",
-                                  "docs/products/cloud/reference/byoc/configurations",
-                                  "docs/products/cloud/reference/byoc/connect",
-                                  "docs/products/cloud/reference/byoc/operations",
-                                  {
-                                    "group": "Onboarding",
-                                    "expanded": false,
-                                    "pages": [
-                                      "docs/products/cloud/guides/infrastructure/01_deployment_options/byoc/03_onboarding/01_aws",
-                                      "docs/products/cloud/reference/byoc/onboarding/standard",
-                                      "docs/products/cloud/reference/byoc/onboarding/customization",
-                                      "docs/products/cloud/reference/byoc/onboarding/network",
-                                      "docs/products/cloud/reference/byoc/onboarding/new_region",
-                                      "docs/products/cloud/reference/byoc/onboarding/azure-private-preview"
-                                    ]
-                                  },
-                                  {
-                                    "group": "Reference",
-                                    "expanded": false,
-                                    "pages": [
-                                      "docs/products/cloud/reference/byoc/reference/faq",
-                                      "docs/products/cloud/reference/byoc/reference/network_security",
-                                      "docs/products/cloud/reference/byoc/reference/privilege"
-                                    ]
-                                  },
-                                  {
-                                    "group": "FAQ (Legacy)",
-                                    "expanded": false,
-                                    "pages": [
-                                      "docs/products/cloud/guides/infrastructure/01_deployment_options/byoc/04_faq/01_aws"
-                                    ]
-                                  },
-                                  {
-                                    "group": "Observability",
-                                    "expanded": false,
-                                    "pages": [
-                                      "docs/products/cloud/guides/infrastructure/01_deployment_options/byoc/05_observability/01_aws"
-                                    ]
-                                  }
-                                ]
-                              }
+                              "docs/products/cloud/guides/infrastructure/01_deployment_options/byoc/01_overview"
                             ]
                           }
                         ]
@@ -2450,6 +2405,87 @@
                     "icon": "book",
                     "pages": [
                       "docs/products/kubernetes-operator/reference/api-reference"
+                    ]
+                  }
+                ]
+              },
+              {
+                "item": "Private",
+                "icon": "shield-halved",
+                "groups": [
+                  {
+                    "group": "Overview",
+                    "icon": "book-open",
+                    "pages": [
+                      "docs/products/clickhouse-private/overview/overview",
+                      "docs/products/clickhouse-private/overview/versions",
+                      "docs/products/clickhouse-private/overview/breaking-changes"
+                    ]
+                  },
+                  {
+                    "group": "Deployment",
+                    "icon": "server",
+                    "pages": [
+                      "docs/products/clickhouse-private/deployment/aws",
+                      "docs/products/clickhouse-private/deployment/gcp",
+                      "docs/products/clickhouse-private/deployment/bare-metal",
+                      "docs/products/clickhouse-private/deployment/government"
+                    ]
+                  },
+                  {
+                    "group": "Management",
+                    "icon": "gear",
+                    "pages": [
+                      "docs/products/clickhouse-private/management/operational-guide",
+                      "docs/products/clickhouse-private/management/api",
+                      "docs/products/clickhouse-private/management/howto-guides",
+                      "docs/products/clickhouse-private/management/faq"
+                    ]
+                  }
+                ]
+              },
+              {
+                "item": "Bring Your Own Cloud",
+                "icon": "/images/icons/icon-byoc.svg",
+                "groups": [
+                  {
+                    "group": "Overview",
+                    "icon": "book-open",
+                    "pages": [
+                      "docs/products/bring-your-own-cloud/overview/overview",
+                      "docs/products/bring-your-own-cloud/overview/architecture"
+                    ]
+                  },
+                  {
+                    "group": "Configuration",
+                    "icon": "gear",
+                    "pages": [
+                      "docs/products/bring-your-own-cloud/configuration/configurations",
+                      "docs/products/bring-your-own-cloud/configuration/connect",
+                      "docs/products/bring-your-own-cloud/configuration/operations"
+                    ]
+                  },
+                  {
+                    "group": "Onboarding",
+                    "icon": "rocket",
+                    "pages": [
+                      "docs/products/bring-your-own-cloud/onboarding/aws",
+                      "docs/products/bring-your-own-cloud/onboarding/standard",
+                      "docs/products/bring-your-own-cloud/onboarding/customization",
+                      "docs/products/bring-your-own-cloud/onboarding/network",
+                      "docs/products/bring-your-own-cloud/onboarding/new_region",
+                      "docs/products/bring-your-own-cloud/onboarding/azure-private-preview"
+                    ]
+                  },
+                  {
+                    "group": "Reference",
+                    "icon": "book",
+                    "pages": [
+                      "docs/products/bring-your-own-cloud/reference/network_security",
+                      "docs/products/bring-your-own-cloud/reference/privilege",
+                      "docs/products/bring-your-own-cloud/reference/observability-aws",
+                      "docs/products/bring-your-own-cloud/reference/faq",
+                      "docs/products/bring-your-own-cloud/reference/faq-aws"
                     ]
                   }
                 ]
