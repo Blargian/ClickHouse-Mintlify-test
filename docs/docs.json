@@ -23,6 +23,9 @@
       "src": "/inject-product-headers.js"
     },
     {
+      "src": "/galaxy.js"
+    },
+    {
       "src": "/cookie-banner.js"
     },
     {
