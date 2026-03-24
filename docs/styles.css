@@ -1844,6 +1844,41 @@ html.dark #banner a,
     margin-top: 24px !important;
 }
 
+/* ============================================
+   Single-Item Sidebar Sections (Maple theme)
+   ============================================ */
+
+/* In Maple theme, sections with only flat pages (no sub-groups) render as
+   regular sidebar items instead of proper section headers. Fix their
+   alignment and color to match the sidebar-group-header style. */
+
+/* Remove the left-margin indent and border so the icon aligns with section headers */
+#navigation-items > ul.sidebar-group > li:only-child > button,
+#navigation-items > ul.sidebar-group > li:only-child > a {
+    margin-left: 0 !important;
+    border-left-color: transparent !important;
+    color: #171717 !important;
+}
+
+/* Darken the mask-icon to match sidebar-group-header icons (bg-current) */
+#navigation-items > ul.sidebar-group > li:only-child > button > svg.h-4,
+#navigation-items > ul.sidebar-group > li:only-child > a > div:first-child > svg {
+    background-color: currentColor !important;
+}
+
+/* Dark mode overrides */
+.dark #navigation-items > ul.sidebar-group > li:only-child > button,
+.dark #navigation-items > ul.sidebar-group > li:only-child > a,
+:is(.dark) #navigation-items > ul.sidebar-group > li:only-child > button,
+:is(.dark) #navigation-items > ul.sidebar-group > li:only-child > a {
+    color: #e5e5e5 !important;
+}
+
+/* Preserve active-page styling (border + text color) when Home is selected */
+#navigation-items > ul.sidebar-group > li:only-child > a[class*="text-primary"] {
+    border-left-color: currentColor !important;
+}
+
 /* 8px text-to-text between menu items (accounting for 6px py-1.5 padding on each item) */
 #navigation-items ul.sidebar-group.space-y-px> :not([hidden])~ :not([hidden]) {
     margin-top: -4px !important;

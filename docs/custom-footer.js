@@ -132,6 +132,8 @@
     style.id = 'ch-footer-styles';
     style.textContent = ''
       + '#' + FOOTER_ID + ' { box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }'
+      // On desktop the sidebar is fixed at 19rem wide; offset the footer so it clears it
+      + '@media (min-width: 1024px) { #' + FOOTER_ID + ' { padding-left: calc(19rem + 24px) !important; } }'
       + '#' + FOOTER_ID + ' * { box-sizing: border-box; }'
       + '#' + FOOTER_ID + ' a { text-decoration: none; transition: color 0.15s, border-color 0.15s; }'
       // Top section: sitemap + CTA side by side only at wide viewports
@@ -261,7 +263,17 @@
     wrapper.style.cssText = 'width:100%;padding:64px 24px 32px;';
     wrapper.innerHTML = buildFooterHtml();
 
-    contentContainer.appendChild(wrapper);
+    // In the Maple theme, #content-container is a flex-row, so appending
+    // there makes the footer a horizontal sibling of the content columns.
+    // Instead, walk up to the nearest block-level ancestor so the footer
+    // renders as a full-width block below the sidebar + content row.
+    var scrollContainer = contentContainer.parentElement;       // .flex.scroll-mt
+    var blockParent = scrollContainer && scrollContainer.parentElement; // lg:flex-1 (display:block)
+    var target = (blockParent && getComputedStyle(blockParent).display === 'block')
+      ? blockParent
+      : contentContainer;
+
+    target.appendChild(wrapper);
     return true;
   }
 

@@ -1,6 +1,6 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "theme": "almond",
+  "theme": "maple",
   "name": "ClickHouse Documentation",
   "colors": {
     "primary": "#1c1c1c",
@@ -27,6 +27,9 @@
     },
     {
       "src": "/custom-footer.js"
+    },
+    {
+      "src": "/navbar-cta.js"
     }
   ],
   "navigation": {
@@ -3373,37 +3376,34 @@
         ]
       },
       {
-        "language": "jp",
-        "tabs": [
+        "language": "ja",
+        "groups": [
           {
             "group": "Home",
-            "icon": "house",
             "pages": [
-              "/"
+              "ja/index"
             ]
           }
         ]
       },
       {
         "language": "zh",
-        "tabs": [
+        "groups": [
           {
             "group": "Home",
-            "icon": "house",
             "pages": [
-              "/"
+              "zh/index"
             ]
           }
         ]
       },
       {
         "language": "ru",
-        "tabs": [
+        "groups": [
           {
             "group": "Home",
-            "icon": "house",
             "pages": [
-              "/"
+              "ru/index"
             ]
           }
         ]
@@ -3417,20 +3417,7 @@
   "fonts": {
     "family": "Inter"
   },
-  "navbar": {
-    "links": [
-      {
-        "label": "44.4k",
-        "icon": "github",
-        "href": "https://github.com/ClickHouse/ClickHouse"
-      }
-    ],
-    "primary": {
-      "type": "button",
-      "label": "Cloud console",
-      "href": "https://clickhouse.cloud"
-    }
-  },
+  "navbar": {},
   "redirects": [
     {
       "source": "/docs/optimize/avoid-mutations",
