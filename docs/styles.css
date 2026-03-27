@@ -156,38 +156,21 @@ html:not(.dark) .pagination-prev:hover {
     height: 2rem;
 }
 
-/* Give navbar a solid background so content doesn't show through when scrolling */
-#navbar {
-    background-color: #f7f7f7 !important;
-}
-
-.dark #navbar,
-:is(.dark) #navbar {
-    background-color: #151515 !important;
-}
-
-/* Override the Almond theme's dark sidebar background to match the navbar */
+/* Dark mode sidebar background */
 .dark #almond-background-color,
 :is(.dark) #almond-background-color {
     background-color: #151515 !important;
 }
 
-/* When banner is present, reduce content area height to account for the extra banner space */
-/* Mobile: base is 100dvh-8rem, subtract ~2.5rem for banner */
-body:has(#banner) .rounded-2xl:has(> #content-container) {
-    height: calc(100dvh - 10.5rem) !important;
+/* Hide the chat assistant textarea */
+.chat-assistant-input {
+    display: none !important;
 }
 
-/* Desktop: base is 100dvh-4.5rem, subtract ~2.5rem for banner */
-@media (min-width: 1024px) {
-    body:has(#banner) .rounded-2xl:has(> #content-container) {
-        height: calc(100dvh - 7rem) !important;
-    }
-}
-
-/* Fix sticky search/filter column overlapping the top nav */
-.mint-sticky.mint-top-4 {
-    top: 5rem !important;
+/* Right-align top nav items and constrain width to content area */
+#navbar-transition-maple {
+    width: calc(100vw - 19rem) !important;
+    justify-content: flex-end !important;
 }
 
 /* Align quickstarts grid to the left instead of centered */
@@ -690,25 +673,25 @@ button.rounded-xl {
    Page Title Alignment
    ============================================ */
 
-/* Left-align page title and context menu in a row */
+/* Page title full-width, context menu on a separate row below */
 #page-title {
     text-align: left !important;
 }
 
 :has(> #page-title) {
     display: flex !important;
-    flex-direction: row !important;
-    align-items: center !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
     width: 100% !important;
 }
 
 :has(> #page-title)>#page-title {
-    flex: 1 !important;
-    min-width: 0 !important;
+    width: 100% !important;
 }
 
 :has(> #page-title)>#page-context-menu {
-    margin-left: auto !important;
+    margin-left: 0 !important;
+    margin-top: 8px !important;
     flex-shrink: 0 !important;
 }
 
@@ -1842,6 +1825,50 @@ html.dark #banner a,
 /* 24px between sidebar groups */
 #navigation-items>div.mt-6 {
     margin-top: 24px !important;
+}
+
+/* ============================================
+   Single-Item Sidebar Sections (Maple theme)
+   ============================================ */
+
+/* In Maple theme, sections with only flat pages (no sub-groups) render as
+   regular sidebar items instead of proper section headers. Fix their
+   alignment and color to match the sidebar-group-header style. */
+
+/* Remove the left-margin indent and border so the icon aligns with section headers */
+#navigation-items > ul.sidebar-group > li:only-child > button,
+#navigation-items > ul.sidebar-group > li:only-child > a {
+    margin-left: 0 !important;
+    border-left-color: transparent !important;
+    color: #171717 !important;
+}
+
+/* Darken the mask-icon to match sidebar-group-header icons (bg-current) */
+#navigation-items > ul.sidebar-group > li:only-child > button > svg.h-4,
+#navigation-items > ul.sidebar-group > li:only-child > a > div:first-child > svg {
+    background-color: currentColor !important;
+}
+
+/* Dark mode overrides */
+.dark #navigation-items > ul.sidebar-group > li:only-child > button,
+.dark #navigation-items > ul.sidebar-group > li:only-child > a,
+:is(.dark) #navigation-items > ul.sidebar-group > li:only-child > button,
+:is(.dark) #navigation-items > ul.sidebar-group > li:only-child > a {
+    color: #e5e5e5 !important;
+}
+
+/* Preserve active-page styling (border + text color) when Home is selected */
+#navigation-items > ul.sidebar-group > li:only-child > a[class*="text-primary"] {
+    border-left-color: currentColor !important;
+}
+
+/* ============================================
+   Sidebar Chevron Alignment
+   ============================================ */
+
+/* Push expandable-group chevrons to the right edge so they all align */
+#sidebar .sidebar-group button > svg.transition-transform {
+    margin-left: auto !important;
 }
 
 /* 8px text-to-text between menu items (accounting for 6px py-1.5 padding on each item) */

@@ -76,9 +76,6 @@
 
     // Keep watching for changes indefinitely - don't disconnect
     const observer = new MutationObserver(function(mutations) {
-        const localizationSelect = document.getElementById('localization-select-trigger');
-        const topbarRightContainer = document.querySelector('.topbar-right-container');
-
         // Always try to add beta tags to sidebar titles
         addBetaTagsToSidebarTitles();
     });
