@@ -31,7 +31,7 @@
       // Navbar logo
       + '#' + LOGO_ID + ' { display: flex; align-items: center; flex-shrink: 0; margin-right: 24px; }'
       + '#' + LOGO_ID + ' a { display: flex; align-items: center; text-decoration: none; }'
-      + '#' + LOGO_ID + ' img { height: 32px; width: auto; }'
+      + '#' + LOGO_ID + ' img { height: 32px; width: auto; padding-left: 0 !important; padding-right: 0 !important; }'
       // Left section: logo + tabs — push tabs to the right
       + '#ch-navbar-left { display: flex; align-items: center; height: 100%; flex: 1; min-width: 0; }'
       + '#ch-navbar-left .nav-tabs { margin-left: auto; }'

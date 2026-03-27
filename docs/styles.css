@@ -690,25 +690,25 @@ button.rounded-xl {
    Page Title Alignment
    ============================================ */
 
-/* Left-align page title and context menu in a row */
+/* Page title full-width, context menu on a separate row below */
 #page-title {
     text-align: left !important;
 }
 
 :has(> #page-title) {
     display: flex !important;
-    flex-direction: row !important;
-    align-items: center !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
     width: 100% !important;
 }
 
 :has(> #page-title)>#page-title {
-    flex: 1 !important;
-    min-width: 0 !important;
+    width: 100% !important;
 }
 
 :has(> #page-title)>#page-context-menu {
-    margin-left: auto !important;
+    margin-left: 0 !important;
+    margin-top: 8px !important;
     flex-shrink: 0 !important;
 }
 
@@ -1877,6 +1877,15 @@ html.dark #banner a,
 /* Preserve active-page styling (border + text color) when Home is selected */
 #navigation-items > ul.sidebar-group > li:only-child > a[class*="text-primary"] {
     border-left-color: currentColor !important;
+}
+
+/* ============================================
+   Sidebar Chevron Alignment
+   ============================================ */
+
+/* Push expandable-group chevrons to the right edge so they all align */
+#sidebar .sidebar-group button > svg.transition-transform {
+    margin-left: auto !important;
 }
 
 /* 8px text-to-text between menu items (accounting for 6px py-1.5 padding on each item) */

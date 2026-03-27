@@ -47,7 +47,6 @@
                   "/index",
                   {
                     "group": "Get started",
-                    "icon": "bolt-lightning",
                     "pages": [
                       {
                         "group": "FAQ",
@@ -86,14 +85,8 @@
                   },
                   {
                     "group": "Setup",
-                    "icon": "server",
                     "pages": [
-                      {
-                        "group": "Cloud",
-                        "pages": [
-                          "/get-started/install/quick-start-cloud"
-                        ]
-                      },
+                      "/get-started/install/quick-start-cloud",
                       {
                         "group": "Self-managed",
                         "pages": [
@@ -177,7 +170,6 @@
                   },
                   {
                     "group": "Sample datasets",
-                    "icon": "database",
                     "expandable": true,
                     "expanded": false,
                     "root": "/get-started/sample-datasets/index",
@@ -222,7 +214,6 @@
                 "pages": [
                   {
                     "group": "Fundamentals",
-                    "icon": "graduation-cap",
                     "root": "/concepts/core-concepts/index",
                     "pages": [
                       "/concepts/core-concepts/glossary",
@@ -236,8 +227,8 @@
                   },
                   {
                     "group": "ClickHouse concepts",
-                    "icon": "cubes",
                     "root": "/concepts/features/index",
+                    "expanded": "true",
                     "pages": [
                       {
                         "group": "Materialized views",
@@ -372,7 +363,7 @@
                         ]
                       },
                       {
-                        "group": "Security and authentication",
+                        "group": "Security and auth",
                         "root": "/guides/security/index",
                         "pages": [
                           "/concepts/features/security/access-rights",
@@ -440,8 +431,8 @@
                   },
                   {
                     "group": "Best practices",
-                    "icon": "star",
                     "root": "/concepts/best-practices/index",
+                    "expanded": "true",
                     "pages": [
                       "/concepts/best-practices/choosing-a-primary-key",
                       "/concepts/best-practices/select-data-type",
@@ -464,7 +455,6 @@
                 "pages": [
                   {
                     "group": "ClickHouse guides",
-                    "icon": "/images/icons/icon-clickhouse.svg",
                     "pages": [
                       {
                         "group": "Data modelling",
@@ -579,7 +569,6 @@
                   },
                   {
                     "group": "Use case guides",
-                    "icon": "bullseye-arrow",
                     "expandable": true,
                     "expanded": false,
                     "pages": [
@@ -694,7 +683,6 @@
                   "/reference/home",
                   {
                     "group": "SQL Reference",
-                    "icon": "code",
                     "expandable": true,
                     "expanded": true,
                     "pages": [
@@ -704,182 +692,181 @@
                         "expandable": true,
                         "expanded": false,
                         "root": "/reference/statements/index",
-                    "pages": [
-                      {
-                        "group": "ALTER",
-                        "expanded": false,
                         "pages": [
-                          "/reference/statements/alter/index",
-                          "/reference/statements/alter/apply-deleted-mask",
-                          "/reference/statements/alter/apply-patches",
-                          "/reference/statements/alter/column",
-                          "/reference/statements/alter/comment",
-                          "/reference/statements/alter/constraint",
-                          "/reference/statements/alter/database-comment",
-                          "/reference/statements/alter/delete",
-                          "/reference/statements/alter/named-collection",
-                          "/reference/statements/alter/order-by",
-                          "/reference/statements/alter/partition",
-                          "/reference/statements/alter/projection",
-                          "/reference/statements/alter/quota",
-                          "/reference/statements/alter/role",
-                          "/reference/statements/alter/row-policy",
-                          "/reference/statements/alter/sample-by",
-                          "/reference/statements/alter/setting",
-                          "/reference/statements/alter/settings-profile",
-                          "/reference/statements/alter/skipping-index",
-                          "/reference/statements/alter/statistics",
-                          "/reference/statements/alter/ttl",
-                          "/reference/statements/alter/update",
-                          "/reference/statements/alter/user",
-                          "/reference/statements/alter/masking-policy",
-                          "/reference/statements/alter/view"
-                        ]
-                      },
-                      "/reference/statements/attach",
-                      "/reference/statements/check-grant",
-                      "/reference/statements/check-table",
-                      {
-                        "group": "CREATE",
-                        "expanded": false,
-                        "pages": [
-                          "/reference/statements/create/index",
-                          "/reference/statements/create/database",
                           {
-                            "group": "DICTIONARY",
+                            "group": "ALTER",
                             "expanded": false,
-                            "root": "/reference/statements/create/dictionary",
                             "pages": [
-                              "/reference/statements/create/dictionary/attributes",
-                              "/reference/statements/create/dictionary/embedded",
-                              "/reference/statements/create/dictionary/lifetime",
-                              {
-                                "group": "Layouts",
-                                "expanded": false,
-                                "root": "/reference/statements/create/dictionary/layouts/overview",
-                                "pages": [
-                                  "/reference/statements/create/dictionary/layouts/flat",
-                                  "/reference/statements/create/dictionary/layouts/hashed",
-                                  "/reference/statements/create/dictionary/layouts/hashed-array",
-                                  "/reference/statements/create/dictionary/layouts/cache",
-                                  "/reference/statements/create/dictionary/layouts/ssd-cache",
-                                  "/reference/statements/create/dictionary/layouts/direct",
-                                  "/reference/statements/create/dictionary/layouts/range-hashed",
-                                  "/reference/statements/create/dictionary/layouts/hierarchical",
-                                  "/reference/statements/create/dictionary/layouts/polygon",
-                                  "/reference/statements/create/dictionary/layouts/ip-trie",
-                                  "/reference/statements/create/dictionary/layouts/regexp-tree"
-                                ]
-                              },
-                              {
-                                "group": "Sources",
-                                "expanded": false,
-                                "root": "/reference/statements/create/dictionary/sources/overview",
-                                "pages": [
-                                  "/reference/statements/create/dictionary/sources/local-file",
-                                  "/reference/statements/create/dictionary/sources/executable-file",
-                                  "/reference/statements/create/dictionary/sources/executable-pool",
-                                  "/reference/statements/create/dictionary/sources/http",
-                                  "/reference/statements/create/dictionary/sources/clickhouse",
-                                  "/reference/statements/create/dictionary/sources/mysql",
-                                  "/reference/statements/create/dictionary/sources/postgresql",
-                                  "/reference/statements/create/dictionary/sources/mongodb",
-                                  "/reference/statements/create/dictionary/sources/redis",
-                                  "/reference/statements/create/dictionary/sources/cassandra",
-                                  "/reference/statements/create/dictionary/sources/odbc",
-                                  "/reference/statements/create/dictionary/sources/null",
-                                  "/reference/statements/create/dictionary/sources/yamlregexptree",
-                                  "/reference/statements/create/dictionary/sources/ytsaurus"
-                                ]
-                              }
+                              "/reference/statements/alter/index",
+                              "/reference/statements/alter/apply-deleted-mask",
+                              "/reference/statements/alter/apply-patches",
+                              "/reference/statements/alter/column",
+                              "/reference/statements/alter/comment",
+                              "/reference/statements/alter/constraint",
+                              "/reference/statements/alter/database-comment",
+                              "/reference/statements/alter/delete",
+                              "/reference/statements/alter/named-collection",
+                              "/reference/statements/alter/order-by",
+                              "/reference/statements/alter/partition",
+                              "/reference/statements/alter/projection",
+                              "/reference/statements/alter/quota",
+                              "/reference/statements/alter/role",
+                              "/reference/statements/alter/row-policy",
+                              "/reference/statements/alter/sample-by",
+                              "/reference/statements/alter/setting",
+                              "/reference/statements/alter/settings-profile",
+                              "/reference/statements/alter/skipping-index",
+                              "/reference/statements/alter/statistics",
+                              "/reference/statements/alter/ttl",
+                              "/reference/statements/alter/update",
+                              "/reference/statements/alter/user",
+                              "/reference/statements/alter/masking-policy",
+                              "/reference/statements/alter/view"
                             ]
                           },
-                          "/reference/statements/create/masking-policy",
-                          "/reference/statements/create/function",
-                          "/reference/statements/create/named-collection",
-                          "/reference/statements/create/quota",
-                          "/reference/statements/create/role",
-                          "/reference/statements/create/row-policy",
-                          "/reference/statements/create/settings-profile",
-                          "/reference/statements/create/table",
-                          "/reference/statements/create/user",
-                          "/reference/statements/create/view"
+                          "/reference/statements/attach",
+                          "/reference/statements/check-grant",
+                          "/reference/statements/check-table",
+                          {
+                            "group": "CREATE",
+                            "expanded": false,
+                            "pages": [
+                              "/reference/statements/create/index",
+                              "/reference/statements/create/database",
+                              {
+                                "group": "DICTIONARY",
+                                "expanded": false,
+                                "root": "/reference/statements/create/dictionary",
+                                "pages": [
+                                  "/reference/statements/create/dictionary/attributes",
+                                  "/reference/statements/create/dictionary/embedded",
+                                  "/reference/statements/create/dictionary/lifetime",
+                                  {
+                                    "group": "Layouts",
+                                    "expanded": false,
+                                    "root": "/reference/statements/create/dictionary/layouts/overview",
+                                    "pages": [
+                                      "/reference/statements/create/dictionary/layouts/flat",
+                                      "/reference/statements/create/dictionary/layouts/hashed",
+                                      "/reference/statements/create/dictionary/layouts/hashed-array",
+                                      "/reference/statements/create/dictionary/layouts/cache",
+                                      "/reference/statements/create/dictionary/layouts/ssd-cache",
+                                      "/reference/statements/create/dictionary/layouts/direct",
+                                      "/reference/statements/create/dictionary/layouts/range-hashed",
+                                      "/reference/statements/create/dictionary/layouts/hierarchical",
+                                      "/reference/statements/create/dictionary/layouts/polygon",
+                                      "/reference/statements/create/dictionary/layouts/ip-trie",
+                                      "/reference/statements/create/dictionary/layouts/regexp-tree"
+                                    ]
+                                  },
+                                  {
+                                    "group": "Sources",
+                                    "expanded": false,
+                                    "root": "/reference/statements/create/dictionary/sources/overview",
+                                    "pages": [
+                                      "/reference/statements/create/dictionary/sources/local-file",
+                                      "/reference/statements/create/dictionary/sources/executable-file",
+                                      "/reference/statements/create/dictionary/sources/executable-pool",
+                                      "/reference/statements/create/dictionary/sources/http",
+                                      "/reference/statements/create/dictionary/sources/clickhouse",
+                                      "/reference/statements/create/dictionary/sources/mysql",
+                                      "/reference/statements/create/dictionary/sources/postgresql",
+                                      "/reference/statements/create/dictionary/sources/mongodb",
+                                      "/reference/statements/create/dictionary/sources/redis",
+                                      "/reference/statements/create/dictionary/sources/cassandra",
+                                      "/reference/statements/create/dictionary/sources/odbc",
+                                      "/reference/statements/create/dictionary/sources/null",
+                                      "/reference/statements/create/dictionary/sources/yamlregexptree",
+                                      "/reference/statements/create/dictionary/sources/ytsaurus"
+                                    ]
+                                  }
+                                ]
+                              },
+                              "/reference/statements/create/masking-policy",
+                              "/reference/statements/create/function",
+                              "/reference/statements/create/named-collection",
+                              "/reference/statements/create/quota",
+                              "/reference/statements/create/role",
+                              "/reference/statements/create/row-policy",
+                              "/reference/statements/create/settings-profile",
+                              "/reference/statements/create/table",
+                              "/reference/statements/create/user",
+                              "/reference/statements/create/view"
+                            ]
+                          },
+                          "/reference/statements/delete",
+                          "/reference/statements/describe-table",
+                          "/reference/statements/detach",
+                          "/reference/statements/distributed-ddl",
+                          "/reference/statements/drop",
+                          "/reference/statements/exchange",
+                          "/reference/statements/execute_as",
+                          "/reference/statements/exists",
+                          "/reference/statements/explain",
+                          "/reference/statements/grant",
+                          "/reference/statements/in",
+                          "/reference/statements/insert-into",
+                          "/reference/statements/kill",
+                          "/reference/statements/move",
+                          "/reference/statements/optimize",
+                          "/reference/statements/parallel_with",
+                          "/reference/statements/rename",
+                          "/reference/statements/revoke",
+                          {
+                            "group": "SELECT",
+                            "expanded": false,
+                            "pages": [
+                              "/reference/statements/select/index",
+                              "/reference/statements/select/all",
+                              "/reference/statements/select/apply_modifier",
+                              "/reference/statements/select/array-join",
+                              "/reference/statements/select/distinct",
+                              "/reference/statements/select/except",
+                              "/reference/statements/select/except_modifier",
+                              "/reference/statements/select/format",
+                              "/reference/statements/select/from",
+                              "/reference/statements/select/group-by",
+                              "/reference/statements/select/having",
+                              "/reference/statements/select/intersect",
+                              "/reference/statements/select/into-outfile",
+                              "/reference/statements/select/join",
+                              "/reference/statements/select/limit-by",
+                              "/reference/statements/select/limit",
+                              "/reference/statements/select/offset",
+                              "/reference/statements/select/order-by",
+                              "/reference/statements/select/qualify",
+                              "/reference/statements/select/replace_modifier",
+                              "/reference/statements/select/sample",
+                              "/reference/statements/select/union",
+                              "/reference/statements/select/where",
+                              "/reference/statements/select/with"
+                            ]
+                          },
+                          "/reference/statements/set-role",
+                          "/reference/statements/set",
+                          "/reference/statements/show",
+                          "/reference/statements/system",
+                          "/reference/statements/truncate",
+                          "/reference/statements/undrop",
+                          "/reference/statements/update",
+                          "/reference/statements/use",
+                          "/reference/statements/watch"
                         ]
                       },
-                      "/reference/statements/delete",
-                      "/reference/statements/describe-table",
-                      "/reference/statements/detach",
-                      "/reference/statements/distributed-ddl",
-                      "/reference/statements/drop",
-                      "/reference/statements/exchange",
-                      "/reference/statements/execute_as",
-                      "/reference/statements/exists",
-                      "/reference/statements/explain",
-                      "/reference/statements/grant",
-                      "/reference/statements/in",
-                      "/reference/statements/insert-into",
-                      "/reference/statements/kill",
-                      "/reference/statements/move",
-                      "/reference/statements/optimize",
-                      "/reference/statements/parallel_with",
-                      "/reference/statements/rename",
-                      "/reference/statements/revoke",
                       {
-                        "group": "SELECT",
+                        "group": "Operators",
+                        "expandable": true,
                         "expanded": false,
+                        "root": "/reference/operators/index",
                         "pages": [
-                          "/reference/statements/select/index",
-                          "/reference/statements/select/all",
-                          "/reference/statements/select/apply_modifier",
-                          "/reference/statements/select/array-join",
-                          "/reference/statements/select/distinct",
-                          "/reference/statements/select/except",
-                          "/reference/statements/select/except_modifier",
-                          "/reference/statements/select/format",
-                          "/reference/statements/select/from",
-                          "/reference/statements/select/group-by",
-                          "/reference/statements/select/having",
-                          "/reference/statements/select/intersect",
-                          "/reference/statements/select/into-outfile",
-                          "/reference/statements/select/join",
-                          "/reference/statements/select/limit-by",
-                          "/reference/statements/select/limit",
-                          "/reference/statements/select/offset",
-                          "/reference/statements/select/order-by",
-                          "/reference/statements/select/qualify",
-                          "/reference/statements/select/replace_modifier",
-                          "/reference/statements/select/sample",
-                          "/reference/statements/select/union",
-                          "/reference/statements/select/where",
-                          "/reference/statements/select/with"
+                          "/reference/operators/exists",
+                          "/reference/operators/distributed-ddl"
                         ]
-                      },
-                      "/reference/statements/set-role",
-                      "/reference/statements/set",
-                      "/reference/statements/show",
-                      "/reference/statements/system",
-                      "/reference/statements/truncate",
-                      "/reference/statements/undrop",
-                      "/reference/statements/update",
-                      "/reference/statements/use",
-                      "/reference/statements/watch"
-                    ]
-                  },
-                  {
-                    "group": "Operators",
-                    "expandable": true,
-                    "expanded": false,
-                    "root": "/reference/operators/index",
-                    "pages": [
-                      "/reference/operators/exists",
-                      "/reference/operators/distributed-ddl"
-                    ]
-                  }
+                      }
                     ]
                   },
                   {
                     "group": "Data Types",
-                    "icon": "file-brackets-curly",
                     "expandable": true,
                     "expanded": false,
                     "root": "/reference/data-types/index",
@@ -990,7 +977,6 @@
                   },
                   {
                     "group": "Engines",
-                    "icon": "engine",
                     "expandable": true,
                     "expanded": false,
                     "root": "/reference/engines/engines",
@@ -1109,7 +1095,6 @@
                   },
                   {
                     "group": "Functions",
-                    "icon": "function",
                     "expandable": true,
                     "expanded": false,
                     "root": "/reference/functions/index",
@@ -1431,184 +1416,182 @@
                   },
                   {
                     "group": "Formats",
-                    "icon": "file-code",
                     "expandable": true,
                     "root": "/reference/formats/index",
                     "expanded": false,
                     "pages": [
-                          {
-                            "group": "Arrow",
-                            "expanded": false,
-                            "pages": [
-                              "/reference/formats/Arrow/Arrow",
-                              "/reference/formats/Arrow/ArrowStream"
-                            ]
-                          },
-                          {
-                            "group": "Avro",
-                            "expanded": false,
-                            "pages": [
-                              "/reference/formats/Avro/Avro",
-                              "/reference/formats/Avro/AvroConfluent"
-                            ]
-                          },
-                          "/reference/formats/BSONEachRow",
-                          "/reference/formats/Buffers",
-                          {
-                            "group": "CSV",
-                            "expanded": false,
-                            "pages": [
-                              "/reference/formats/CSV/CSV",
-                              "/reference/formats/CSV/CSVWithNames",
-                              "/reference/formats/CSV/CSVWithNamesAndTypes"
-                            ]
-                          },
-                          "/reference/formats/CapnProto",
-                          {
-                            "group": "CustomSeparated",
-                            "expanded": false,
-                            "pages": [
-                              "/reference/formats/CustomSeparated/CustomSeparated",
-                              "/reference/formats/CustomSeparated/CustomSeparatedIgnoreSpaces",
-                              "/reference/formats/CustomSeparated/CustomSeparatedIgnoreSpacesWithNames",
-                              "/reference/formats/CustomSeparated/CustomSeparatedIgnoreSpacesWithNamesAndTypes",
-                              "/reference/formats/CustomSeparated/CustomSeparatedWithNames",
-                              "/reference/formats/CustomSeparated/CustomSeparatedWithNamesAndTypes"
-                            ]
-                          },
-                          "/reference/formats/DWARF",
-                          "/reference/formats/Form",
-                          "/reference/formats/Hash",
-                          "/reference/formats/HiveText",
-                          {
-                            "group": "JSON",
-                            "expanded": false,
-                            "pages": [
-                              "/reference/formats/JSON/JSON",
-                              "/reference/formats/JSON/JSONAsObject",
-                              "/reference/formats/JSON/JSONAsString",
-                              "/reference/formats/JSON/JSONColumns",
-                              "/reference/formats/JSON/JSONColumnsWithMetadata",
-                              "/reference/formats/JSON/JSONCompact",
-                              "/reference/formats/JSON/JSONCompactColumns",
-                              "/reference/formats/JSON/JSONCompactEachRow",
-                              "/reference/formats/JSON/JSONCompactEachRowWithNames",
-                              "/reference/formats/JSON/JSONCompactEachRowWithNamesAndTypes",
-                              "/reference/formats/JSON/JSONCompactEachRowWithProgress",
-                              "/reference/formats/JSON/JSONCompactStrings",
-                              "/reference/formats/JSON/JSONCompactStringsEachRow",
-                              "/reference/formats/JSON/JSONCompactStringsEachRowWithNames",
-                              "/reference/formats/JSON/JSONCompactStringsEachRowWithNamesAndTypes",
-                              "/reference/formats/JSON/JSONCompactStringsEachRowWithProgress",
-                              "/reference/formats/JSON/JSONEachRow",
-                              "/reference/formats/JSON/JSONEachRowWithProgress",
-                              "/reference/formats/JSON/JSONLines",
-                              "/reference/formats/JSON/JSONObjectEachRow",
-                              "/reference/formats/JSON/JSONStrings",
-                              "/reference/formats/JSON/JSONStringsEachRow",
-                              "/reference/formats/JSON/JSONStringsEachRowWithProgress",
-                              "/reference/formats/JSON/PrettyJSONEachRow",
-                              "/reference/formats/JSON/format-settings"
-                            ]
-                          },
-                          {
-                            "group": "LineAsString",
-                            "expanded": false,
-                            "pages": [
-                              "/reference/formats/LineAsString/LineAsString",
-                              "/reference/formats/LineAsString/LineAsStringWithNames",
-                              "/reference/formats/LineAsString/LineAsStringWithNamesAndTypes"
-                            ]
-                          },
-                          "/reference/formats/Markdown",
-                          "/reference/formats/MsgPack",
-                          "/reference/formats/MySQLDump",
-                          "/reference/formats/MySQLWire",
-                          "/reference/formats/Native",
-                          "/reference/formats/Npy",
-                          "/reference/formats/Null",
-                          "/reference/formats/ODBCDriver2",
-                          "/reference/formats/ORC",
-                          "/reference/formats/One",
-                          {
-                            "group": "Parquet",
-                            "expanded": false,
-                            "pages": [
-                              "/reference/formats/Parquet/Parquet",
-                              "/reference/formats/Parquet/ParquetMetadata"
-                            ]
-                          },
-                          "/reference/formats/PostgreSQLWire",
-                          {
-                            "group": "Pretty",
-                            "expanded": false,
-                            "pages": [
-                              "/reference/formats/Pretty/Pretty",
-                              "/reference/formats/Pretty/PrettyCompact",
-                              "/reference/formats/Pretty/PrettyCompactMonoBlock",
-                              "/reference/formats/Pretty/PrettyCompactNoEscapes",
-                              "/reference/formats/Pretty/PrettyCompactNoEscapesMonoBlock",
-                              "/reference/formats/Pretty/PrettyMonoBlock",
-                              "/reference/formats/Pretty/PrettyNoEscapes",
-                              "/reference/formats/Pretty/PrettyNoEscapesMonoBlock",
-                              "/reference/formats/Pretty/PrettySpace",
-                              "/reference/formats/Pretty/PrettySpaceMonoBlock",
-                              "/reference/formats/Pretty/PrettySpaceNoEscapes",
-                              "/reference/formats/Pretty/PrettySpaceNoEscapesMonoBlock"
-                            ]
-                          },
-                          "/reference/formats/Prometheus",
-                          {
-                            "group": "Protobuf",
-                            "expanded": false,
-                            "pages": [
-                              "/reference/formats/Protobuf/Protobuf",
-                              "/reference/formats/Protobuf/ProtobufList",
-                              "/reference/formats/Protobuf/ProtobufSingle"
-                            ]
-                          },
-                          "/reference/formats/RawBLOB",
-                          "/reference/formats/Regexp",
-                          {
-                            "group": "RowBinary",
-                            "expanded": false,
-                            "pages": [
-                              "/reference/formats/RowBinary/RowBinary",
-                              "/reference/formats/RowBinary/RowBinaryWithDefaults",
-                              "/reference/formats/RowBinary/RowBinaryWithNames",
-                              "/reference/formats/RowBinary/RowBinaryWithNamesAndTypes"
-                            ]
-                          },
-                          "/reference/formats/SQLInsert",
-                          {
-                            "group": "TabSeparated",
-                            "expanded": false,
-                            "pages": [
-                              "/reference/formats/TabSeparated/TSKV",
-                              "/reference/formats/TabSeparated/TabSeparated",
-                              "/reference/formats/TabSeparated/TabSeparatedRaw",
-                              "/reference/formats/TabSeparated/TabSeparatedRawWithNames",
-                              "/reference/formats/TabSeparated/TabSeparatedRawWithNamesAndTypes",
-                              "/reference/formats/TabSeparated/TabSeparatedWithNames",
-                              "/reference/formats/TabSeparated/TabSeparatedWithNamesAndTypes"
-                            ]
-                          },
-                          {
-                            "group": "Template",
-                            "expanded": false,
-                            "pages": [
-                              "/reference/formats/Template/Template",
-                              "/reference/formats/Template/TemplateIgnoreSpaces"
-                            ]
-                          },
-                          "/reference/formats/Values",
-                          "/reference/formats/Vertical",
-                          "/reference/formats/XML"
+                      {
+                        "group": "Arrow",
+                        "expanded": false,
+                        "pages": [
+                          "/reference/formats/Arrow/Arrow",
+                          "/reference/formats/Arrow/ArrowStream"
+                        ]
+                      },
+                      {
+                        "group": "Avro",
+                        "expanded": false,
+                        "pages": [
+                          "/reference/formats/Avro/Avro",
+                          "/reference/formats/Avro/AvroConfluent"
+                        ]
+                      },
+                      "/reference/formats/BSONEachRow",
+                      "/reference/formats/Buffers",
+                      {
+                        "group": "CSV",
+                        "expanded": false,
+                        "pages": [
+                          "/reference/formats/CSV/CSV",
+                          "/reference/formats/CSV/CSVWithNames",
+                          "/reference/formats/CSV/CSVWithNamesAndTypes"
+                        ]
+                      },
+                      "/reference/formats/CapnProto",
+                      {
+                        "group": "CustomSeparated",
+                        "expanded": false,
+                        "pages": [
+                          "/reference/formats/CustomSeparated/CustomSeparated",
+                          "/reference/formats/CustomSeparated/CustomSeparatedIgnoreSpaces",
+                          "/reference/formats/CustomSeparated/CustomSeparatedIgnoreSpacesWithNames",
+                          "/reference/formats/CustomSeparated/CustomSeparatedIgnoreSpacesWithNamesAndTypes",
+                          "/reference/formats/CustomSeparated/CustomSeparatedWithNames",
+                          "/reference/formats/CustomSeparated/CustomSeparatedWithNamesAndTypes"
+                        ]
+                      },
+                      "/reference/formats/DWARF",
+                      "/reference/formats/Form",
+                      "/reference/formats/Hash",
+                      "/reference/formats/HiveText",
+                      {
+                        "group": "JSON",
+                        "expanded": false,
+                        "pages": [
+                          "/reference/formats/JSON/JSON",
+                          "/reference/formats/JSON/JSONAsObject",
+                          "/reference/formats/JSON/JSONAsString",
+                          "/reference/formats/JSON/JSONColumns",
+                          "/reference/formats/JSON/JSONColumnsWithMetadata",
+                          "/reference/formats/JSON/JSONCompact",
+                          "/reference/formats/JSON/JSONCompactColumns",
+                          "/reference/formats/JSON/JSONCompactEachRow",
+                          "/reference/formats/JSON/JSONCompactEachRowWithNames",
+                          "/reference/formats/JSON/JSONCompactEachRowWithNamesAndTypes",
+                          "/reference/formats/JSON/JSONCompactEachRowWithProgress",
+                          "/reference/formats/JSON/JSONCompactStrings",
+                          "/reference/formats/JSON/JSONCompactStringsEachRow",
+                          "/reference/formats/JSON/JSONCompactStringsEachRowWithNames",
+                          "/reference/formats/JSON/JSONCompactStringsEachRowWithNamesAndTypes",
+                          "/reference/formats/JSON/JSONCompactStringsEachRowWithProgress",
+                          "/reference/formats/JSON/JSONEachRow",
+                          "/reference/formats/JSON/JSONEachRowWithProgress",
+                          "/reference/formats/JSON/JSONLines",
+                          "/reference/formats/JSON/JSONObjectEachRow",
+                          "/reference/formats/JSON/JSONStrings",
+                          "/reference/formats/JSON/JSONStringsEachRow",
+                          "/reference/formats/JSON/JSONStringsEachRowWithProgress",
+                          "/reference/formats/JSON/PrettyJSONEachRow",
+                          "/reference/formats/JSON/format-settings"
+                        ]
+                      },
+                      {
+                        "group": "LineAsString",
+                        "expanded": false,
+                        "pages": [
+                          "/reference/formats/LineAsString/LineAsString",
+                          "/reference/formats/LineAsString/LineAsStringWithNames",
+                          "/reference/formats/LineAsString/LineAsStringWithNamesAndTypes"
+                        ]
+                      },
+                      "/reference/formats/Markdown",
+                      "/reference/formats/MsgPack",
+                      "/reference/formats/MySQLDump",
+                      "/reference/formats/MySQLWire",
+                      "/reference/formats/Native",
+                      "/reference/formats/Npy",
+                      "/reference/formats/Null",
+                      "/reference/formats/ODBCDriver2",
+                      "/reference/formats/ORC",
+                      "/reference/formats/One",
+                      {
+                        "group": "Parquet",
+                        "expanded": false,
+                        "pages": [
+                          "/reference/formats/Parquet/Parquet",
+                          "/reference/formats/Parquet/ParquetMetadata"
+                        ]
+                      },
+                      "/reference/formats/PostgreSQLWire",
+                      {
+                        "group": "Pretty",
+                        "expanded": false,
+                        "pages": [
+                          "/reference/formats/Pretty/Pretty",
+                          "/reference/formats/Pretty/PrettyCompact",
+                          "/reference/formats/Pretty/PrettyCompactMonoBlock",
+                          "/reference/formats/Pretty/PrettyCompactNoEscapes",
+                          "/reference/formats/Pretty/PrettyCompactNoEscapesMonoBlock",
+                          "/reference/formats/Pretty/PrettyMonoBlock",
+                          "/reference/formats/Pretty/PrettyNoEscapes",
+                          "/reference/formats/Pretty/PrettyNoEscapesMonoBlock",
+                          "/reference/formats/Pretty/PrettySpace",
+                          "/reference/formats/Pretty/PrettySpaceMonoBlock",
+                          "/reference/formats/Pretty/PrettySpaceNoEscapes",
+                          "/reference/formats/Pretty/PrettySpaceNoEscapesMonoBlock"
+                        ]
+                      },
+                      "/reference/formats/Prometheus",
+                      {
+                        "group": "Protobuf",
+                        "expanded": false,
+                        "pages": [
+                          "/reference/formats/Protobuf/Protobuf",
+                          "/reference/formats/Protobuf/ProtobufList",
+                          "/reference/formats/Protobuf/ProtobufSingle"
+                        ]
+                      },
+                      "/reference/formats/RawBLOB",
+                      "/reference/formats/Regexp",
+                      {
+                        "group": "RowBinary",
+                        "expanded": false,
+                        "pages": [
+                          "/reference/formats/RowBinary/RowBinary",
+                          "/reference/formats/RowBinary/RowBinaryWithDefaults",
+                          "/reference/formats/RowBinary/RowBinaryWithNames",
+                          "/reference/formats/RowBinary/RowBinaryWithNamesAndTypes"
+                        ]
+                      },
+                      "/reference/formats/SQLInsert",
+                      {
+                        "group": "TabSeparated",
+                        "expanded": false,
+                        "pages": [
+                          "/reference/formats/TabSeparated/TSKV",
+                          "/reference/formats/TabSeparated/TabSeparated",
+                          "/reference/formats/TabSeparated/TabSeparatedRaw",
+                          "/reference/formats/TabSeparated/TabSeparatedRawWithNames",
+                          "/reference/formats/TabSeparated/TabSeparatedRawWithNamesAndTypes",
+                          "/reference/formats/TabSeparated/TabSeparatedWithNames",
+                          "/reference/formats/TabSeparated/TabSeparatedWithNamesAndTypes"
+                        ]
+                      },
+                      {
+                        "group": "Template",
+                        "expanded": false,
+                        "pages": [
+                          "/reference/formats/Template/Template",
+                          "/reference/formats/Template/TemplateIgnoreSpaces"
+                        ]
+                      },
+                      "/reference/formats/Values",
+                      "/reference/formats/Vertical",
+                      "/reference/formats/XML"
                     ]
                   },
                   {
                     "group": "Settings",
-                    "icon": "sliders",
                     "expandable": true,
                     "expanded": false,
                     "root": "/reference/settings/index",
@@ -1622,7 +1605,6 @@
                   },
                   {
                     "group": "System Tables",
-                    "icon": "table",
                     "expandable": true,
                     "expanded": false,
                     "root": "/reference/system-tables/index",
@@ -1763,7 +1745,6 @@
                 "groups": [
                   {
                     "group": "Get started",
-                    "icon": "rocket",
                     "root": "/products/cloud/getting-started/cloud-get-started",
                     "pages": [
                       "/docs/cloud/getting-started/intro",
@@ -1772,7 +1753,6 @@
                   },
                   {
                     "group": "Features",
-                    "icon": "list-check",
                     "pages": [
                       "/products/cloud/features/01_cloud_tiers",
                       "/products/cloud/features/02_integrations",
@@ -1854,7 +1834,6 @@
                   },
                   {
                     "group": "Cloud reference",
-                    "icon": "cloud",
                     "pages": [
                       "/products/cloud/reference/06_service-uptime",
                       "/products/cloud/reference/11_account-close",
@@ -1866,7 +1845,6 @@
                   },
                   {
                     "group": "Billing",
-                    "icon": "credit-card",
                     "pages": [
                       "/products/cloud/reference/03_billing/01_billing_overview",
                       {
@@ -1898,7 +1876,6 @@
                   },
                   {
                     "group": "Guides",
-                    "icon": "book",
                     "pages": [
                       {
                         "group": "Best practices",
@@ -2074,7 +2051,6 @@
                   },
                   {
                     "group": "API reference",
-                    "icon": "code",
                     "openapi": "api-reference/cloud/cloud-openapi.json"
                   }
                 ]
@@ -2085,7 +2061,6 @@
                 "groups": [
                   {
                     "group": "Get started",
-                    "icon": "rocket",
                     "pages": [
                       "/products/clickstack/overview",
                       {
@@ -2112,7 +2087,6 @@
                   },
                   {
                     "group": "Features",
-                    "icon": "list-check",
                     "pages": [
                       {
                         "group": "Deployment",
@@ -2152,7 +2126,6 @@
                   {
                     "group": "Managing ClickStack",
                     "expanded": true,
-                    "icon": "gear",
                     "root": "/products/clickstack/managing",
                     "pages": [
                       "/products/clickstack/managing/admin",
@@ -2163,7 +2136,6 @@
                   },
                   {
                     "group": "Guides",
-                    "icon": "book",
                     "pages": [
                       {
                         "group": "Ingesting data",
@@ -2245,7 +2217,6 @@
                   },
                   {
                     "group": "Integration partners",
-                    "icon": "handshake",
                     "root": "/products/clickstack/integration-partners/index",
                     "pages": [
                       "/products/clickstack/integration-partners/bindplane"
@@ -2253,7 +2224,6 @@
                   },
                   {
                     "group": "API reference",
-                    "icon": "code",
                     "root": "/products/clickstack/api-reference",
                     "openapi": "api-reference/hyperdx/hyperdx-openapi.json"
                   }
@@ -2265,7 +2235,6 @@
                 "groups": [
                   {
                     "group": "Get started",
-                    "icon": "rocket",
                     "pages": [
                       "/products/managed-postgres/overview",
                       "/products/managed-postgres/quickstart"
@@ -2273,7 +2242,6 @@
                   },
                   {
                     "group": "Features",
-                    "icon": "list-check",
                     "pages": [
                       "/products/managed-postgres/connection",
                       "/products/managed-postgres/settings",
@@ -2288,21 +2256,18 @@
                   },
                   {
                     "group": "Benchmarks",
-                    "icon": "chart-line",
                     "pages": [
                       "/products/managed-postgres/benchmarks"
                     ]
                   },
                   {
                     "group": "ClickHouse Integration",
-                    "icon": "link",
                     "pages": [
                       "/products/managed-postgres/clickhouse-integration"
                     ]
                   },
                   {
                     "group": "Migrations",
-                    "icon": "right-left",
                     "pages": [
                       "/products/managed-postgres/migrations/pg_dump-pg_restore",
                       "/products/managed-postgres/migrations/logical-replication",
@@ -2311,7 +2276,6 @@
                   },
                   {
                     "group": "FAQ",
-                    "icon": "circle-question",
                     "pages": [
                       "/products/managed-postgres/faq"
                     ]
@@ -2324,7 +2288,6 @@
                 "groups": [
                   {
                     "group": "Overview",
-                    "icon": "house",
                     "pages": [
                       "/products/agentic-data-stack/overview"
                     ]
@@ -2337,7 +2300,6 @@
                 "groups": [
                   {
                     "group": "Get started",
-                    "icon": "rocket",
                     "pages": [
                       "/products/chdb/index",
                       "/products/chdb/getting-started"
@@ -2345,7 +2307,6 @@
                   },
                   {
                     "group": "Language integrations",
-                    "icon": "laptop-code",
                     "pages": [
                       "/products/chdb/install/python",
                       "/products/chdb/install/nodejs",
@@ -2357,7 +2318,6 @@
                   },
                   {
                     "group": "DataStore",
-                    "icon": "database",
                     "pages": [
                       "/products/chdb/datastore/index",
                       "/products/chdb/datastore/quickstart",
@@ -2373,7 +2333,6 @@
                   },
                   {
                     "group": "Configuration",
-                    "icon": "sliders",
                     "pages": [
                       "/products/chdb/configuration/index",
                       "/products/chdb/configuration/execution-engine",
@@ -2383,7 +2342,6 @@
                   },
                   {
                     "group": "Debugging",
-                    "icon": "bug",
                     "pages": [
                       "/products/chdb/debugging/index",
                       "/products/chdb/debugging/explain",
@@ -2393,7 +2351,6 @@
                   },
                   {
                     "group": "Developer guides",
-                    "icon": "book",
                     "pages": [
                       "/products/chdb/guides/jupysql",
                       "/products/chdb/guides/querying-pandas",
@@ -2411,7 +2368,6 @@
                   },
                   {
                     "group": "Technical reference",
-                    "icon": "gears",
                     "pages": [
                       "/products/chdb/reference/data-formats",
                       "/products/chdb/reference/sql-reference",
@@ -2426,14 +2382,12 @@
                 "groups": [
                   {
                     "group": "Overview",
-                    "icon": "book-open",
                     "pages": [
                       "/products/kubernetes-operator/overview"
                     ]
                   },
                   {
                     "group": "Install",
-                    "icon": "download",
                     "pages": [
                       "/products/kubernetes-operator/install/kubectl",
                       "/products/kubernetes-operator/install/helm",
@@ -2442,7 +2396,6 @@
                   },
                   {
                     "group": "Guides",
-                    "icon": "compass",
                     "pages": [
                       "/products/kubernetes-operator/guides/introduction",
                       "/products/kubernetes-operator/guides/configuration"
@@ -2450,7 +2403,6 @@
                   },
                   {
                     "group": "Reference",
-                    "icon": "book",
                     "pages": [
                       "/products/kubernetes-operator/reference/api-reference"
                     ]
@@ -2466,16 +2418,9 @@
                 "item": "ClickPipes",
                 "icon": "/images/icons/icon-clickpipes.svg",
                 "groups": [
-                  {
-                    "group": "Home",
-                    "icon": "house",
-                    "pages": [
-                      "/integrations/clickpipes/home"
-                    ]
-                  },
+                  "/integrations/clickpipes/home",
                   {
                     "group": "ClickPipes for Object Storage",
-                    "icon": "cloud",
                     "pages": [
                       "/integrations/clickpipes/object-storage/01_create_clickpipe_for_object_storage",
                       "/integrations/clickpipes/object-storage/02_reference",
@@ -2505,7 +2450,6 @@
                   },
                   {
                     "group": "ClickPipes for Postgres",
-                    "icon": "database",
                     "pages": [
                       "/integrations/clickpipes/postgres/index",
                       "/integrations/clickpipes/postgres/deduplication",
@@ -2550,7 +2494,6 @@
                   },
                   {
                     "group": "ClickPipes for Kafka",
-                    "icon": "stream",
                     "pages": [
                       "/integrations/clickpipes/kafka/index",
                       "/integrations/clickpipes/kafka/01_create-kafka-clickpipe",
@@ -2562,7 +2505,6 @@
                   },
                   {
                     "group": "ClickPipes for Kinesis",
-                    "icon": "stream",
                     "pages": [
                       "/integrations/clickpipes/kinesis/overview",
                       "/integrations/clickpipes/kinesis/index",
@@ -2572,7 +2514,6 @@
                   },
                   {
                     "group": "ClickPipes for MySQL",
-                    "icon": "database",
                     "pages": [
                       "/integrations/clickpipes/mysql/index",
                       "/integrations/clickpipes/mysql/faq",
@@ -2607,7 +2548,6 @@
                   },
                   {
                     "group": "ClickPipes for MongoDB",
-                    "icon": "database",
                     "pages": [
                       "/integrations/clickpipes/mongodb/index",
                       "/integrations/clickpipes/mongodb/datatypes",
@@ -2637,7 +2577,6 @@
                   },
                   {
                     "group": "ClickPipes for BigQuery",
-                    "icon": "database",
                     "pages": [
                       "/integrations/clickpipes/bigquery/overview",
                       "/integrations/clickpipes/bigquery/get-started"
@@ -2645,7 +2584,6 @@
                   },
                   {
                     "group": "Other",
-                    "icon": "ellipsis",
                     "pages": [
                       "/integrations/clickpipes/aws-privatelink",
                       "/integrations/clickpipes/secure-rds",
@@ -2765,14 +2703,12 @@
                 "groups": [
                   {
                     "group": "Home",
-                    "icon": "house",
                     "pages": [
                       "/integrations/connectors/home"
                     ]
                   },
                   {
                     "group": "Data sources",
-                    "icon": "database",
                     "pages": [
                       "/integrations/connectors/data-sources/index",
                       {
@@ -2814,7 +2750,6 @@
                   },
                   {
                     "group": "Data visualization",
-                    "icon": "chart-simple",
                     "pages": [
                       "/integrations/connectors/data-visualization/index",
                       {
@@ -2847,7 +2782,6 @@
                       },
                       {
                         "group": "Community integrations",
-                        "icon": "users",
                         "expanded": false,
                         "pages": [
                           "/integrations/connectors/data-visualization/community-integrations/astrato-and-clickhouse",
@@ -2872,7 +2806,6 @@
                   },
                   {
                     "group": "Data ingestion",
-                    "icon": "arrows-to-dot",
                     "pages": [
                       "/integrations/connectors/data-ingestion/index",
                       "/integrations/connectors/data-ingestion/etl-tools/airbyte-and-clickhouse",
@@ -2942,7 +2875,6 @@
                       },
                       {
                         "group": "Community integrations",
-                        "icon": "users",
                         "expanded": false,
                         "pages": [
                           "/integrations/connectors/data-ingestion/community-integrations/artie-and-clickhouse",
@@ -2953,7 +2885,6 @@
                   },
                   {
                     "group": "Tools",
-                    "icon": "wrench",
                     "pages": [
                       "/integrations/connectors/tools/index",
                       {
@@ -3014,14 +2945,12 @@
                 "groups": [
                   {
                     "group": "Home",
-                    "icon": "house",
                     "pages": [
                       "/resources/support-center/home"
                     ]
                   },
                   {
                     "group": "Knowledgebase",
-                    "icon": "book",
                     "pages": [
                       {
                         "group": "Performance & Optimization",
@@ -3312,7 +3241,6 @@
                 "groups": [
                   {
                     "group": "Cloud",
-                    "icon": "cloud",
                     "root": "/resources/changelogs/cloud/release-notes-index",
                     "pages": [
                       "/resources/changelogs/cloud/01_changelog",
@@ -3339,7 +3267,6 @@
                   },
                   {
                     "group": "Self-managed",
-                    "icon": "database",
                     "pages": [
                       "/resources/changelogs/oss/2025",
                       "/resources/changelogs/oss/2024",
