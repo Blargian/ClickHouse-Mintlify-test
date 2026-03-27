@@ -10,7 +10,124 @@ rss: true
 
 In addition to this ClickHouse Cloud changelog, please see the [Cloud Compatibility](/whats-new/cloud-compatibility) page.
 
-<Update label="October 17, 2025" tags={["New feature", "Bugfix"]}>
+<Update label="March 20, 2026">
+
+### Custom date range for Usage Breakdown
+Users can now view usage costs across all billing dimensions on the usage breakdown screen using a custom date range. Select a start and end date (inclusive) to filter costs by a specific period and download the results as a CSV. The date range is limited to a maximum of 31 days.
+
+</Update>
+
+<Update label="February 20, 2026">
+
+### ClickPipes automatic cleanup
+Reverse private endpoints in an inactive state will now be automatically removed after a defined grace period. This ensures unused or misconfigured endpoints are not persisted indefinitely in the backend. See the automatic clean up [documentation](/integrations/clickpipes/aws-privatelink#automatic-cleanup) for more details.
+
+</Update>
+
+<Update label="February 13, 2026">
+
+### BigQuery Connector
+[BigQuery Connector](/integrations/clickpipes/bigquery/overview) is now in Private Preview. Read this [blogpost](https://clickhouse.com/blog/bigquery-clickpipe-private-preview) for more details and join the [waitlist](https://clickhouse.com/cloud/clickpipes/bigquery-connector) for access.
+
+### PCI deployments for Google Cloud
+Support for PCI deployments for Google Cloud. Regions supported:
+- GCP europe-west4 (Netherlands)
+- GCP us-central1 (Iowa)
+- GCP us-east1 (South Carolina)
+
+### Crash report collection preferences
+Crash report collection preferences can now be configured at the organization level. This setting was previously available only at the service level. When disabled at the organization level, all existing and future services will be opted out automatically.
+
+</Update>
+
+<Update label="January 23, 2026">
+
+### ClickPipes in AWS eu-west-1
+ClickPipes is now available in AWS `eu-west-1`. For new ClickHouse Cloud services created from January 20 in that region, the matching region will be used for ClickPipes. For older services, ClickPipes defaults to `eu-central-1`. See the [documentation](/integrations/clickpipes#list-of-static-ips) for more details.
+
+</Update>
+
+<Update label="January 16, 2026">
+
+### Service-level usage cost filtering via API
+The API now supports filtering organization usage costs by specific service tags, making it easier to analyze spend at a more granular level.
+
+### Data Catalog integration
+Connect an external data catalog as a data source. ClickHouse Cloud supports AWS Glue and Unity Catalog (with more coming soon). Once connected, the catalog appears as a database, allowing you to read Iceberg tables directly—without duplicating data. For access, contact support to request access.
+
+### ClickPipes
+- The MongoDB connector has been promoted to Public Beta, and is now available to new and existing ClickHouse Cloud customers, in all service tiers. Read the [blogpost](https://clickhouse.com/blog/mongodb-cdc-connector-clickpipes-beta) for an overview of new features and head to the [documentation](/integrations/clickpipes/mongodb) to get started.
+- The [S3 ClickPipe](/integrations/clickpipes/object-storage/s3/overview) is now compatible with OVH Object Storage, the S3 API-compatible object storage service in OVHcloud.
+
+</Update>
+
+<Update label="December 19, 2025">
+
+### PCI compliance in AWS ap-south-1
+AWS ap-south-1 now supports launching PCI compliant services.
+
+### Unified user identity private preview
+Customers interested in managing database users from the console may enable a new authentication method for SQL console. This allows customers to try out the new authentication method while we continue work to bring database user management to the console.
+
+### Unordered mode in S3 ClickPipes
+Customers can now ingest data from Amazon S3 into ClickHouse Cloud in any order for event-driven analytics. Files are no longer required to be in lexicographical order for consumption. More details available in the announcement [blog](https://clickhouse.com/blog/clickpipes-s3-unordered-mode).
+
+### Fivetran connector beta
+The Fivetran connector has recently moved to beta. If you're using Fivetran and want to set up ClickHouse as a destination, check out these [docs](https://fivetran.com/docs/destinations/clickhouse/setup-guide).
+
+</Update>
+
+<Update label="December 12, 2025">
+
+### SAML SSO self-serve setup
+Enterprise customers may now complete SAML setup in the console without a support ticket. Additionally, SAML customers may set a default role that will be assigned to new users added via their identity provider and set custom session timeout settings. For more information, please review our [docs](/cloud/security/saml-setup).
+
+### Maximum replica size and scaling limits in Azure
+Customers can now set the maximum replica size as 356 GiB in all Azure regions, except `eastus2` where the available maximum replica size is 120 GiB.
+
+</Update>
+
+<Update label="November 21, 2025">
+
+### AWS Israel (Tel Aviv) region
+ClickHouse Cloud is now available in **AWS Israel (Tel Aviv) — il-central-1**.
+
+### Marketplace onboarding improvements
+Improved the marketplace onboarding experience for setting up ClickHouse organizations to bill to marketplace pay-as-you-go subscriptions or private offers.
+
+</Update>
+
+<Update label="November 14, 2025">
+
+### New public regions
+ClickHouse Cloud is now available in two additional public regions:
+- **GCP Japan (asia-northeast1)**
+- **AWS Seoul (Asia Pacific, ap-northeast-2)** — now also supported in **ClickPipes**
+
+These regions were previously available as private regions and are now open to all users.
+
+### Terraform and API tags
+Terraform and API now support adding tags to services and filtering services by tags.
+
+</Update>
+
+<Update label="November 7, 2025">
+
+### Granular replica sizing
+ClickHouse Cloud console now supports configuring replica sizes in increments of 1 vCPU, 4 GiB from the cloud console. These options are available both when setting up a new service as well as when setting minimum and maximum replica sizes on the settings page.
+
+### Custom hardware profiles with idling
+Custom hardware profiles (available on the Enterprise tier) now support idling.
+
+### Simplified AWS Marketplace purchasing
+ClickHouse Cloud now offers a simplified purchasing experience through AWS Marketplace, with separate options for [pay-as-you-go](https://aws.amazon.com/marketplace/pp/prodview-p4gwofrqpkltu?sr=0-2&ref_=beagle&applicationId=AWSMPContessa) and [committed spend contracts](https://aws.amazon.com/marketplace/pp/prodview-4qyeihstyym2s?sr=0-3&ref_=beagle&applicationId=AWSMPContessa).
+
+### ClickStack alerting
+Alerting is now available for ClickStack users in ClickHouse Cloud. You can now create and manage alerts directly in the HyperDX UI, across logs, metrics, and traces with no extra setup, no extra infra or service, and no config. Alerts integrate with Slack, PagerDuty, and more. For more information see the [alerting documentation](/use-cases/observability/clickstack/alerts).
+
+</Update>
+
+<Update label="October 17, 2025" tags={["Improvements", "New feature"]}>
 
 ### Service Monitoring - Resource Utilization Dashboard
   The CPU utilization and memory utilization metrics display will change to show the maximum utilization metric during a particular time period to better surface instances of underprovisionment, from average.
@@ -22,86 +139,111 @@ In addition to this ClickHouse Cloud changelog, please see the [Cloud Compatibil
 
 </Update>
 
-## August 29, 2025
+<Update label="August 29, 2025">
 
-- [ClickHouse Cloud Azure Private Link](/cloud/security/azure-privatelink) has switched from using Resource GUID to Resource ID filters for resource identification. You can still use the legacy Resource GUID, which is backward compatible, but we recommend switching to Resource ID filters. For migration details see the [docs](/cloud/security/azure-privatelink#obtaining-private-endpoint-resourceid) for Azure Private Link.
+### ClickHouse Cloud Azure Private Link
+[ClickHouse Cloud Azure Private Link](/cloud/security/azure-privatelink) has switched from using Resource GUID to Resource ID filters for resource identification. You can still use the legacy Resource GUID, which is backward compatible, but we recommend switching to Resource ID filters. For migration details see the [docs](/cloud/security/azure-privatelink#obtaining-private-endpoint-resourceid) for Azure Private Link.
 
-## August 22, 2025
+</Update>
 
-- **ClickHouse Connector for AWS Glue**
+<Update label="August 22, 2025">
+
+### ClickHouse Connector for AWS Glue
   You can now use the official [ClickHouse Connector for AWS Glue](/integrations/glue) that is available from the [AWS Marketplace](https://aws.amazon.com/marketplace/pp/prodview-eqvmuopqzdg7s). Utilizes AWS Glue’s Apache
   Spark-based serverless engine for extracting, transforming and loading data integration between ClickHouse and other data sources. Get
   started by following along with the announcement [blogpost](http://clickhouse.com/blog/clickhouse-connector-aws-glue) for how to create tables, write and read data between ClickHouse and Spark.
-- **Change to the minimum number of replicas in a service**
+### Change to the minimum number of replicas in a service
   Services which have been scaled up can now be [scaled back down](/manage/scaling) to use a single replica (previously the minimum was 2 replicas). Note: single replica services have reduced availability and are not recommended for production usage.
 - ClickHouse Cloud will begin to send notifications related to service scaling and service version upgrades, by default for administrator roles. Users can adjust their notification preferences in their notification settings.
 
-## August 13, 2025
+</Update>
 
-- **ClickPipes for MongoDB CDC now in Private Preview**
+<Update label="August 13, 2025">
+
+### ClickPipes for MongoDB CDC now in Private Preview
   You can now use ClickPipes to replicate data from MongoDB into ClickHouse Cloud in a few clicks, enabling
   real-time analytics without the need for external ETL tools. The connector supports continuous
   replication as well as one-time migrations, and is compatible with MongoDB Atlas and self-hosted MongoDB
   deployments. Read the [blogpost](https://clickhouse.com/blog/mongodb-cdc-clickhouse-preview) for an overview of the MongoDB CDC connector and [sign up for early access here](https://clickhouse.com/cloud/clickpipes/mongodb-cdc-connector)!
 
-## August 8, 2025
+</Update>
 
-- **Notifications**: Users will now receive a UI notification when their service starts upgrading to a new ClickHouse version. Additional Email and Slack notifications can be added via the notification center.
-- **ClickPipes**: Azure Blob Storage (ABS) ClickPipes support was added to the ClickHouse Terraform provider. See the provider documentation for an example of how to programmatically create an ABS ClickPipe.
+<Update label="August 8, 2025">
+
+### Notifications
+Users will now receive a UI notification when their service starts upgrading to a new ClickHouse version. Additional Email and Slack notifications can be added via the notification center.
+### ClickPipes
+Azure Blob Storage (ABS) ClickPipes support was added to the ClickHouse Terraform provider. See the provider documentation for an example of how to programmatically create an ABS ClickPipe.
   - [Bug fix] Object storage ClickPipes writing to a destination table using the Null engine now report "Total records" and "Data ingested" metrics in the UI.
   - [Bug fix] The “Time period” selector for metrics in the UI defaulted to “24 hours” regardless of the selected time period. This has now been fixed, and the UI correctly updates the charts for the selected time period.
-- **Cross-region private link (AWS)** is now Generally Available. Please refer to the [documentation](/manage/security/aws-privatelink) for the list of supported regions.
+### Cross-region private link (AWS)
+Cross-region private link (AWS) is now Generally Available. Please refer to the [documentation](/manage/security/aws-privatelink) for the list of supported regions.
 
-## July 31, 2025
+</Update>
 
-**Vertical scaling for ClickPipes now available**
+<Update label="July 31, 2025">
 
+### Vertical scaling for ClickPipes now available
 [Vertical scaling is now available for streaming ClickPipes](https://clickhouse.com/blog/clickpipes-flexible-scaling-monitoring).
 This feature allows you to control the size of each replica, in addition to the
 number of replicas (horizontal scaling). The details page for each ClickPipe now
 also includes per-replica CPU and memory utilization, which helps you better
 understand your workloads and plan re-sizing operations with confidence.
 
-## July 24, 2025
+</Update>
 
-**ClickPipes for MySQL CDC now in public beta**
+<Update label="July 24, 2025">
 
+### ClickPipes for MySQL CDC now in public beta
 The MySQL CDC connector in ClickPipes is now widely available in public beta. With just a few clicks,
 you can start replicating your MySQL (or MariaDB) data directly into ClickHouse Cloud in real-time,
 with no external dependencies. Read the [blogpost](https://clickhouse.com/blog/mysql-cdc-connector-clickpipes-beta)
 for an overview of the connector and follow the [quickstart](https://clickhouse.com/docs/integrations/clickpipes/mysql)
 to get up and running.
 
-## July 11, 2025
+</Update>
 
-- New services now store database and table metadata in a central **SharedCatalog**,
-  a new model for coordination and object lifecycles which enables:
-  - **Cloud-scale DDL**, even under high concurrency
-  - **Resilient deletion and new DDL operations**
-  - **Fast spin-up and wake-ups** as stateless nodes now launch with no disk dependencies
-  - **Stateless compute across both native and open formats**, including Iceberg and Delta Lake
+<Update label="July 11, 2025">
 
-  Read more about SharedCatalog in our [blog](https://clickhouse.com/blog/clickhouse-cloud-stateless-compute)
+### SharedCatalog
+New services now store database and table metadata in a central **SharedCatalog**,
+a new model for coordination and object lifecycles which enables:
+- **Cloud-scale DDL**, even under high concurrency
+- **Resilient deletion and new DDL operations**
+- **Fast spin-up and wake-ups** as stateless nodes now launch with no disk dependencies
+- **Stateless compute across both native and open formats**, including Iceberg and Delta Lake
 
-- We now support the ability to launch HIPAA compliant services in GCP `europe-west4`
+Read more about SharedCatalog in our [blog](https://clickhouse.com/blog/clickhouse-cloud-stateless-compute)
 
-## June 27, 2025
+### HIPAA compliance in GCP
+We now support the ability to launch HIPAA compliant services in GCP `europe-west4`
 
-- We now officially support a Terraform provider for managing database privileges
-  which is also compatible with self-managed deployments. Please refer to the
-  [blog](https://clickhouse.com/blog/new-terraform-provider-manage-clickhouse-database-users-roles-and-privileges-with-code)
-  and our [docs](https://registry.terraform.io/providers/ClickHouse/clickhousedbops/latest/docs)
-  for more information.
-- Enterprise tier services can now enlist in the [slow release channel](/manage/updates/#slow-release-channel-deferred-upgrades) to defer
-  upgrades by two weeks after the regular release to permit additional time for
-  testing.
+</Update>
 
-## June 13, 2025
+<Update label="June 27, 2025">
+
+### Terraform provider for database privileges
+We now officially support a Terraform provider for managing database privileges
+which is also compatible with self-managed deployments. Please refer to the
+[blog](https://clickhouse.com/blog/new-terraform-provider-manage-clickhouse-database-users-roles-and-privileges-with-code)
+and our [docs](https://registry.terraform.io/providers/ClickHouse/clickhousedbops/latest/docs)
+for more information.
+
+### Slow release channel
+Enterprise tier services can now enlist in the [slow release channel](/manage/updates/#slow-release-channel-deferred-upgrades) to defer
+upgrades by two weeks after the regular release to permit additional time for
+testing.
+
+</Update>
+
+<Update label="June 13, 2025">
 
 - We're excited to announce that ClickHouse Cloud Dashboards are now generally available. Dashboards allow users to visualize queries on dashboards, interact with data via filters and query parameters, and manage sharing.
 - API key IP filters: we are introducing an additional layer of protection for your interactions with ClickHouse Cloud. When generating an API key, you may setup an IP allow list to limit where the API key may be used.  Please refer to the [documentation](https://clickhouse.com/docs/cloud/security/setting-ip-filters) for details.
 
-## May 30, 2025
+</Update>
+
+<Update label="May 30, 2025">
 
 - We're excited to announce general availability of **ClickPipes for Postgres CDC**
   in ClickHouse Cloud. With just a few clicks, you can now replicate your Postgres
@@ -125,7 +267,9 @@ to get up and running.
 - We are enlisting preview participants for [Distributed cache](https://clickhouse.com/cloud/distributed-cache-waitlist)
   for AWS and GCP. Read more in the [blog](https://clickhouse.com/blog/building-a-distributed-cache-for-s3).
 
-## May 16, 2025
+</Update>
+
+<Update label="May 16, 2025">
 
 - Introduced the Resource Utilization Dashboard which provides a view of
   resources being used by a service in ClickHouse Cloud. The following metrics
@@ -140,7 +284,9 @@ to get up and running.
   a pre-configured dashboard that gives you real-time visibility into the health
   and performance of your services. Refer to the launch [blog](https://clickhouse.com/blog/monitor-with-new-prometheus-grafana-mix-in) to read more.
 
-## April 18, 2025
+</Update>
+
+<Update label="April 18, 2025">
 
 - Introduced a new **Member** organization level role and two new service level
   roles: **Service Admin** and **Service Read Only**.
@@ -157,13 +303,16 @@ to get up and running.
   configured per pipe. For **Postgres CDC ClickPipes**, alerts also cover
   replication slot threshold (configurable in the **Settings** tab), specific error
   types, and self-serve steps to resolve failures.
-- **MySQL CDC private preview** is now open. This lets customers replicate MySQL
+### MySQL CDC private preview
+MySQL CDC private preview is now open. This lets customers replicate MySQL
   databases to ClickHouse Cloud in a few clicks, enabling fast analytics and
   removing the need for external ETL tools. The connector supports both continuous
   replication and one-time migrations, whether MySQL is on the cloud (RDS,
   Aurora, Cloud SQL, Azure, etc.) or on-premises. You can sign up to the private
   preview by [following this link](https://clickhouse.com/cloud/clickpipes/mysql-cdc-connector).
-- Introduced **AWS PrivateLink for ClickPipes**. You can use AWS PrivateLink to
+
+### AWS PrivateLink for ClickPipes
+You can use AWS PrivateLink to
   establish secure connectivity between VPCs, AWS services, your on-premises
   systems, and ClickHouse Cloud. This can be done without exposing traffic to
   the public internet while moving data from sources like Postgres, MySQL, and
@@ -171,12 +320,16 @@ to get up and running.
   PrivateLink connectivity set-up is now [fully self-serve](https://clickhouse.com/docs/integrations/clickpipes/aws-privatelink)
   through ClickPipes.
 
-## April 4, 2025
+</Update>
+
+<Update label="April 4, 2025">
 
 - Slack notifications for ClickHouse Cloud: ClickHouse Cloud now supports Slack notifications for billing, scaling, and ClickPipes events, in addition to in-console and email notifications. These notifications are sent via the ClickHouse Cloud Slack application. Organization admins can configure these notifications via the notification center by specifying slack channels to which notifications should be sent.
 - Users running Production and Development services will now see ClickPipes and data transfer usage price on their bills.
 
-## March 21, 2025
+</Update>
+
+<Update label="March 21, 2025">
 
 - Cross-region Private Link connectivity on AWS is now in Beta. Please refer to
   ClickHouse Cloud private link [docs](/manage/security/aws-privatelink) for
@@ -185,7 +338,9 @@ to get up and running.
   This allows for efficient utilization, while ensuring we have resources
   allocated to background processes.
 
-## March 7, 2025
+</Update>
+
+<Update label="March 7, 2025">
 
 - New `UsageCost` API endpoint: The API specification now supports a new endpoint
   for retrieving usage information. This is an organization endpoint and usage
@@ -194,7 +349,9 @@ to get up and running.
   to the [documentation](https://clickhouse.com/docs/cloud/manage/api/usageCost-api-reference) for details.
 - Terraform provider [v2.1.0](https://registry.terraform.io/providers/ClickHouse/clickhouse/2.1.0/docs/resources/service#nestedatt--endpoints_configuration) release supports enabling the MySQL endpoint.
 
-## February 21, 2025
+</Update>
+
+<Update label="February 21, 2025">
 
 ### ClickHouse Bring Your Own Cloud (BYOC) for AWS is now generally available
 
@@ -245,7 +402,9 @@ in use.
 - If your service is already above these limits, we will permit a 10% increase.
   Please contact [support](https://clickhouse.com/support/program) if you have any questions.
 
-## January 27, 2025
+</Update>
+
+<Update label="January 27, 2025">
 
 ### Changes to ClickHouse Cloud tiers
 
@@ -309,17 +468,21 @@ JDBC / Java will be in[ 0.8.0](https://github.com/ClickHouse/clickhouse-java/rel
 
 We've added several enhancements for the Prometheus integration:
 
-- **Organization-level endpoint**. We've introduced an enhancement to our Prometheus integration for ClickHouse Cloud. In addition to service-level metrics, the API now includes an endpoint for **organization-level metrics**. This new endpoint automatically collects metrics for all services within your organization, streamlining the process of exporting metrics into your Prometheus collector. These metrics can be integrated with visualization tools like Grafana and Datadog for a more comprehensive view of your organization's performance.
+### Organization-level endpoint
+We've introduced an enhancement to our Prometheus integration for ClickHouse Cloud. In addition to service-level metrics, the API now includes an endpoint for **organization-level metrics**. This new endpoint automatically collects metrics for all services within your organization, streamlining the process of exporting metrics into your Prometheus collector. These metrics can be integrated with visualization tools like Grafana and Datadog for a more comprehensive view of your organization's performance.
 
   This feature is available now for all users. You can find more details [here](/integrations/prometheus).
 
-- **Filtered metrics**. We've added support for returning a filtered list of metrics in our Prometheus integration for ClickHouse Cloud. This feature helps reduce response payload size by enabling you to focus on metrics that are critical for monitoring the health of your service.
+### Filtered metrics
+We've added support for returning a filtered list of metrics in our Prometheus integration for ClickHouse Cloud. This feature helps reduce response payload size by enabling you to focus on metrics that are critical for monitoring the health of your service.
 
   This functionality is available via an optional query parameter in the API, making it easier to optimize your data collection and streamline integrations with tools like Grafana and Datadog.
 
   The filtered metrics feature is now available for all users. You can find more details [here](/integrations/prometheus).
 
-## December 20, 2024
+</Update>
+
+<Update label="December 20, 2024">
 
 ### Marketplace subscription organization attachment
 
@@ -335,7 +498,9 @@ It is now possible to restrict the expiry options of API keys so you don't creat
 
 Org Admins can now add more email addresses to a specific notification as additional recipients. This is useful in case you want to send notifications to an alias or to other users within your organization who might not be users of ClickHouse Cloud. To configure this, go to the Notification Settings from the cloud console and edit the email addresses that you want to receive the email notifications.
 
-## December 6, 2024
+</Update>
+
+<Update label="December 6, 2024">
 
 ### BYOC (beta)
 
@@ -401,7 +566,9 @@ You can now use IAM authentication to connect to an MSK broker with AWS MSK Clic
 
 From now on, any new services created on AWS will allow a maximum available replica size of 236 GiB.
 
-## November 22, 2024
+</Update>
+
+<Update label="November 22, 2024">
 
 ### Built-in advanced observability dashboard for ClickHouse Cloud
 
@@ -421,7 +588,9 @@ We've improved autocomplete significantly, allowing you to get in-line SQL compl
 
 You can now assign users in your organization to a new **Billing** role that allows them to view and manage billing information without giving them the ability to configure or manage services. Simply invite a new user or edit an existing user's role to assign the **Billing** role.
 
-## November 8, 2024
+</Update>
+
+<Update label="November 8, 2024">
 
 ### Customer Notifications in ClickHouse Cloud
 
@@ -435,7 +604,9 @@ Please see the [ClickHouse docs](/cloud/notifications) to learn more about how t
 
 <br />
 
-## October 4, 2024
+</Update>
+
+<Update label="October 4, 2024">
 
 ### ClickHouse Cloud now offers HIPAA-ready services in Beta for GCP
 
@@ -477,7 +648,9 @@ High throughput can demand extra resources to meet your data volume and latency 
 
 It is now possible to  ingest an entire Kafka or Kinesis message without parsing it. ClickPipes now offers support for a `_raw_message` [virtual column](/integrations/clickpipes/kafka/reference/#kafka-virtual-columns), allowing users to map the full message into a single String column. This gives you the flexibility to work with raw data as needed.
 
-## August 29, 2024
+</Update>
+
+<Update label="August 29, 2024">
 
 ### New Terraform provider version - v1.0.0
 
@@ -491,7 +664,9 @@ Our SOC 2 Type II demonstrates our ongoing commitment to achieving security, ava
 
 Please also check out our [Trust Center](https://trust.clickhouse.com/) for security and compliance documents and reports.
 
-## August 15, 2024
+</Update>
+
+<Update label="August 15, 2024">
 
 ### Compute-compute separation is now in Private Preview for AWS
 
@@ -505,7 +680,9 @@ Our new compute-compute separation feature enables you to create multiple comput
 
 ClickPipes is the easiest way to ingest data into ClickHouse Cloud. We're happy to announce that [ClickPipes](https://clickhouse.com/cloud/clickpipes) for S3 and GCS is now **Generally Available**. ClickPipes supports both one-time batch ingest and "continuous mode". An ingest task will load all the files matched by a pattern from a specific remote bucket into the ClickHouse destination table. In "continuous mode", the ClickPipes job will run constantly, ingesting matching files that get added into the remote object storage bucket as they arrive. This will allow users to turn any object storage bucket into a fully fledged staging area for ingesting data into ClickHouse Cloud. Read more about ClickPipes in [our documentation](/integrations/clickpipes).
 
-## July 18, 2024
+</Update>
+
+<Update label="July 18, 2024">
 
 ### Prometheus endpoint for metrics is now generally available
 
@@ -529,7 +706,9 @@ For the last couple of years, we've been working on a new analyzer for query ana
 
 Stay tuned for more improvements to the analyzer as we have many more optimizations planned.
 
-## June 28, 2024
+</Update>
+
+<Update label="June 28, 2024">
 
 ### ClickHouse Cloud for Microsoft Azure is now generally available
 
@@ -557,7 +736,9 @@ Perhaps one of our most requested features: you can now export [Prometheus](http
 ### Other features
 - [Configurable backups](/cloud/manage/backups/configurable-backups) to configure custom backup policies like frequency, retention, and schedule are now Generally Available.
 
-## June 13, 2024
+</Update>
+
+<Update label="June 13, 2024">
 
 ### Configurable offsets for Kafka ClickPipes Connector (Beta)
 
@@ -584,7 +765,9 @@ ClickHouse Cloud supports [horizontal scaling](/manage/scaling#how-scaling-works
 
 Please see the [ClickHouse Terraform provider](https://registry.terraform.io/providers/ClickHouse/clickhouse/latest/docs) for more information.
 
-## May 30, 2024
+</Update>
+
+<Update label="May 30, 2024">
 
 ### Share queries with your teammates
 
@@ -610,7 +793,9 @@ You can now configure private endpoints in just a few clicks directly from the C
 
 <img src="/images/cloud/reference/may-30-private-endpoints.png" alt="ClickHouse Cloud console showing private endpoint setup interface in the security settings"/>
 
-## May 17, 2024
+</Update>
+
+<Update label="May 17, 2024">
 
 ### Ingest data from Amazon Kinesis using ClickPipes (beta)
 
@@ -634,7 +819,9 @@ When you write a SQL query for ClickHouse, you still need to connect to ClickHou
 
 There are 12 free training modules in ClickHouse Develop training course. Prior to this week, there was no official way to prove your mastery in ClickHouse. We recently launched an official exam to become a **ClickHouse Certified Developer**. Completing this exam allows you to share with current and prospective employers your mastery in ClickHouse on topics including data ingestion, modeling, analysis, performance optimization, and more. You can take the exam [here](https://clickhouse.com/learn/certification) or read more about ClickHouse certification in this [blog post](https://clickhouse.com/blog/first-official-clickhouse-certification).
 
-## April 25, 2024
+</Update>
+
+<Update label="April 25, 2024">
 
 ### Load data from S3 and GCS using ClickPipes
 
@@ -652,14 +839,16 @@ This is an open-source integration built over many months of hard work by our In
 
 ### Other changes
 
-**Console changes**
+### Console changes
 - Output formats support in the SQL console
 
-**Integrations changes**
+### Integrations changes
 - ClickPipes Kafka connector supports multi-broker setup
 - PowerBI connector supports providing ODBC driver configuration options.
 
-## April 18, 2024
+</Update>
+
+<Update label="April 18, 2024">
 
 ### AWS Tokyo region is now available for ClickHouse Cloud
 
@@ -681,7 +870,9 @@ Other changes:
 - Java client: Fixed bug with incorrect error code parsing
 - Python client: Fixed parameters binding for numeric types, fixed bugs with number list in query binding, added SQLAlchemy Point support.
 
-## April 4, 2024
+</Update>
+
+<Update label="April 4, 2024">
 
 ### Introducing the new ClickHouse Cloud console
 
@@ -695,7 +886,9 @@ Select customers will receive a preview of our new cloud console experience – 
 
 <img src="/images/cloud/reference/new-cloud-console.gif" alt="Animation showing the new ClickHouse Cloud console interface with integrated SQL editor and management features"/>
 
-## March 28, 2024
+</Update>
+
+<Update label="March 28, 2024">
 
 This release introduces support for Microsoft Azure, Horizontal Scaling via API, and Release Channels in Private Preview.
 
@@ -725,7 +918,9 @@ This release introduces support for Microsoft Azure, Horizontal Scaling via API,
 ### Security updates
 - Updated ClickHouse Cloud to prevent ["Role-based Access Control is bypassed when query caching is enabled"](https://github.com/ClickHouse/ClickHouse/security/advisories/GHSA-45h5-f7g3-gr8r) (CVE-2024-22412)
 
-## March 14, 2024
+</Update>
+
+<Update label="March 14, 2024">
 
 This release makes available in early access the new Cloud console experience, ClickPipes for bulk loading from S3 and GCS, and support for Avro format in ClickPipes for Kafka. It also upgrades the ClickHouse database version to 24.1, bringing support for new functions as well as performance and resource usage optimizations.
 
@@ -746,7 +941,9 @@ This release makes available in early access the new Cloud console experience, C
 - Golang client: Reduced the memory footprint for handling responses, fixed Date32 extreme values, fixed error reporting when compression is enabled
 - Python client: Improved timezone support in datetime parameters, improved performance for Pandas DataFrame
 
-## February 29, 2024
+</Update>
+
+<Update label="February 29, 2024">
 
 This release improves SQL console application load time, adds support for SCRAM-SHA-256 authentication in ClickPipes, and extends nested structure support to Kafka Connect.
 
@@ -763,7 +960,9 @@ This release improves SQL console application load time, adds support for SCRAM-
 - DBT: Added the ability to pass settings to model creation
 - Node.js client: Added support for long-running queries (>1hr) and handling of empty values gracefully
 
-## February 15, 2024
+</Update>
+
+<Update label="February 15, 2024">
 
 This release upgrades the core database version, adds ability to set up private links via Terraform, and adds support for exactly once semantics for asynchronous inserts through Kafka Connect.
 
@@ -791,7 +990,9 @@ This release upgrades the core database version, adds ability to set up private 
 * `use_mysql_types_in_show_columns` is no longer required. It will be automatically enabled when you connect through the MySQL interface.
 * `async_insert_max_data_size` now has the default value of `10 MiB`
 
-## February 2, 2024
+</Update>
+
+<Update label="February 2, 2024">
 
 This release brings availability of ClickPipes for Azure Event Hub, dramatically improves workflow for logs and traces navigation using v4 ClickHouse Grafana connector, and debuts support for Flyway and Atlas database schema management tools.
 
@@ -816,7 +1017,9 @@ This release brings availability of ClickPipes for Azure Event Hub, dramatically
 * Metabase
   * Added support for a connection to multiple databases
 
-## January 18, 2024
+</Update>
+
+<Update label="January 18, 2024">
 
 This release brings a new region in AWS (London / eu-west-2), adds ClickPipes support for Redpanda, Upstash, and Warpstream, and improves reliability of the [is_deleted](/engines/table-engines/mergetree-family/replacingmergetree#is_deleted) core database capability.
 
@@ -841,7 +1044,9 @@ This release brings a new region in AWS (London / eu-west-2), adds ClickPipes su
 ### Reliability changes
 - User-facing backward incompatible change: Previously, two features ([is_deleted](/engines/table-engines/mergetree-family/replacingmergetree#is_deleted) and ``OPTIMIZE CLEANUP``) under certain conditions could lead to corruption of the data in ClickHouse. To protect the integrity of the data of our users, while keeping the core of the functionality, we adjusted how this feature works. Specifically, the MergeTree setting ``clean_deleted_rows`` is now deprecated and has no effect anymore. The ``CLEANUP`` keyword is not allowed by default (to use it you will need to enable ``allow_experimental_replacing_merge_with_cleanup``). If you decide to use ``CLEANUP``, you need to make sure that it is always used together with ``FINAL``, and you must guarantee that no rows with older versions will be inserted after you run ``OPTIMIZE FINAL CLEANUP``.
 
-## December 18, 2023
+</Update>
+
+<Update label="December 18, 2023">
 
 This release brings a new region in GCP (us-east1), ability to self-service secure endpoint connections, support for additional integrations including DBT 1.7, and numerous bug fixes and security enhancements.
 
@@ -870,7 +1075,9 @@ This release brings a new region in GCP (us-east1), ability to self-service secu
   - CVE-2023-48704 (CVSS 7.0) - a heap buffer overflow vulnerability affecting the native interface running by default on port 9000/tcp
   - CVE 2023-48298 (CVSS 5.9) - an integer underflow vulnerability in the FPC compressions codec
 
-## November 22, 2023
+</Update>
+
+<Update label="November 22, 2023">
 
 This release upgrades the core database version, improves login and authentication flow, and adds proxy support to Kafka Connect Sink.
 
@@ -879,7 +1086,8 @@ This release upgrades the core database version, improves login and authenticati
 - Dramatically improved performance for reading Parquet files. See [23.8 release blog](https://clickhouse.com/blog/clickhouse-release-23-08) for details.
 - Added type inference support for JSON. See [23.9 release blog](https://clickhouse.com/blog/clickhouse-release-23-09) for details.
 - Introduced powerful analyst-facing functions like `ArrayFold`. See [23.10 release blog](https://clickhouse.com/blog/clickhouse-release-23-10) for details.
-- **User-facing backward-incompatible change**: Disabled setting `input_format_json_try_infer_numbers_from_strings` by default to avoid inferring numbers from strings in JSON format. Doing so can create possible parsing errors when sample data contains strings similar to numbers.
+### User-facing backward-incompatible change
+Disabled setting `input_format_json_try_infer_numbers_from_strings` by default to avoid inferring numbers from strings in JSON format. Doing so can create possible parsing errors when sample data contains strings similar to numbers.
 - Dozens of new features, performance improvements, and bug fixes. See [core database changelogs](/whats-new/changelog) for details.
 
 ### Console changes
@@ -894,7 +1102,9 @@ This release upgrades the core database version, improves login and authenticati
 - Metabase: Added `datetimeDiff` function support.
 - Python client: Added support for special characters in column names. Fixed timezone parameter binding.
 
-## November 2, 2023
+</Update>
+
+<Update label="November 2, 2023">
 
 This release adds more regional support for development services in Asia, introduces key rotation functionality to customer-managed encryption keys, improved granularity of tax settings in the billing console and a number of bug fixes across supported language clients.
 
@@ -923,7 +1133,9 @@ This release adds more regional support for development services in Asia, introd
 - DBT
   - Improved distributed table support with tests
 
-## October 19, 2023
+</Update>
+
+<Update label="October 19, 2023">
 
 This release brings usability and performance improvements in the SQL console, better IP data type handling in the Metabase connector, and new functionality in the Java and Node.js clients.
 
@@ -939,7 +1151,9 @@ This release brings usability and performance improvements in the SQL console, b
 - Node.js client: Fixed keep-alive behavior for insert queries
 - Metabase: Fixed IPv4/IPv6 column serialization
 
-## September 28, 2023
+</Update>
+
+<Update label="September 28, 2023">
 
 This release brings general availability of ClickPipes for Kafka, Confluent Cloud, and Amazon MSK and the Kafka Connect ClickHouse Sink, self-service workflow to secure access to Amazon S3 via IAM roles, and AI-assisted query suggestions ( private preview).
 
@@ -955,7 +1169,9 @@ This release brings general availability of ClickPipes for Kafka, Confluent Clou
   - Added support for `tableRefreshInterval` to re-fetch table changes from ClickHouse
 - Fixed an SSL connection issue and type mappings between [PowerBI](/integrations/powerbi) and ClickHouse data types
 
-## September 7, 2023
+</Update>
+
+<Update label="September 7, 2023">
 
 This release brings the beta release of the PowerBI Desktop official connector, improved credit card payment handling for India, and multiple improvements across supported language clients.
 
@@ -970,7 +1186,9 @@ This release brings the beta release of the PowerBI Desktop official connector, 
 - Node.js client: added default_format setting support
 - Golang client: fixed bool type handling, removed string limits
 
-## Aug 24, 2023
+</Update>
+
+<Update label="Aug 24, 2023">
 
 This release adds support for the MySQL interface to the ClickHouse database, introduces a new official PowerBI connector, adds a new "Running Queries" view in the cloud console, and updates the ClickHouse version to 23.7.
 
@@ -994,7 +1212,9 @@ This release adds support for the MySQL interface to the ClickHouse database, in
 - Golang Client: Fixed several batch and async data loading issues
 - Metabase: Support v0.47, added connection impersonation, fixed data types mappings
 
-## July 27, 2023
+</Update>
+
+<Update label="July 27, 2023">
 
 This release brings the private preview of ClickPipes for Kafka, a new data loading experience, and the ability to load a file from a URL using the cloud console.
 
@@ -1009,7 +1229,9 @@ This release brings the private preview of ClickPipes for Kafka, a new data load
 - Introduced ability to load a file from a URL using the cloud console
 - Improved invitation flow with additional options to join a different organization and see all your outstanding invitations
 
-## July 14, 2023
+</Update>
+
+<Update label="July 14, 2023">
 
 This release brings the ability to spin up Dedicated Services, a new AWS region in Australia, and the ability to bring your own key for encrypting data on disk.
 
@@ -1030,7 +1252,9 @@ This release brings the ability to spin up Dedicated Services, a new AWS region 
 ### Core database changes
 - [Query cache](/operations/query-cache) can be enabled in ClickHouse Cloud. When it is enabled, successful queries are cached for a minute by default and subsequent queries will use the cached result.
 
-## June 20, 2023
+</Update>
+
+<Update label="June 20, 2023">
 
 This release makes ClickHouse Cloud on GCP generally available, brings a Terraform provider for the Cloud API, and updates the ClickHouse version to 23.4.
 
@@ -1054,7 +1278,9 @@ This release makes ClickHouse Cloud on GCP generally available, brings a Terrafo
 ### Administration changes
 - Expanded local dictionary creation for non "default" users
 
-## May 30, 2023
+</Update>
+
+<Update label="May 30, 2023">
 
 This release brings the public release of the ClickHouse Cloud Programmatic API for Control Plane operations (see [blog](https://clickhouse.com/blog/using-the-new-clickhouse-cloud-api-to-automate-deployments) for details), S3 access using IAM roles, and additional scaling options.
 
@@ -1081,7 +1307,9 @@ This release brings the public release of the ClickHouse Cloud Programmatic API 
 - Improved efficiency and performance of write heavy workloads
 - Deployed incremental backup strategy to increase speed and efficiency of backups
 
-## May 11, 2023
+</Update>
+
+<Update label="May 11, 2023">
 
 This release brings the public beta of ClickHouse Cloud on GCP
 (see [blog](https://clickhouse.com/blog/clickhouse-cloud-on-gcp-available-in-public-beta)
@@ -1114,7 +1342,9 @@ ClickHouse Cloud on GCP is now GA, see the [June 20th](#june-20-2023) entry abov
 ### Performance and reliability
 - Added more granular control over terminate query permission for administrators
 
-## May 4, 2023
+</Update>
+
+<Update label="May 4, 2023">
 
 This release brings a new heatmap chart type, improves billing usage page, and improves service startup time.
 
@@ -1135,7 +1365,9 @@ This release brings a new heatmap chart type, improves billing usage page, and i
 ### Bug fixes
 - Fixed a bug causing 'Cell Towers' sample dataset import to fail
 
-## April 20, 2023
+</Update>
+
+<Update label="April 20, 2023">
 
 This release updates the ClickHouse version to 23.3, significantly improves the speed of cold reads, and brings real-time chat with support.
 
@@ -1157,7 +1389,9 @@ This release updates the ClickHouse version to 23.3, significantly improves the 
 - Added support for multi-stage PREWHERE-see 23.2 release [blog](https://clickhouse.com/blog/clickhouse-release-23-03) for details
 - Dozens of new features, performance improvements, and bug fixes–see detailed [changelogs](/whats-new/changelog/index.md) for 23.3 and 23.2
 
-## April 6, 2023
+</Update>
+
+<Update label="April 6, 2023">
 
 This release brings an API for retrieving cloud endpoints, an advanced scaling control for minimum idle timeout, and support for external data in Python client query methods.
 
@@ -1180,7 +1414,9 @@ This release brings an API for retrieving cloud endpoints, an advanced scaling c
 ### Bug fixes
 * Fixed behavior where running `INSERT INTO ... SELECT ...` from the SQL console incorrectly applied the same row limit as select queries
 
-## March 23, 2023
+</Update>
+
+<Update label="March 23, 2023">
 
 This release brings database password complexity rules, significant speedup in restoring large backups, and support for displaying traces in Grafana Trace View.
 
@@ -1213,7 +1449,9 @@ This release brings database password complexity rules, significant speedup in r
 - Fixed a bug resulting in slow initial provisioning and startup times for new services
 - Fixed a bug that resulted in slower query performance due to cache misconfiguration
 
-## March 9, 2023
+</Update>
+
+<Update label="March 9, 2023">
 
 This release improves observability dashboards, optimizes time to create large backups, and adds the configuration necessary to drop large tables and partitions.
 
@@ -1236,7 +1474,9 @@ This release improves observability dashboards, optimizes time to create large b
 - [Kafka-Connect](/integrations/data-ingestion/kafka/index.md): Implicit date conversion and better handling for null columns
 - [Java Client](https://github.com/ClickHouse/clickhouse-java): Nested conversion to Java maps
 
-##  February 23, 2023
+</Update>
+
+<Update label="February 23, 2023">
 
 This release enables a subset of the features in the ClickHouse 23.1 core release, brings interoperability with Amazon Managed Streaming for Apache Kafka (MSK), and exposes advanced scaling and idling adjustments in the activity log.
 
@@ -1274,7 +1514,9 @@ Adds support for a subset of features in ClickHouse 23.1, for example:
 - Fixed behavior where resetting service password did not adhere to the password policy
 - Made organization invite email validation case-insensitive
 
-## February 2, 2023
+</Update>
+
+<Update label="February 2, 2023">
 
 This release brings an officially supported Metabase integration, a major Java client / JDBC driver release, and support for views and materialized views in the SQL console.
 
@@ -1298,7 +1540,9 @@ This release brings an officially supported Metabase integration, a major Java c
 - Fixed a bug where SQL console CSV export was truncated
 - Fixed a bug resulting in intermittent sample data upload failures
 
-## January 12, 2023
+</Update>
+
+<Update label="January 12, 2023">
 
 This release updates the ClickHouse version to 22.12, enables dictionaries for many new sources, and improves query performance.
 
@@ -1335,7 +1579,9 @@ This release updates the ClickHouse version to 22.12, enables dictionaries for m
 ### Bug fixes
 Using the Advanced Scaling slider to reserve resources now takes effect right away.
 
-## December 20, 2022
+</Update>
+
+<Update label="December 20, 2022">
 
 This release introduces seamless logins for administrators to SQL console, improved read performance for cold reads, and an improved Metabase connector for ClickHouse Cloud.
 
@@ -1351,7 +1597,9 @@ This release introduces seamless logins for administrators to SQL console, impro
 ### Integrations changes
 - The [Metabase plugin](/integrations/data-visualization/metabase-and-clickhouse.md) got a long-awaited v0.9.1 major update. Now it is compatible with the latest Metabase version and has been thoroughly tested against ClickHouse Cloud.
 
-## December 6, 2022 - General availability
+</Update>
+
+<Update label="December 6, 2022 - General availability">
 
 ClickHouse Cloud is now production-ready with SOC2 Type II compliance, uptime SLAs for production workloads, and public status page. This release includes major new capabilities like AWS Marketplace integration, SQL console - a data exploration workbench for ClickHouse users, and ClickHouse Academy - self-paced learning in ClickHouse Cloud. Learn more in this [blog](https://clickhouse.com/blog/clickhouse-cloud-generally-available).
 
@@ -1389,7 +1637,9 @@ ClickHouse Cloud is now production-ready with SOC2 Type II compliance, uptime SL
 ### Bug fixes
 - Addressed known issue where restore from backup did not always work due to dependency resolution
 
-## November 29, 2022
+</Update>
+
+<Update label="November 29, 2022">
 
 This release brings SOC2 Type II compliance, updates the ClickHouse version to 22.11, and improves a number of ClickHouse clients and integrations.
 
@@ -1426,7 +1676,9 @@ This release brings SOC2 Type II compliance, updates the ClickHouse version to 2
 
 - Restore from backup may not work due to dependency resolution
 
-## November 17, 2022
+</Update>
+
+<Update label="November 17, 2022">
 
 This release enables dictionaries from local ClickHouse table and HTTP sources, introduces support for the Mumbai region, and improves the cloud console user experience.
 
@@ -1449,7 +1701,9 @@ This release enables dictionaries from local ClickHouse table and HTTP sources, 
 ### Known issues
 - Restore from backup may not work due to dependency resolution
 
-## November 3, 2022
+</Update>
+
+<Update label="November 3, 2022">
 
 This release removes read & write units from pricing (see the [pricing page](https://clickhouse.com/pricing) for details), updates the ClickHouse version to 22.10, adds support for higher vertical scaling for self-service customers, and improves reliability through better defaults.
 
@@ -1477,7 +1731,9 @@ This release removes read & write units from pricing (see the [pricing page](htt
 - Added functions for Morton curve encoding, Java integer hashing, and random number generation.
 - See the [detailed 22.10 changelog](/whats-new/cloud#clickhouse-2210-version-upgrade) for the complete list of changes.
 
-## October 25, 2022
+</Update>
+
+<Update label="October 25, 2022">
 
 This release significantly lowers compute consumption for small workloads, lowers compute pricing (see [pricing](https://clickhouse.com/pricing) page for details), improves stability through better defaults, and enhances the Billing and Usage views in the ClickHouse Cloud console.
 
@@ -1497,8 +1753,12 @@ This release significantly lowers compute consumption for small workloads, lower
 - Improved workflow when switching options for IP filtering
 - Added resend email confirmation button to the cloud console
 
-## October 4, 2022 - Beta
+</Update>
+
+<Update label="October 4, 2022 - Beta">
 
 ClickHouse Cloud began its public Beta on October 4th, 2022. Learn more in this [blog](https://clickhouse.com/blog/clickhouse-cloud-public-beta).
 
 The ClickHouse Cloud version is based on ClickHouse core v22.10. For a list of compatible features, refer to the [Cloud Compatibility](/whats-new/cloud-compatibility) guide.
+
+</Update>
