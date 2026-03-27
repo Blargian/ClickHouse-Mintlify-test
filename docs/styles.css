@@ -156,38 +156,21 @@ html:not(.dark) .pagination-prev:hover {
     height: 2rem;
 }
 
-/* Give navbar a solid background so content doesn't show through when scrolling */
-#navbar {
-    background-color: #f7f7f7 !important;
-}
-
-.dark #navbar,
-:is(.dark) #navbar {
-    background-color: #151515 !important;
-}
-
-/* Override the Almond theme's dark sidebar background to match the navbar */
+/* Dark mode sidebar background */
 .dark #almond-background-color,
 :is(.dark) #almond-background-color {
     background-color: #151515 !important;
 }
 
-/* When banner is present, reduce content area height to account for the extra banner space */
-/* Mobile: base is 100dvh-8rem, subtract ~2.5rem for banner */
-body:has(#banner) .rounded-2xl:has(> #content-container) {
-    height: calc(100dvh - 10.5rem) !important;
+/* Hide the chat assistant textarea */
+.chat-assistant-input {
+    display: none !important;
 }
 
-/* Desktop: base is 100dvh-4.5rem, subtract ~2.5rem for banner */
-@media (min-width: 1024px) {
-    body:has(#banner) .rounded-2xl:has(> #content-container) {
-        height: calc(100dvh - 7rem) !important;
-    }
-}
-
-/* Fix sticky search/filter column overlapping the top nav */
-.mint-sticky.mint-top-4 {
-    top: 5rem !important;
+/* Right-align top nav items and constrain width to content area */
+#navbar-transition-maple {
+    width: calc(100vw - 19rem) !important;
+    justify-content: flex-end !important;
 }
 
 /* Align quickstarts grid to the left instead of centered */

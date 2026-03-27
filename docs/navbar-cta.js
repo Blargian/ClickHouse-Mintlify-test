@@ -2,7 +2,6 @@
   'use strict';
 
   var CTA_ID = 'ch-navbar-cta';
-  var LOGO_ID = 'ch-navbar-logo';
 
   var githubSvg = '<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">'
     + '<path fill-rule="evenodd" clip-rule="evenodd" d="M8 1.75C4.27 1.75 1.25 4.77 1.25 8.5c0 2.99 1.93 5.51 4.62 6.4.34.06.46-.14.46-.32 0-.16-.01-.69-.01-1.26-1.7.32-2.14-.6-2.27-.98-.08-.19-.41-.79-.7-.95-.24-.13-.58-.44-.01-.45.53-.01.91.49 1.04.69.61 1.02 1.58.73 1.97.56.06-.44.24-.74.43-.91-1.5-.17-3.07-.75-3.07-3.33 0-.73.26-1.34.69-1.81-.07-.17-.3-.86.07-1.79 0 0 .57-.18 1.86.69.54-.15 1.11-.23 1.69-.23.57 0 1.14.08 1.68.23 1.29-.88 1.86-.69 1.86-.69.37.93.14 1.62.07 1.79.43.47.69 1.07.69 1.81 0 2.59-1.58 3.16-3.08 3.33.25.21.46.62.46 1.25 0 .9-.01 1.63-.01 1.86 0 .18.13.39.47.32 2.67-.9 4.58-3.41 4.58-6.4 0-3.73-3.02-6.75-6.75-6.75Z" fill="currentColor"/>'
@@ -18,23 +17,6 @@
     var style = document.createElement('style');
     style.id = 'ch-navbar-cta-styles';
     style.textContent = ''
-      // Extend navbar to full width with logo on the left
-      + '#navbar-transition-maple { left: 0 !important; width: 100vw !important; justify-content: space-between !important; padding-left: 24px !important; padding-right: 24px !important; z-index: 30 !important; }'
-      // Push the sidebar down below the navbar
-      + '@media (min-width: 1024px) {'
-      + '  #sidebar { top: calc(var(--banner-height, 0px) + 3rem) !important; }'
-      + '}'
-      // Hide the original logo area in the sidebar header
-      + '#sidebar .overflow-y-auto > div:first-child { display: none !important; }'
-      // Also reduce the sidebar top padding since the logo is gone
-      + '#sidebar .overflow-y-auto { padding-top: 16px !important; }'
-      // Navbar logo
-      + '#' + LOGO_ID + ' { display: flex; align-items: center; flex-shrink: 0; margin-right: 24px; }'
-      + '#' + LOGO_ID + ' a { display: flex; align-items: center; text-decoration: none; }'
-      + '#' + LOGO_ID + ' img { height: 32px; width: auto; padding-left: 0 !important; padding-right: 0 !important; }'
-      // Left section: logo + tabs — push tabs to the right
-      + '#ch-navbar-left { display: flex; align-items: center; height: 100%; flex: 1; min-width: 0; }'
-      + '#ch-navbar-left .nav-tabs { margin-left: auto; }'
       // CTA container
       + '#' + CTA_ID + ' { display: flex; align-items: center; gap: 16px; flex-shrink: 0; margin-left: 32px; }'
       // GitHub stars link
@@ -62,29 +44,6 @@
     if (!mapleNav) return false;
 
     injectStyles();
-
-    // --- Left section: logo + nav tabs ---
-    var navTabs = mapleNav.querySelector('.nav-tabs');
-    if (navTabs && !document.getElementById('ch-navbar-left')) {
-      var leftSection = document.createElement('div');
-      leftSection.id = 'ch-navbar-left';
-
-      // Clone the logo from the sidebar
-      var logoContainer = document.createElement('div');
-      logoContainer.id = LOGO_ID;
-
-      var sidebarLogo = document.querySelector('#sidebar .overflow-y-auto > div:first-child a');
-      if (sidebarLogo) {
-        var logoClone = sidebarLogo.cloneNode(true);
-        // Remove the sr-only span text, keep just the images
-        logoContainer.appendChild(logoClone);
-      }
-
-      leftSection.appendChild(logoContainer);
-      // Move the existing nav-tabs into the left section
-      leftSection.appendChild(navTabs);
-      mapleNav.insertBefore(leftSection, mapleNav.firstChild);
-    }
 
     // --- Right section: GitHub stars + Get started ---
     var container = document.createElement('div');

@@ -3244,7 +3244,6 @@
                     "root": "/resources/changelogs/cloud/release-notes-index",
                     "pages": [
                       "/resources/changelogs/cloud/01_changelog",
-                      "/resources/changelogs/cloud",
                       "/resources/changelogs/cloud/release-status",
                       {
                         "group": "Release notes",
